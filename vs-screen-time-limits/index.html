@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Broc vs screen-time limits: why timers are easy to ignore</title>
+<meta name="description" content="Screen-time limits fail because you hold the snooze button. Broc is a habit-based app blocker: apps stay blocked until you do a real habit and earn the unlock.">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="canonical" href="https://getbroc.app/vs-screen-time-limits/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Broc vs screen-time limits: why timers are easy to ignore">
+<meta property="og:description" content="Limits fail because you hold the snooze button. Broc blocks apps until your habits are done.">
+<meta property="og:image" content="https://getbroc.app/img/og.png">
+<meta property="og:url" content="https://getbroc.app/vs-screen-time-limits/">
+<meta property="og:type" content="article">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Broc?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Broc is a habit-based app blocker for Android: block distracting apps, do a real habit, prove it with a photo, earn the unlock. Apps like Instagram, TikTok and YouTube stay blocked until your daily habits are done."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Broc different from a screen-time limit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A screen-time limit asks you to stop and lets you tap through when you don't. Broc has no snooze button. The only way to open a blocked app is completing a habit you chose, like reading or working out."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can't you just uninstall Broc?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Broc is not a prison. The point is asymmetry: tapping '5 more minutes' costs nothing, while uninstalling an app you deliberately set up is a real decision your streak makes visible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Broc free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The free tier includes up to 5 habits and app blocking with a 30-minute unlock cap. Broc Pro adds unlimited habits, custom unlock durations, AI photo verification and full history, with a 7-day free trial. No ads either way."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which phones does Broc work on?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Broc is on Android via Google Play. An iOS version is not available yet; you can leave your email at getbroc.app to hear when it is."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{ --navy:#0A1428; --navy3:#08101F; --cobalt:#1452FF; --ink:#1B2430;
+         --dim:#4A5568; --hairline:#E4E8EF; }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  body{font-family:'Hanken Grotesk',system-ui,sans-serif; background:#fff; color:var(--ink);
+       -webkit-font-smoothing:antialiased; line-height:1.65;}
+  a{color:var(--cobalt);}
+  .top{background:var(--navy); padding:18px 24px;}
+  .top-inner{max-width:760px; margin:0 auto; display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:10px; color:#fff; text-decoration:none;}
+  .brand img{width:30px; height:30px; border-radius:50%;}
+  .brand span{font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:800;}
+  .top a.back{color:rgba(255,255,255,0.7); font-size:13px; text-decoration:none;}
+  .top a.back:hover{color:#fff;}
+  main{max-width:760px; margin:0 auto; padding:44px 24px 90px;}
+  h1{font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:800; line-height:1.15;}
+  h2{font-family:'Bricolage Grotesque',sans-serif; font-size:21px; font-weight:700; margin:36px 0 10px;}
+  h3{font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:700; margin:24px 0 6px;}
+  p{margin:12px 0; font-size:16px;}
+  ul{margin:12px 0 12px 22px; font-size:16px;}
+  li{margin:6px 0;}
+  strong{font-weight:700;}
+  table{border-collapse:collapse; width:100%; margin:16px 0; font-size:15px;}
+  th,td{border:1px solid var(--hairline); padding:10px 12px; text-align:left; vertical-align:top;}
+  th{background:#F6F8FB; font-weight:700;}
+  .more{margin-top:44px; border-top:1px solid var(--hairline); padding-top:22px;}
+  .more h2{margin-top:0; font-size:17px;}
+  .more ul{list-style:none; margin:10px 0 0; display:grid; gap:8px;}
+  .more li{margin:0;}
+  .cta{margin:40px 0 0; padding:26px; background:var(--navy); border-radius:14px; text-align:center;}
+  .cta p{color:rgba(255,255,255,0.85); margin:0 0 14px;}
+  .btn{display:inline-block; background:var(--cobalt); color:#fff; text-decoration:none;
+       font-weight:700; padding:13px 26px; border-radius:10px;}
+  footer{border-top:1px solid var(--hairline); padding:22px 24px; font-size:13px; color:var(--dim);}
+  .foot-inner{max-width:760px; margin:0 auto; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+  footer a{color:var(--dim);}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-inner">
+    <a class="brand" href="/"><img src="/img/favicon.png" alt=""><span>Broc</span></a>
+    <a class="back" href="/">&larr; getbroc.app</a>
+  </div>
+</div>
+
+<main>
+<h1>Broc vs screen-time limits: why timers are easy to ignore</h1>
+
+<p>You set a 30-minute limit on Instagram. Three days later you're tapping
+"Ignore limit for today" without reading it. This page explains why that keeps
+happening and what a blocker has to do differently to survive contact with
+11pm you.</p>
+
+<h2>The problem: you hold the snooze button</h2>
+
+<p>Every built-in screen-time tool works the same way. It counts your minutes,
+and when they run out, it asks you to stop. Asking is the flaw. The same person
+who set the limit gets to waive it, and the waive button is one tap while the
+discipline costs actual effort. When willpower is low, that trade loses every
+time.</p>
+
+<p>It's not a fair fight either. The apps you're limiting are built by teams
+whose whole job is keeping you in them. A polite dialog box was never going to
+win. Your screen-time report is a scoreboard for a game you're losing.</p>
+
+<h2>What actually changes behavior: a price, not a plea</h2>
+
+<p>A limit that can be dismissed for free is a suggestion. Behavior changes
+when the easy path has a real cost and the good path has a real payoff. That
+means the block can't end with a tap. It has to end with something you'd have
+to physically do.</p>
+
+<h2>How Broc does it</h2>
+
+<p>Broc is a habit-based app blocker: block distracting apps, do a real habit,
+prove it with a photo, earn the unlock.</p>
+
+<ul>
+  <li><strong>Pick the apps that pull you in.</strong> Instagram, TikTok, YouTube, games, your choice.</li>
+  <li><strong>Set daily habits.</strong> Read 10 pages, train, study, drink water. Real ones.</li>
+  <li><strong>Open a blocked app and you see your habit list instead.</strong> No snooze, no "remind me later".</li>
+  <li><strong>Finish habits to earn screen time.</strong> Per habit, or clear the whole list first. Your call.</li>
+  <li><strong>Optional AI photo verification (Pro)</strong> checks you actually did it, not just tapped a box.</li>
+</ul>
+
+<h2>Side by side</h2>
+
+<table>
+  <tr><th></th><th>Screen-time limit</th><th>Broc</th></tr>
+  <tr><td>When time runs out</td><td>A dialog asks you to stop</td><td>The app stays blocked</td></tr>
+  <tr><td>Getting the app back</td><td>Tap "ignore limit"</td><td>Do a habit you chose</td></tr>
+  <tr><td>Cost of giving in</td><td>Zero</td><td>The habit, or nothing</td></tr>
+  <tr><td>Honesty check</td><td>None</td><td>AI photo verification (optional, Pro)</td></tr>
+  <tr><td>What you get out of it</td><td>A guilt report</td><td>A streak of habits actually done</td></tr>
+</table>
+
+<h2>Common questions</h2>
+
+<h3>Can't you just uninstall it?</h3>
+<p>Yes. Broc doesn't pretend to be a prison. The point is asymmetry: tapping
+"5 more minutes" costs nothing, uninstalling an app you deliberately set up is
+a decision, and your streak makes that decision visible. A pause is easy to
+outlast. Thirty pushups are not.</p>
+
+<h3>How is this different from one-sec-style pause apps?</h3>
+<p>Pause apps make you wait or breathe before opening the app. The exit still
+costs nothing but time. Broc's exit is doing the habit you picked.</p>
+
+<h3>Is it free?</h3>
+<p>The free tier covers 5 habits and blocking with a 30-minute unlock cap.
+Broc Pro adds unlimited habits, custom unlock durations, AI photo verification
+and full history, with a 7-day free trial. No ads on either.</p>
+
+<h3>What about privacy?</h3>
+<p>Broc uses Android's Usage Access permission only to check which app is open
+right now, on your device. No usage history is stored or sent. Details in the
+<a href="/privacy/">privacy policy</a>.</p>
+
+<h3>Is there an iPhone version?</h3>
+<p>Android only for now, on Google Play. Leave your email on the
+<a href="/">homepage</a> to hear when iOS lands.</p>
+
+<div class="cta">
+  <p>Block the apps. Do the habit. Earn it back.</p>
+  <a class="btn play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto">Get Broc on Google Play</a>
+</div>
+
+<div class="more">
+  <h2>More guides</h2>
+  <ul>
+    <li><a href="/block-tiktok-while-studying/">How to block TikTok until you finish studying</a></li>
+    <li><a href="/stop-doomscrolling-at-night/">How to stop doomscrolling at night</a></li>
+    <li><a href="/earn-scrolling-by-reading/">Turn scrolling into a reward for reading</a></li>
+    <li><a href="/ai-photo-verification/">AI photo verification and privacy, explained</a></li>
+  </ul>
+</div>
+
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <span>&copy; 2026 Broc &middot; Broc. You against your phone.</span>
+    <span><a href="/">Home</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.play-link').forEach(function(a){
+    a.addEventListener('click', function(){
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({path: 'play-store-click', event: true});
+      }
+    });
+  });
+</script>
+
+<script data-goatcounter="https://vetoapp.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turn scrolling into a reward for reading</title>
+<meta name="description" content="You don't need more discipline to read more. You need an exchange rate: 10 pages read earns 15 minutes of Instagram. How to set it up with the Broc habit app blocker.">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="canonical" href="https://getbroc.app/earn-scrolling-by-reading/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Turn scrolling into a reward for reading">
+<meta property="og:description" content="10 pages read earns 15 minutes of Instagram. That's the exchange rate.">
+<meta property="og:image" content="https://getbroc.app/img/og.png">
+<meta property="og:url" content="https://getbroc.app/earn-scrolling-by-reading/">
+<meta property="og:type" content="article">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How can I make myself read instead of scrolling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Link the two directly: make scrolling the reward for reading. With Broc, a habit-based app blocker for Android, apps like Instagram and TikTok stay blocked until your reading habit is done, and finishing it earns a set window of screen time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's a realistic reading habit to start with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ten pages a day. It's small enough to finish on a bad day and adds up to roughly a book a month. You can raise it once the streak is real."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the app tell if I actually read?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With Broc Pro, AI photo verification checks a photo (the open book, your e-reader page) before the habit counts. On the free tier you check it off yourself and the streak keeps you honest."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Broc?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Broc is a habit-based app blocker for Android: block distracting apps, do a real habit, prove it with a photo, earn the unlock."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{ --navy:#0A1428; --navy3:#08101F; --cobalt:#1452FF; --ink:#1B2430;
+         --dim:#4A5568; --hairline:#E4E8EF; --wash:#F6F8FB; }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  body{font-family:'Hanken Grotesk',system-ui,sans-serif; background:#fff; color:var(--ink);
+       -webkit-font-smoothing:antialiased; line-height:1.65;}
+  a{color:var(--cobalt);}
+  .top{background:var(--navy); padding:18px 24px;}
+  .top-inner{max-width:760px; margin:0 auto; display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:10px; color:#fff; text-decoration:none;}
+  .brand img{width:30px; height:30px; border-radius:50%;}
+  .brand span{font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:800;}
+  .top a.back{color:rgba(255,255,255,0.7); font-size:13px; text-decoration:none;}
+  .top a.back:hover{color:#fff;}
+  .hero{background:var(--navy); padding:36px 24px 48px;}
+  .hero-inner{max-width:760px; margin:0 auto;}
+  .hero .kicker{color:#7EA0FF; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;}
+  .hero h1{font-family:'Bricolage Grotesque',sans-serif; font-size:36px; font-weight:800;
+           line-height:1.12; color:#fff; margin-top:10px;}
+  .hero p{color:rgba(255,255,255,0.78); margin-top:14px; font-size:17px; max-width:600px;}
+  main{max-width:760px; margin:0 auto; padding:40px 24px 90px;}
+  h2{font-family:'Bricolage Grotesque',sans-serif; font-size:22px; font-weight:700; margin:38px 0 10px;}
+  h3{font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:700; margin:24px 0 6px;}
+  p{margin:12px 0; font-size:16px;}
+  ul{margin:12px 0 12px 22px; font-size:16px;}
+  li{margin:6px 0;}
+  strong{font-weight:700;}
+  .rate{display:flex; align-items:center; justify-content:center; gap:18px; margin:24px 0;
+        background:var(--navy); border-radius:14px; padding:26px 18px; flex-wrap:wrap;}
+  .rate .side{text-align:center;}
+  .rate .big{font-family:'Bricolage Grotesque',sans-serif; font-size:30px; font-weight:800; color:#fff;}
+  .rate .label{font-size:13px; color:rgba(255,255,255,0.65); margin-top:2px;}
+  .rate .eq{font-family:'Bricolage Grotesque',sans-serif; font-size:26px; font-weight:800; color:#7EA0FF;}
+  .steps{counter-reset:step; margin:20px 0; display:grid; gap:12px;}
+  .step{background:var(--wash); border:1px solid var(--hairline); border-radius:12px;
+        padding:16px 18px 16px 58px; position:relative;}
+  .step::before{counter-increment:step; content:counter(step);
+        position:absolute; left:16px; top:16px; width:28px; height:28px; border-radius:50%;
+        background:var(--cobalt); color:#fff; font-weight:700; font-size:14px;
+        display:flex; align-items:center; justify-content:center;}
+  .step h3{margin:0 0 4px;}
+  .step p{margin:0; font-size:15px; color:var(--dim);}
+  .callout{border-left:4px solid var(--cobalt); background:var(--wash); padding:14px 18px;
+           border-radius:0 10px 10px 0; margin:18px 0; font-size:15px;}
+  .cta{margin:44px 0 0; padding:28px; background:var(--navy); border-radius:14px; text-align:center;}
+  .cta p{color:rgba(255,255,255,0.85); margin:0 0 14px;}
+  .btn{display:inline-block; background:var(--cobalt); color:#fff; text-decoration:none;
+       font-weight:700; padding:13px 26px; border-radius:10px;}
+  .more{margin-top:44px; border-top:1px solid var(--hairline); padding-top:22px;}
+  .more h2{margin-top:0; font-size:17px;}
+  .more ul{list-style:none; margin:10px 0 0; display:grid; gap:8px;}
+  .more li{margin:0;}
+  footer{border-top:1px solid var(--hairline); padding:22px 24px; font-size:13px; color:var(--dim);}
+  .foot-inner{max-width:760px; margin:0 auto; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+  footer a{color:var(--dim);}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-inner">
+    <a class="brand" href="/"><img src="/img/favicon.png" alt=""><span>Broc</span></a>
+    <a class="back" href="/">&larr; getbroc.app</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="kicker">Guide &middot; reading</span>
+    <h1>Turn scrolling into a reward for reading</h1>
+    <p>You don't need more discipline to read more. You need an exchange rate.</p>
+  </div>
+</div>
+
+<main>
+
+<div class="rate">
+  <div class="side">
+    <div class="big">10 pages</div>
+    <div class="label">read, actually read</div>
+  </div>
+  <div class="eq">=</div>
+  <div class="side">
+    <div class="big">15 minutes</div>
+    <div class="label">of Instagram, earned</div>
+  </div>
+</div>
+
+<h2>The problem with "read more" as a goal</h2>
+
+<p>Reading loses to scrolling for a boring mechanical reason: the feed pays
+out instantly and the book pays out in a month. Every evening your brain picks
+between a slot machine and a savings account, and it picks the slot machine,
+because you would too.</p>
+
+<p>Most fixes attack the wrong end. Book clubs, reading goals, "phone in the
+other room": all trying to make reading more attractive or scrolling less
+available. The leverage is in <strong>connecting</strong> them, so the thing
+you crave pays for the thing you want to want.</p>
+
+<div class="callout">Don't fight the craving. Tax it. Every scroll session now
+costs pages.</div>
+
+<h2>The setup</h2>
+
+<p>Broc is a habit-based app blocker: block distracting apps, do a real habit,
+prove it with a photo, earn the unlock. The reading version:</p>
+
+<div class="steps">
+  <div class="step">
+    <h3>Create the habit: read 10 pages</h3>
+    <p>Ten is deliberate. Small enough to clear on your worst day, big enough
+    to finish a book a month. Raise it later if the streak holds.</p>
+  </div>
+  <div class="step">
+    <h3>Block what you'd scroll instead</h3>
+    <p>Instagram, TikTok, YouTube. From now on, opening them shows the habit
+    list, and the habit list says "read 10 pages".</p>
+  </div>
+  <div class="step">
+    <h3>Use per-habit unlock mode</h3>
+    <p>Each completed habit earns a chunk of screen time. Pages in, minutes
+    out. When the window ends, the block returns, and so does the book.</p>
+  </div>
+  <div class="step">
+    <h3>Optional: photo proof (Pro)</h3>
+    <p>AI photo verification wants to see the open book or the e-reader page
+    before the habit counts. For the people (all of us) who would eventually
+    just tap the box.</p>
+  </div>
+</div>
+
+<h2>Why the exchange rate sticks</h2>
+
+<p>Two feedback loops start running. The obvious one: you read every day,
+because that's the only door to the feed, and ten daily pages quietly becomes
+twelve books a year. The sneakier one: the scroll window is finite now, so you
+stop opening Instagram out of boredom and start spending it like money.
+Both loops show up in your streak, and a 20-day streak is a possession you
+won't break for one lazy evening.</p>
+
+<p>The craving never goes away. It does your reading now.</p>
+
+<h2>Common questions</h2>
+
+<h3>Does it work with Kindle or audiobooks?</h3>
+<p>The habit is whatever you define: paper pages, Kindle pages, a chapter of
+an audiobook on a walk. Broc checks the habit, not the format. With photo
+verification, point the camera at whatever shows the work.</p>
+
+<h3>What if I genuinely need an app that's blocked?</h3>
+<p>Then do the ten pages. That's the deal you made with yourself when you set
+it up, and the app holding you to it is the product working.</p>
+
+<h3>What does it cost?</h3>
+<p>Free: 5 habits, blocking, 30-minute unlock cap. Broc Pro (7-day free trial)
+adds unlimited habits, custom unlock durations, AI photo verification and full
+history. No ads.</p>
+
+<h3>iPhone?</h3>
+<p>Android only for now, on Google Play. iOS email signup is on the
+<a href="/">homepage</a>.</p>
+
+<div class="cta">
+  <p>Make Instagram cost 10 pages.</p>
+  <a class="btn play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto">Get Broc on Google Play</a>
+</div>
+
+<div class="more">
+  <h2>More guides</h2>
+  <ul>
+    <li><a href="/vs-screen-time-limits/">Broc vs screen-time limits: why timers are easy to ignore</a></li>
+    <li><a href="/block-tiktok-while-studying/">How to block TikTok until you finish studying</a></li>
+    <li><a href="/stop-doomscrolling-at-night/">How to stop doomscrolling at night</a></li>
+    <li><a href="/ai-photo-verification/">AI photo verification and privacy, explained</a></li>
+  </ul>
+</div>
+
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <span>&copy; 2026 Broc &middot; Broc. You against your phone.</span>
+    <span><a href="/">Home</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.play-link').forEach(function(a){
+    a.addEventListener('click', function(){
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({path: 'play-store-click', event: true});
+      }
+    });
+  });
+</script>
+
+<script data-goatcounter="https://vetoapp.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

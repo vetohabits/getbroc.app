@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to stop doomscrolling at night</title>
+<meta name="description" content="It's 1am and you're still scrolling. Willpower isn't the fix at midnight. Here's a setup that makes the feed cost something, using the Broc habit app blocker.">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="canonical" href="https://getbroc.app/stop-doomscrolling-at-night/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="How to stop doomscrolling at night">
+<meta property="og:description" content="Willpower isn't the fix at midnight. Make the feed cost something instead.">
+<meta property="og:image" content="https://getbroc.app/img/og.png">
+<meta property="og:url" content="https://getbroc.app/stop-doomscrolling-at-night/">
+<meta property="og:type" content="article">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I stop doomscrolling at night?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stop relying on willpower at the exact hour it's weakest. Block the feeds with a blocker that can't be snoozed, give the pickup habit somewhere else to go (an easier app or a book), and make the block start before the scrolling usually does. Broc is a habit-based app blocker that keeps apps blocked until your habits are done."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do I doomscroll even when I'm exhausted?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Late-night scrolling is mostly autopilot: the pickup happens before any decision does, and feeds are engineered to keep a tired brain in the loop. That's why limits you can dismiss with one tap fail at midnight."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do screen-time limits work for night scrolling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rarely. A limit asks you to stop and lets you tap through when you don't, and at midnight you always tap through. A block that only opens after a real habit is a different trade: the exit costs effort instead of nothing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Broc?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Broc is a habit-based app blocker for Android: block distracting apps, do a real habit, prove it with a photo, earn the unlock. No snooze button."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{ --navy:#0A1428; --navy3:#08101F; --cobalt:#1452FF; --ink:#1B2430;
+         --dim:#4A5568; --hairline:#E4E8EF; --wash:#F6F8FB; }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  body{font-family:'Hanken Grotesk',system-ui,sans-serif; background:#fff; color:var(--ink);
+       -webkit-font-smoothing:antialiased; line-height:1.65;}
+  a{color:var(--cobalt);}
+  .top{background:var(--navy); padding:18px 24px;}
+  .top-inner{max-width:760px; margin:0 auto; display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:10px; color:#fff; text-decoration:none;}
+  .brand img{width:30px; height:30px; border-radius:50%;}
+  .brand span{font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:800;}
+  .top a.back{color:rgba(255,255,255,0.7); font-size:13px; text-decoration:none;}
+  .top a.back:hover{color:#fff;}
+  .hero{background:var(--navy); padding:36px 24px 48px;}
+  .hero-inner{max-width:760px; margin:0 auto;}
+  .hero .kicker{color:#7EA0FF; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;}
+  .hero h1{font-family:'Bricolage Grotesque',sans-serif; font-size:36px; font-weight:800;
+           line-height:1.12; color:#fff; margin-top:10px;}
+  .hero p{color:rgba(255,255,255,0.78); margin-top:14px; font-size:17px; max-width:600px;}
+  main{max-width:760px; margin:0 auto; padding:40px 24px 90px;}
+  h2{font-family:'Bricolage Grotesque',sans-serif; font-size:22px; font-weight:700; margin:38px 0 10px;}
+  h3{font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:700; margin:24px 0 6px;}
+  p{margin:12px 0; font-size:16px;}
+  ul{margin:12px 0 12px 22px; font-size:16px;}
+  li{margin:6px 0;}
+  strong{font-weight:700;}
+  .steps{counter-reset:step; margin:20px 0; display:grid; gap:12px;}
+  .step{background:var(--wash); border:1px solid var(--hairline); border-radius:12px;
+        padding:16px 18px 16px 58px; position:relative;}
+  .step::before{counter-increment:step; content:counter(step);
+        position:absolute; left:16px; top:16px; width:28px; height:28px; border-radius:50%;
+        background:var(--cobalt); color:#fff; font-weight:700; font-size:14px;
+        display:flex; align-items:center; justify-content:center;}
+  .step h3{margin:0 0 4px;}
+  .step p{margin:0; font-size:15px; color:var(--dim);}
+  .callout{border-left:4px solid var(--cobalt); background:var(--wash); padding:14px 18px;
+           border-radius:0 10px 10px 0; margin:18px 0; font-size:15px;}
+  .cta{margin:44px 0 0; padding:28px; background:var(--navy); border-radius:14px; text-align:center;}
+  .cta p{color:rgba(255,255,255,0.85); margin:0 0 14px;}
+  .btn{display:inline-block; background:var(--cobalt); color:#fff; text-decoration:none;
+       font-weight:700; padding:13px 26px; border-radius:10px;}
+  .more{margin-top:44px; border-top:1px solid var(--hairline); padding-top:22px;}
+  .more h2{margin-top:0; font-size:17px;}
+  .more ul{list-style:none; margin:10px 0 0; display:grid; gap:8px;}
+  .more li{margin:0;}
+  footer{border-top:1px solid var(--hairline); padding:22px 24px; font-size:13px; color:var(--dim);}
+  .foot-inner{max-width:760px; margin:0 auto; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+  footer a{color:var(--dim);}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-inner">
+    <a class="brand" href="/"><img src="/img/favicon.png" alt=""><span>Broc</span></a>
+    <a class="back" href="/">&larr; getbroc.app</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="kicker">Guide &middot; night scrolling</span>
+    <h1>How to stop doomscrolling at night</h1>
+    <p>It's 1am. You're not even enjoying it. You keep scrolling anyway. The
+    fix isn't more willpower, it's making the feed cost something at the hour
+    your willpower clocks off.</p>
+  </div>
+</div>
+
+<main>
+
+<h2>Why midnight-you always wins</h2>
+
+<p>Late-night scrolling is barely a decision. The pickup is autopilot: the
+phone is in your hand before any thought happens, and the feed takes it from
+there. Feeds are built by teams whose job is keeping a tired brain in the
+loop, and at midnight they're up against nobody. You've been making choices
+all day. That muscle is done.</p>
+
+<p>This is why every "I'll just stop at 11" plan fails, and why screen-time
+limits fail with it. The limit fires, the dialog asks nicely, and midnight-you
+taps "ignore" without reading it. The rule-maker and the rule-breaker are the
+same person, and only one of them is awake.</p>
+
+<div class="callout">Stop trying to out-discipline a slot machine. Change the
+price of opening it instead.</div>
+
+<h2>The night setup</h2>
+
+<p>Broc is a habit-based app blocker: block distracting apps, do a real habit,
+prove it with a photo, earn the unlock. For nights, the trick is aiming the
+habits at what late-you actually needs:</p>
+
+<div class="steps">
+  <div class="step">
+    <h3>Block the night-time feeds</h3>
+    <p>TikTok, Instagram, YouTube, Reddit, whichever ones own your 11pm.
+    Opening them now shows your habit list instead of the feed.</p>
+  </div>
+  <div class="step">
+    <h3>Set a wind-down habit as the price</h3>
+    <p>"Read 10 pages", "stretch", "tomorrow's to-do list written". If you
+    want to scroll, that's the toll. Half the time, ten pages in, you won't
+    want to anymore.</p>
+  </div>
+  <div class="step">
+    <h3>Keep the unlock window short</h3>
+    <p>A finished habit earns a set chunk of time, then the block comes back.
+    No open-ended "just tonight" exceptions, because the window closes
+    itself.</p>
+  </div>
+  <div class="step">
+    <h3>Stack the physical stuff on top</h3>
+    <p>None of this needs an app: charge the phone across the room, kill
+    notifications after 10, use grayscale. Broc covers the moment those fail,
+    the pickup that happens anyway.</p>
+  </div>
+</div>
+
+<h2>What changes after a week or two</h2>
+
+<p>The honest version: the urge to grab the phone doesn't vanish. What changes
+is what the urge produces. Each pickup hits the block screen, and the block
+screen offers a trade instead of a feed. Some nights you pay the toll, read the
+ten pages, scroll your earned window and stop when it ends. Some nights the
+toll is enough friction that you just go to sleep. Both outcomes beat the 90
+minutes you didn't choose.</p>
+
+<p>And the streak grows either way, which is its own trap, the good kind. Day
+15 of reading before scrolling is hard to give up over one bad night.</p>
+
+<h2>Common questions</h2>
+
+<h3>Can't I just uninstall it at 1am?</h3>
+<p>You could. But uninstalling a blocker you set up, and watching a visible
+streak die, is a real decision. Tapping "ignore limit" never was. That
+asymmetry is the entire point.</p>
+
+<h3>Is this a sleep or health treatment?</h3>
+<p>No. Broc is an app blocker with a habit gate, nothing medical. It makes
+distracting apps harder to open and real habits more rewarding. If sleep is a
+serious problem, talk to a professional.</p>
+
+<h3>What does it cost?</h3>
+<p>Free: 5 habits, blocking, 30-minute unlock cap. Broc Pro (7-day free trial)
+adds unlimited habits, custom unlock durations, AI photo verification and full
+history. No ads.</p>
+
+<h3>iPhone?</h3>
+<p>Android only for now, on Google Play. Email signup for iOS news is on the
+<a href="/">homepage</a>.</p>
+
+<div class="cta">
+  <p>The scroll pays rent now.</p>
+  <a class="btn play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto">Get Broc on Google Play</a>
+</div>
+
+<div class="more">
+  <h2>More guides</h2>
+  <ul>
+    <li><a href="/vs-screen-time-limits/">Broc vs screen-time limits: why timers are easy to ignore</a></li>
+    <li><a href="/block-tiktok-while-studying/">How to block TikTok until you finish studying</a></li>
+    <li><a href="/earn-scrolling-by-reading/">Turn scrolling into a reward for reading</a></li>
+    <li><a href="/ai-photo-verification/">AI photo verification and privacy, explained</a></li>
+  </ul>
+</div>
+
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <span>&copy; 2026 Broc &middot; Broc. You against your phone.</span>
+    <span><a href="/">Home</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.play-link').forEach(function(a){
+    a.addEventListener('click', function(){
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({path: 'play-store-click', event: true});
+      }
+    });
+  });
+</script>
+
+<script data-goatcounter="https://vetoapp.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

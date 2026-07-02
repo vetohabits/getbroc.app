@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI photo verification and privacy, explained</title>
+<meta name="description" content="Broc can make you prove a habit with a photo before your apps unlock. What the AI checks, what happens to the photo, and every privacy question answered straight.">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="canonical" href="https://getbroc.app/ai-photo-verification/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="AI photo verification and privacy, explained">
+<meta property="og:description" content="The app that makes you prove you did the habit. What happens to the photo, answered straight.">
+<meta property="og:image" content="https://getbroc.app/img/og.png">
+<meta property="og:url" content="https://getbroc.app/ai-photo-verification/">
+<meta property="og:type" content="article">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Broc's AI photo verification?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Broc Pro feature: when you mark a habit done, the app asks for a photo (your gym, the open book, your desk) and an AI checks whether the photo matches the habit before it counts. It stops the tap-the-box lie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to my photo after verification?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The photo is sent securely to Broc's server, passed to the AI provider (OpenAI) for the check, and only the pass or fail result is kept. Broc does not save the photo on its servers after the check, and OpenAI does not use API images to train its models."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use Broc without photo verification?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Verification is off by default and per-habit. Without it, you check habits off yourself and no photos are involved at all."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you cheat the AI verification?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "People try. The AI checks whether the photo plausibly matches the habit, so a photo of your ceiling doesn't pass 'went to the gym'. It isn't claimed to be fraud-proof; it's enough friction that lying to it costs more than doing the habit."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{ --navy:#0A1428; --navy3:#08101F; --cobalt:#1452FF; --ink:#1B2430;
+         --dim:#4A5568; --hairline:#E4E8EF; --wash:#F6F8FB; }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  body{font-family:'Hanken Grotesk',system-ui,sans-serif; background:#fff; color:var(--ink);
+       -webkit-font-smoothing:antialiased; line-height:1.65;}
+  a{color:var(--cobalt);}
+  .top{background:var(--navy); padding:18px 24px;}
+  .top-inner{max-width:760px; margin:0 auto; display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:10px; color:#fff; text-decoration:none;}
+  .brand img{width:30px; height:30px; border-radius:50%;}
+  .brand span{font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:800;}
+  .top a.back{color:rgba(255,255,255,0.7); font-size:13px; text-decoration:none;}
+  .top a.back:hover{color:#fff;}
+  .hero{background:var(--navy); padding:36px 24px 48px;}
+  .hero-inner{max-width:760px; margin:0 auto;}
+  .hero .kicker{color:#7EA0FF; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;}
+  .hero h1{font-family:'Bricolage Grotesque',sans-serif; font-size:36px; font-weight:800;
+           line-height:1.12; color:#fff; margin-top:10px;}
+  .hero p{color:rgba(255,255,255,0.78); margin-top:14px; font-size:17px; max-width:600px;}
+  main{max-width:760px; margin:0 auto; padding:40px 24px 90px;}
+  h2{font-family:'Bricolage Grotesque',sans-serif; font-size:22px; font-weight:700; margin:38px 0 10px;}
+  h3{font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:700; margin:24px 0 6px;}
+  p{margin:12px 0; font-size:16px;}
+  ul{margin:12px 0 12px 22px; font-size:16px;}
+  li{margin:6px 0;}
+  strong{font-weight:700;}
+  .flow{display:grid; gap:10px; margin:20px 0;}
+  .flow .stage{display:flex; gap:14px; align-items:flex-start; background:var(--wash);
+        border:1px solid var(--hairline); border-radius:12px; padding:14px 16px;}
+  .flow .n{flex:0 0 28px; height:28px; border-radius:50%; background:var(--cobalt); color:#fff;
+        font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center;}
+  .flow p{margin:0; font-size:15px;}
+  .flow p strong{display:block; font-size:15px; color:var(--ink);}
+  .flow p span{color:var(--dim);}
+  table{border-collapse:collapse; width:100%; margin:16px 0; font-size:15px;}
+  th,td{border:1px solid var(--hairline); padding:10px 12px; text-align:left; vertical-align:top;}
+  th{background:var(--wash); font-weight:700;}
+  .callout{border-left:4px solid var(--cobalt); background:var(--wash); padding:14px 18px;
+           border-radius:0 10px 10px 0; margin:18px 0; font-size:15px;}
+  .cta{margin:44px 0 0; padding:28px; background:var(--navy); border-radius:14px; text-align:center;}
+  .cta p{color:rgba(255,255,255,0.85); margin:0 0 14px;}
+  .btn{display:inline-block; background:var(--cobalt); color:#fff; text-decoration:none;
+       font-weight:700; padding:13px 26px; border-radius:10px;}
+  .more{margin-top:44px; border-top:1px solid var(--hairline); padding-top:22px;}
+  .more h2{margin-top:0; font-size:17px;}
+  .more ul{list-style:none; margin:10px 0 0; display:grid; gap:8px;}
+  .more li{margin:0;}
+  footer{border-top:1px solid var(--hairline); padding:22px 24px; font-size:13px; color:var(--dim);}
+  .foot-inner{max-width:760px; margin:0 auto; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+  footer a{color:var(--dim);}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-inner">
+    <a class="brand" href="/"><img src="/img/favicon.png" alt=""><span>Broc</span></a>
+    <a class="back" href="/">&larr; getbroc.app</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="kicker">Feature &middot; Broc Pro</span>
+    <h1>AI photo verification and privacy, explained</h1>
+    <p>Broc can make you prove the habit with a photo before your apps unlock.
+    Here's exactly what the AI checks, what happens to the photo, and the
+    honest answers to the awkward questions.</p>
+  </div>
+</div>
+
+<main>
+
+<h2>Why proof exists at all</h2>
+
+<p>Every habit tracker has the same quiet failure mode: the checkbox. At some
+point, tired and craving the feed, you tap "done" on a workout that didn't
+happen. Nobody sees it. The streak survives. The habit dies.</p>
+
+<p>Broc is a habit-based app blocker: block distracting apps, do a real habit,
+prove it with a photo, earn the unlock. Verification is the "prove it" part,
+and it's what makes the unlock mean something. No other app blocker checks
+whether the habit actually happened.</p>
+
+<h2>How it works</h2>
+
+<div class="flow">
+  <div class="stage"><div class="n">1</div><p><strong>You finish a habit with verification on.</strong>
+    <span>Instead of a checkbox, the camera opens.</span></p></div>
+  <div class="stage"><div class="n">2</div><p><strong>You photograph the evidence.</strong>
+    <span>The gym floor, the open book, your running shoes on the trail, the cleared desk.</span></p></div>
+  <div class="stage"><div class="n">3</div><p><strong>The AI checks the match.</strong>
+    <span>The photo goes securely to Broc's server, then to the AI provider (OpenAI), which answers one question: does this photo plausibly show this habit?</span></p></div>
+  <div class="stage"><div class="n">4</div><p><strong>Pass or fail comes back. That's all that's kept.</strong>
+    <span>Pass marks the habit done and earns your unlock. The photo is not saved on Broc's servers after the check.</span></p></div>
+</div>
+
+<h2>The privacy part, straight</h2>
+
+<table>
+  <tr><th>Question</th><th>Answer</th></tr>
+  <tr><td>Is the photo stored?</td><td>Not after the check. Broc keeps the pass/fail result, not the image.</td></tr>
+  <tr><td>Who sees it?</td><td>No human review. The photo is processed by the AI provider (OpenAI) via API.</td></tr>
+  <tr><td>Is it used to train AI?</td><td>No. OpenAI does not use API images for training.</td></tr>
+  <tr><td>Can I opt out?</td><td>It's opt-in, per habit. Leave it off and no photos are ever taken.</td></tr>
+  <tr><td>What else can Broc see on my phone?</td><td>Only which app is currently open (Android Usage Access), checked on-device against your block list. No usage history is stored or sent, no keylogging, no screen recording.</td></tr>
+</table>
+
+<p>The full details live in the <a href="/privacy/">privacy policy</a>. If
+anything there doesn't match what you see in the app, email
+<a href="mailto:developer@getbroc.app">developer@getbroc.app</a> and it gets
+fixed.</p>
+
+<h2>"Can't you cheat it?"</h2>
+
+<p>The most asked question, so here's the honest answer: people try, and the
+model is better at this than you'd hope. A photo of your ceiling doesn't pass
+"went to the gym". Yesterday's photo is a gamble because the check looks at
+whether the scene plausibly matches the habit now.</p>
+
+<div class="callout">Broc doesn't claim verification is fraud-proof, because
+nothing is. The claim is smaller and more useful: lying to it costs more
+effort than doing the habit, and that reverses the default.</div>
+
+<p>And if you defeat it anyway? You've spent real ingenuity to avoid ten
+pushups, and the streak you're protecting is now fiction. The app can't want
+the habit more than you do. It just makes wanting it enough.</p>
+
+<h2>Common questions</h2>
+
+<h3>Do I need Pro for this?</h3>
+<p>Yes, verification is a Broc Pro feature (7-day free trial, along with
+unlimited habits, custom unlock durations and full history). The free tier has
+blocking, 5 habits and self-checked completion.</p>
+
+<h3>Does verification work offline?</h3>
+<p>No, the check needs a connection. Without one, verify when you're back
+online.</p>
+
+<h3>Which habits suit photo proof?</h3>
+<p>Anything that leaves visible evidence: gym sessions, reading, a tidied
+room, meal prep, being at the library. For habits with nothing to photograph
+(meditation, say), leave verification off for that habit.</p>
+
+<div class="cta">
+  <p>The habit tracker that asks for receipts.</p>
+  <a class="btn play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto">Get Broc on Google Play</a>
+</div>
+
+<div class="more">
+  <h2>More guides</h2>
+  <ul>
+    <li><a href="/vs-screen-time-limits/">Broc vs screen-time limits: why timers are easy to ignore</a></li>
+    <li><a href="/block-tiktok-while-studying/">How to block TikTok until you finish studying</a></li>
+    <li><a href="/stop-doomscrolling-at-night/">How to stop doomscrolling at night</a></li>
+    <li><a href="/earn-scrolling-by-reading/">Turn scrolling into a reward for reading</a></li>
+  </ul>
+</div>
+
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <span>&copy; 2026 Broc &middot; Broc. You against your phone.</span>
+    <span><a href="/">Home</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.play-link').forEach(function(a){
+    a.addEventListener('click', function(){
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({path: 'play-store-click', event: true});
+      }
+    });
+  });
+</script>
+
+<script data-goatcounter="https://vetoapp.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
