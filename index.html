@@ -1,441 +1,354 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Veto: the app blocker that makes you earn your screen time</title>
-<meta name="description" content="Veto blocks Instagram, TikTok and YouTube until your daily habits are done. No snooze button, no '5 more minutes'. Join the waitlist for early access on Android.">
-<link rel="canonical" href="https://vetohabits.github.io/">
-<link rel="icon" type="image/png" href="img/favicon.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Broc: the habit app blocker. You against your phone.</title>
+<meta name="description" content="Broc blocks Instagram, TikTok, and YouTube until your daily habits are done. No snooze button. You earn your screen time. Free on Android.">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="canonical" href="https://getbroc.app/">
 
-<!-- Open Graph / social -->
-<meta property="og:title" content="Veto: the circuit breaker for doomscrollers">
-<meta property="og:description" content="Blocks the apps that pull you in until your habits are done. No snooze button. Join the waitlist for Android early access.">
+<meta property="og:title" content="Broc: the habit app blocker">
+<meta property="og:description" content="Blocks the apps that pull you in until your habits are done. No snooze button. You earn your screen time.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://vetohabits.github.io/">
-<meta property="og:image" content="https://vetohabits.github.io/img/og.png">
+<meta property="og:url" content="https://getbroc.app/">
+<meta property="og:image" content="https://getbroc.app/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Veto: the circuit breaker for doomscrollers">
-<meta name="twitter:description" content="The app blocker with no snooze button. Earn your screen time by doing your habits.">
-<meta name="twitter:image" content="https://vetohabits.github.io/img/og.png">
+<meta name="twitter:title" content="Broc: the habit app blocker">
+<meta name="twitter:description" content="Blocks the apps that pull you in until your habits are done. No snooze button.">
+<meta name="twitter:image" content="https://getbroc.app/img/og.png">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Veto",
+  "name": "Broc",
   "operatingSystem": "Android",
   "applicationCategory": "Productivity",
-  "description": "Veto blocks distracting apps until your daily habits are done. You earn your screen time back by doing the habit, not by tapping snooze.",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "description": "Broc blocks distracting apps until your daily habits are done. You earn your screen time back by doing the habit, not by tapping snooze.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "url": "https://getbroc.app/",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.vetohq.veto"
 }
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
   :root{
-    --ink:#EAEEF3; --surface:#F4F7FA; --hairline:#E0E4EA;
-    --mint:#1452FF; --mintDeep:#CFDDFF; --cobalt:#4F70D8; --cobaltDeep:#DDE4F5;
-    --deep:#08080F; --deepblue:#16306E; --rose:#B8284B; --roseTint:#F3D6DD;
-    --text:#0A1420; --textDim:#5A6470; --textFaint:#9AA0A8;
+    --navy:#0A1428; --navy2:#0D1F42; --navy3:#08101F;
+    --cobalt:#1452FF; --cobalt2:#0E47C8; --badge:#016BFE;
+    --ink:#0A1420; --dim:rgba(255,255,255,0.72); --faint:rgba(255,255,255,0.45);
+    --hairline:rgba(255,255,255,0.08);
   }
-  *{margin:0;padding:0;box-sizing:border-box;}
+  *{margin:0; padding:0; box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{
-    font-family:'Inter',system-ui,sans-serif; color:var(--text); background:var(--ink);
-    -webkit-font-smoothing:antialiased; line-height:1.5;
-  }
+  body{font-family:'Hanken Grotesk',system-ui,sans-serif; background:var(--navy); color:#fff;
+       -webkit-font-smoothing:antialiased; overflow-x:hidden;}
   .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
-  img{display:block; max-width:100%;}
+  a{color:inherit; text-decoration:none;}
 
-  /* ---------- nav ---------- */
-  nav{display:flex; align-items:center; justify-content:space-between; padding:28px 0;}
-  .brand{display:flex; align-items:center; gap:10px; font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:30px; letter-spacing:-1px; color:var(--text);}
-  .brand .vmark{width:30px; height:32px;}
-  .nav-cta{font-weight:600; font-size:16px; color:var(--mint); text-decoration:none; padding:10px 20px; border:2px solid var(--mintDeep); border-radius:999px; transition:.15s;}
-  .nav-cta:hover{background:var(--mintDeep);}
+  /* ── Nav ── */
+  nav{position:relative; z-index:3; display:flex; align-items:center; justify-content:space-between;
+      max-width:1080px; margin:0 auto; padding:20px 24px;}
+  .brand{display:flex; align-items:center; gap:10px;}
+  .brand img{width:34px; height:34px; border-radius:50%;}
+  .brand span{font-family:'Bricolage Grotesque',sans-serif; font-size:21px; font-weight:800;}
+  .navlinks{display:flex; align-items:center; gap:22px; font-size:14px; color:var(--dim);}
+  .navlinks a:hover{color:#fff;}
+  .btn{display:inline-flex; align-items:center; gap:9px; background:var(--cobalt); color:#fff;
+       padding:10px 18px; border-radius:999px; font-size:14px; font-weight:700; transition:.15s;}
+  .btn:hover{background:#2A63FF; transform:translateY(-1px);}
+  .btn-white{display:inline-flex; align-items:center; gap:10px; background:#fff; color:var(--ink);
+       padding:14px 24px; border-radius:14px; font-size:16px; font-weight:700; transition:.15s;}
+  .btn-white:hover{background:#E9EEF6; transform:translateY(-1px);}
 
-  /* ---------- hero ---------- */
-  .hero{position:relative; overflow:hidden; padding:24px 0 72px;
-    background:radial-gradient(circle 720px at 30% -120px, rgba(20,82,255,0.14), rgba(20,82,255,0) 60%);}
-  .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center;}
-  .hero-copy{text-align:left;}
-  .eyebrow{display:inline-flex; align-items:center; gap:10px; background:#fff; border:2px solid var(--hairline); border-radius:999px; padding:8px 18px; font-size:14px; font-weight:600; color:var(--textDim); margin-bottom:26px;}
-  .eyebrow .dot{width:9px; height:9px; border-radius:999px; background:var(--rose); animation:pulse 2.4s ease-in-out infinite;}
-  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
-  h1{font-family:'Bricolage Grotesque',sans-serif; font-weight:800; letter-spacing:-2.5px; line-height:1.02;
-    font-size:clamp(40px, 6.5vw, 68px); margin:0 0 18px;}
-  h1 .hl{color:var(--mint);}
-  .subline{font-size:clamp(18px,2.4vw,22px); color:var(--textDim); font-weight:500; max-width:38ch; margin:0 0 32px;}
+  /* ── Hero ── */
+  .hero{position:relative; overflow:hidden;}
+  .hero .wedges{position:absolute; inset:0; width:100%; height:100%; z-index:0;}
+  .hero-grid{position:relative; z-index:2; display:grid; grid-template-columns:1.15fr 0.85fr;
+             gap:32px; align-items:end; padding-top:44px;}
+  h1{font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(44px,7vw,76px);
+     font-weight:800; line-height:1.02; letter-spacing:-0.5px;}
+  .hero-sub{margin-top:20px; font-size:17px; line-height:1.6; color:var(--dim); max-width:420px;}
+  .hero-cta{margin-top:28px; display:flex; align-items:center; gap:16px; flex-wrap:wrap;}
+  .hero-note{font-size:13px; color:var(--faint);}
+  .hero-copy{padding-bottom:72px;}
+  .phone{width:min(300px,72vw); justify-self:center; border-radius:34px 34px 0 0;
+         background:#08080C; padding:9px 9px 0; box-shadow:0 -18px 60px rgba(0,0,0,0.45);}
+  .phone img{display:block; width:100%; height:auto; border-radius:25px 25px 0 0;}
 
-  /* ---------- phone mockup ---------- */
-  .phone-stage{display:flex; justify-content:center; filter:drop-shadow(0 30px 60px rgba(20,82,255,0.25));}
-  .phone{width:min(290px, 76vw); border-radius:38px; border:10px solid var(--deep); background:var(--deep); overflow:hidden; transform:rotate(2.5deg);}
-  .phone img{width:100%; height:auto; border-radius:28px;}
+  /* ── Steps ── */
+  .steps{background:var(--navy2); border-top:1px solid var(--hairline);}
+  .steps-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; padding:52px 0;}
+  .step-icon{width:40px; height:40px; border-radius:12px; background:var(--cobalt);
+             display:flex; align-items:center; justify-content:center; margin-bottom:14px;}
+  .step h3{font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:700;}
+  .step p{margin-top:8px; font-size:14.5px; line-height:1.55; color:var(--dim);}
 
-  /* ---------- form ---------- */
-  .signup{max-width:520px;}
-  .platform-row{display:flex; gap:8px; margin-bottom:12px;}
-  .platform-pill{font-size:14px; font-weight:600; color:var(--textDim); background:#fff; border:2px solid var(--hairline); border-radius:999px; padding:8px 18px; cursor:pointer; transition:.15s; user-select:none;}
-  .platform-pill.sel{color:var(--mint); border-color:var(--mint); background:var(--mintDeep);}
-  form{display:flex; gap:12px; flex-wrap:wrap;}
-  input[type=email]{flex:1; min-width:220px; font-size:17px; font-family:inherit; padding:18px 22px; border:2px solid var(--hairline); border-radius:16px; background:#fff; color:var(--text); outline:none; transition:.15s;}
-  input[type=email]:focus{border-color:var(--mint); box-shadow:0 0 0 4px rgba(20,82,255,0.12);}
-  button{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:18px; color:#fff; background:var(--mint); border:none; border-radius:16px; padding:18px 30px; cursor:pointer; white-space:nowrap; box-shadow:0 14px 30px rgba(20,82,255,0.32); transition:.15s;}
-  button:hover{transform:translateY(-1px); box-shadow:0 18px 38px rgba(20,82,255,0.40);}
-  button:active{transform:translateY(0);}
-  .reassure{margin-top:14px; font-size:14px; color:var(--textFaint);}
+  /* ── Feature sections ── */
+  .feature{padding:72px 0; border-top:1px solid var(--hairline);}
+  .feature-grid{display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center;}
+  .feature h2{font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(28px,4vw,40px);
+              font-weight:800; line-height:1.1;}
+  .feature .lead{margin-top:14px; font-size:16px; line-height:1.65; color:var(--dim);}
+  .verified-tile{width:200px; height:200px; border-radius:22px; background:var(--navy2);
+                 border:1px solid var(--hairline); display:flex; flex-direction:column;
+                 align-items:center; justify-content:center; gap:12px; justify-self:center;}
+  .verified-tile .check{width:64px; height:64px; border-radius:50%; background:var(--cobalt);
+                        display:flex; align-items:center; justify-content:center;}
+  .verified-tile span{font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:700;}
 
-  /* success + share */
-  .joined{display:none; background:#fff; border:2px solid var(--mintDeep); border-radius:20px; padding:24px; max-width:520px;}
-  .joined.show{display:block;}
-  .joined .head{display:flex; align-items:center; gap:14px; margin-bottom:6px;}
-  .check-badge{flex-shrink:0; width:44px; height:44px; border-radius:999px; background:var(--mint); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(20,82,255,0.35);}
-  .joined h3{font-family:'Bricolage Grotesque',sans-serif; font-size:21px; letter-spacing:-.5px;}
-  .joined p{font-size:15px; color:var(--textDim); margin-bottom:16px;}
-  .share-row{display:flex; gap:10px; flex-wrap:wrap;}
-  .share-btn{font-size:14px; font-weight:600; color:var(--text); background:var(--surface); border:2px solid var(--hairline); border-radius:999px; padding:9px 18px; cursor:pointer; text-decoration:none; transition:.15s;}
-  .share-btn:hover{border-color:var(--mint); color:var(--mint);}
+  /* ── Screens strip ── */
+  .screens{background:var(--navy2); border-top:1px solid var(--hairline); padding:64px 0;}
+  .screens h2{font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(26px,3.5vw,34px);
+              font-weight:800; text-align:center;}
+  .screens-row{margin-top:36px; display:flex; justify-content:center; gap:22px; flex-wrap:wrap;}
+  .screen-card{width:min(230px,80vw); border-radius:26px; background:#08080C; padding:7px;}
+  .screen-card img{display:block; width:100%; height:auto; border-radius:20px;}
+  .screen-cap{margin-top:10px; text-align:center; font-size:13px; color:var(--dim);}
 
-  /* ---------- beta strip ---------- */
-  .beta-strip{border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline); padding:18px 0; text-align:center; font-size:15px; font-weight:600; color:var(--textDim); background:#fff;}
-  .beta-strip b{color:var(--mint);}
+  /* ── iOS capture ── */
+  .ios{padding:56px 0; border-top:1px solid var(--hairline);}
+  .ios-box{display:flex; align-items:center; justify-content:space-between; gap:24px;
+           flex-wrap:wrap; background:var(--navy2); border:1px solid var(--hairline);
+           border-radius:20px; padding:28px 32px;}
+  .ios h2{font-family:'Bricolage Grotesque',sans-serif; font-size:22px; font-weight:800;}
+  .ios p{margin-top:5px; font-size:14px; color:var(--dim);}
+  .ios form{display:flex; gap:10px; flex-wrap:wrap;}
+  .ios input[type=email]{background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.18);
+       color:#fff; border-radius:12px; padding:12px 16px; font-size:15px; font-family:inherit;
+       min-width:230px; outline:none;}
+  .ios input[type=email]:focus{border-color:var(--cobalt);}
+  .ios input::placeholder{color:var(--faint);}
+  .ios button{background:var(--cobalt); color:#fff; border:0; border-radius:12px;
+       padding:12px 22px; font-size:15px; font-weight:700; font-family:inherit; cursor:pointer;}
+  .ios button:hover{background:#2A63FF;}
+  .joined{display:none; font-size:15px; font-weight:600; color:#fff;}
 
-  /* ---------- sections ---------- */
-  .strip{padding:72px 0 8px;}
-  .strip h2{font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(28px,4vw,40px); letter-spacing:-1.5px; text-align:center; margin-bottom:48px;}
-  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-  .step{background:#fff; border:2px solid var(--hairline); border-radius:24px; padding:34px 28px;}
-  .step .n{font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:20px; color:var(--mint); margin-bottom:14px;}
-  .step h3{font-size:21px; font-weight:700; margin-bottom:8px; letter-spacing:-.5px;}
-  .step p{font-size:16px; color:var(--textDim);}
+  /* ── FAQ ── */
+  .faq{padding:64px 0 72px; border-top:1px solid var(--hairline);}
+  .faq h2{font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(26px,3.5vw,34px); font-weight:800;}
+  .faq-item{margin-top:26px; max-width:640px;}
+  .faq-item h3{font-size:16.5px; font-weight:700;}
+  .faq-item p{margin-top:7px; font-size:15px; line-height:1.6; color:var(--dim);}
+  .faq-item a{text-decoration:underline;}
 
-  /* ---------- features (screenshots) ---------- */
-  .features{padding:72px 0 24px;}
-  .features h2{font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(28px,4vw,40px); letter-spacing:-1.5px; text-align:center; margin-bottom:12px;}
-  .features .sub{ text-align:center; color:var(--textDim); font-size:17px; margin-bottom:48px;}
-  .feat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-  .feat{background:#fff; border:2px solid var(--hairline); border-radius:24px; padding:24px 24px 0; overflow:hidden; display:flex; flex-direction:column;}
-  .feat h3{font-size:20px; font-weight:700; letter-spacing:-.5px; margin-bottom:6px;}
-  .feat p{font-size:15px; color:var(--textDim); margin-bottom:18px;}
-  .feat .pro{display:inline-block; font-size:11px; font-weight:700; letter-spacing:.5px; color:var(--mint); background:var(--mintDeep); border-radius:999px; padding:3px 9px; vertical-align:2px;}
-  .feat .shot{margin-top:auto; border-radius:18px 18px 0 0; border:6px solid var(--deep); border-bottom:none; overflow:hidden;}
-  .feat .shot img{width:100%; height:auto;}
+  /* ── Footer ── */
+  footer{background:var(--navy3); border-top:1px solid var(--hairline); padding:26px 0;}
+  .foot{display:flex; align-items:center; justify-content:space-between; gap:14px;
+        flex-wrap:wrap; font-size:13px; color:var(--faint);}
+  .foot a:hover{color:#fff;}
+  .foot-links{display:flex; gap:20px;}
 
-  /* ---------- punch ---------- */
-  .punch{padding:88px 0; text-align:center;}
-  .punch p{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:clamp(26px,4.5vw,46px); letter-spacing:-1.5px; max-width:18ch; margin:0 auto; line-height:1.08;}
-  .punch .who{margin-top:26px; font-size:17px; color:var(--textDim); font-family:'Inter',sans-serif; font-weight:500; letter-spacing:0; max-width:52ch;}
-
-  /* ---------- FAQ ---------- */
-  .faq{padding:8px 0 72px;}
-  .faq h2{font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(28px,4vw,40px); letter-spacing:-1.5px; text-align:center; margin-bottom:40px;}
-  .faq-list{max-width:720px; margin:0 auto;}
-  details{background:#fff; border:2px solid var(--hairline); border-radius:18px; margin-bottom:12px; overflow:hidden;}
-  summary{cursor:pointer; list-style:none; padding:20px 24px; font-weight:700; font-size:17px; display:flex; justify-content:space-between; align-items:center; gap:16px;}
-  summary::-webkit-details-marker{display:none;}
-  summary::after{content:'+'; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:22px; color:var(--mint); flex-shrink:0;}
-  details[open] summary::after{content:'\2212';}
-  details .a{padding:0 24px 20px; font-size:15.5px; color:var(--textDim);}
-
-  /* ---------- bottom CTA ---------- */
-  .final{background:var(--deep); color:#fff; border-radius:36px; margin:0 24px 40px; padding:72px 24px; text-align:center;
-    background:radial-gradient(circle 600px at 50% 0%, var(--deepblue), var(--deep) 70%);}
-  .final h2{font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(30px,5vw,52px); letter-spacing:-2px; margin-bottom:14px;}
-  .final p{color:rgba(255,255,255,0.6); font-size:18px; margin-bottom:36px;}
-  .final .signup{margin:0 auto;}
-  .final input[type=email]{background:rgba(255,255,255,0.07); border-color:rgba(255,255,255,0.16); color:#fff;}
-  .final input[type=email]::placeholder{color:rgba(255,255,255,0.45);}
-  .final .platform-pill{background:rgba(255,255,255,0.07); border-color:rgba(255,255,255,0.16); color:rgba(255,255,255,0.7);}
-  .final .platform-pill.sel{color:#fff; border-color:var(--mint); background:rgba(20,82,255,0.35);}
-  .final .joined{background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.18);}
-  .final .joined h3{color:#fff;}
-  .final .joined p{color:rgba(255,255,255,0.6);}
-  .final .share-btn{background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.2); color:#fff;}
-
-  footer{text-align:center; padding:40px 0 56px; color:var(--textFaint); font-size:15px;}
-  footer .tag{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; color:var(--textDim); font-size:18px; margin-bottom:14px;}
-  footer img{width:64px; margin:0 auto 14px; opacity:.9;}
-  footer a{color:var(--textDim); text-decoration:none;}
-  footer a:hover{color:var(--mint);}
-
-  @media(max-width:860px){
-    .hero-grid{grid-template-columns:1fr; gap:40px;}
-    .hero-copy{text-align:center;}
-    .signup{margin:0 auto;}
-    .subline{margin-left:auto; margin-right:auto;}
-    .platform-row{justify-content:center;}
-    .steps,.feat-grid{grid-template-columns:1fr;}
+  @media (max-width:820px){
+    .navlinks .navlink{display:none;}
+    .hero-grid{grid-template-columns:1fr; gap:8px; padding-top:28px;}
+    .hero-copy{padding-bottom:36px; text-align:center;}
+    .hero-sub{margin-left:auto; margin-right:auto;}
+    .hero-cta{justify-content:center;}
+    .steps-grid{grid-template-columns:1fr; gap:26px; padding:40px 0;}
+    .feature-grid{grid-template-columns:1fr; gap:32px; text-align:center;}
+    .feature .lead{margin-left:auto; margin-right:auto; max-width:460px;}
+    .ios-box{justify-content:center; text-align:center;}
   }
 </style>
 </head>
 <body>
 
-<div class="wrap">
-  <nav>
-    <div class="brand">
-      <svg class="vmark" viewBox="0 0 96 104" fill="none"><path d="M10 40 L40 92 L86 12" stroke="#1452FF" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Veto
-    </div>
-    <a class="nav-cta" href="#join">Join the waitlist</a>
-  </nav>
-</div>
-
-<!-- ======================= HERO ======================= -->
+<!-- ── Hero ─────────────────────────────────────────────────────────── -->
 <header class="hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="dot"></span> In closed beta · Android · launching this month</div>
-        <h1>Veto is the <span class="hl">circuit breaker</span> for doomscrollers.</h1>
-        <p class="subline">It blocks Instagram, TikTok and YouTube until your daily habits are done. Cut the loop. Earn your screen time back.</p>
+  <svg class="wedges" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <rect width="1440" height="900" fill="#0A1428"/>
+    <polygon points="0,120 520,260 260,470 0,380" fill="#1452FF"/>
+    <polygon points="520,260 960,170 830,430 260,470" fill="#0E47C8"/>
+    <polygon points="960,170 1440,290 1440,80 1080,50" fill="#102A5E"/>
+    <polygon points="0,620 380,520 540,820 0,900" fill="#0D1F42"/>
+    <polygon points="830,430 1290,490 1440,760 960,790" fill="#0D2352"/>
+    <polygon points="1290,490 1440,290 1440,490" fill="#1B6CFF"/>
+  </svg>
 
-        <div class="signup" id="join">
-          <div class="platform-row" role="radiogroup" aria-label="Your phone">
-            <span class="platform-pill sel" data-platform="Android" role="radio" aria-checked="true" tabindex="0">Android</span>
-            <span class="platform-pill" data-platform="iPhone" role="radio" aria-checked="false" tabindex="0">iPhone</span>
-          </div>
-          <form action="#">
-            <input type="email" name="email" placeholder="you@email.com" required autocomplete="email" aria-label="Email address">
-            <button type="submit">Join the waitlist</button>
-          </form>
-          <p class="reassure">No spam. One email when it launches on Google Play.</p>
-          <div class="joined">
-            <div class="head">
-              <span class="check-badge"><svg viewBox="0 0 96 104" fill="none" width="22" height="24"><path d="M14 44 L40 88 L82 16" stroke="#fff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              <h3>You're on the list.</h3>
-            </div>
-            <p class="joined-msg">You'll get one email the day Veto goes live.</p>
-            <div class="share-row">
-              <a class="share-btn share-x" target="_blank" rel="noopener">Post on X</a>
-              <a class="share-btn share-wa" target="_blank" rel="noopener">Send on WhatsApp</a>
-              <span class="share-btn share-copy">Copy link</span>
-            </div>
-          </div>
-        </div>
-      </div>
+  <nav>
+    <a class="brand" href="/">
+      <img src="/img/favicon.png" alt="" width="34" height="34">
+      <span>Broc</span>
+    </a>
+    <div class="navlinks">
+      <a class="navlink" href="#how">How it works</a>
+      <a class="navlink" href="#faq">FAQ</a>
+      <a class="btn play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto">Get it on Google Play</a>
+    </div>
+  </nav>
 
-      <div class="phone-stage">
-        <div class="phone">
-          <img src="img/shot_overlay.png" alt="Veto blocking an app: the lock screen shows your habit list instead of the app you opened" width="560" height="1257">
-        </div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1>You against<br>your phone.</h1>
+      <p class="hero-sub">Broc blocks Instagram, TikTok, and YouTube until your daily
+        habits are done. No snooze button. You earn your screen time.</p>
+      <div class="hero-cta">
+        <a class="btn-white play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 1.8c-.4.4-.6 1-.6 1.7v17c0 .7.2 1.3.6 1.7l.1.1 9.5-9.5v-.2L3.7 1.7l-.1.1z"/><path d="M16.3 15.3 13.1 12.1v-.2l3.2-3.2.1 0 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.8 2.2h-.1z"/><path d="M16.4 15.2 13.1 12 3.6 21.5c.4.4 1 .4 1.7 0l11.1-6.3z"/><path d="M16.4 8.8 5.3 2.5c-.7-.4-1.3-.4-1.7 0L13.1 12l3.3-3.2z"/></svg>
+          Get it on Google Play
+        </a>
+        <span class="hero-note">Free. No ads.</span>
       </div>
+    </div>
+    <div class="phone">
+      <img src="/img/shot_overlay.png" alt="Broc's lock screen blocking Instagram: the badger mascot, today's habit list, and the time each habit unlocks" width="480" height="964">
     </div>
   </div>
 </header>
 
-<div class="beta-strip">
-  <div class="wrap">Real beta testers are using Veto right now. <b>Production release on Google Play is weeks away.</b></div>
-</div>
+<!-- ── How it works ─────────────────────────────────────────────────── -->
+<section class="steps" id="how">
+  <div class="wrap steps-grid">
+    <div class="step">
+      <div class="step-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+      <h3>Block</h3>
+      <p>Pick the apps that pull you in. When you open one, Broc's lock screen shows up instead.</p>
+    </div>
+    <div class="step">
+      <div class="step-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></div>
+      <h3>Do the habit</h3>
+      <p>Read, train, study, anything you set. Broc's AI can even check a photo to confirm you really did it.</p>
+    </div>
+    <div class="step">
+      <div class="step-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h12M6 22h12M8 2v4l4 4 4-4V2M8 22v-4l4-4 4 4v4"/></svg></div>
+      <h3>Earn it back</h3>
+      <p>Each finished habit unlocks screen time. Streaks track every day you show up.</p>
+    </div>
+  </div>
+</section>
 
-<!-- ======================= HOW ======================= -->
-<section class="strip">
+<!-- ── No faking it ─────────────────────────────────────────────────── -->
+<section class="feature">
+  <div class="wrap feature-grid">
+    <div>
+      <h2>No faking it.</h2>
+      <p class="lead">Every other blocker has a bypass: a snooze, a delay you can outlast, an
+        "emergency" button. Broc asks for proof. Snap a photo of the finished habit and
+        Broc's AI confirms it was real before your apps come back.</p>
+    </div>
+    <div class="verified-tile">
+      <div class="check"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg></div>
+      <span>Verified</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── Screens ──────────────────────────────────────────────────────── -->
+<section class="screens">
   <div class="wrap">
-    <h2>How Veto breaks the loop</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="n">01</div>
-        <h3>You open the app</h3>
-        <p>Reach for Instagram, TikTok, the usual. Veto opens instead of it.</p>
+    <h2>Habits in. Doomscroll out.</h2>
+    <div class="screens-row">
+      <div>
+        <div class="screen-card"><img src="/img/shot_today.png" alt="Broc's Today tab: habit list with completion ring and streak" loading="lazy" width="400" height="803"></div>
+        <p class="screen-cap">Your daily list</p>
       </div>
-      <div class="step">
-        <div class="n">02</div>
-        <h3>You do the habit</h3>
-        <p>Read, train, study, whatever you set. The thing you actually meant to do.</p>
+      <div>
+        <div class="screen-card"><img src="/img/shot_progress.jpg" alt="Broc's Progress tab: a 24-day streak with weekly chart" loading="lazy" width="400" height="802"></div>
+        <p class="screen-cap">Streaks that hold you to it</p>
       </div>
-      <div class="step">
-        <div class="n">03</div>
-        <h3>You get your time</h3>
-        <p>Finish the habit and the app unlocks. Skip it and it stays shut.</p>
+      <div>
+        <div class="screen-card"><img src="/img/shot_lock.png" alt="Broc's Lock tab: choosing YouTube and TikTok to block" loading="lazy" width="400" height="803"></div>
+        <p class="screen-cap">You choose what gets blocked</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ======================= FEATURES ======================= -->
-<section class="features">
+<!-- Social proof slot: once ~10 Play reviews exist, add a ratings row here
+     (stars + "4.8 on Google Play" + two short quotes). -->
+
+<!-- ── iOS capture ──────────────────────────────────────────────────── -->
+<section class="ios">
   <div class="wrap">
-    <h2>Built strict on purpose</h2>
-    <p class="sub">Screen-time apps show you the damage. Veto stops it.</p>
-    <div class="feat-grid">
-      <div class="feat">
-        <h3>Your habits answer the door</h3>
-        <p>Open a blocked app and this screen appears instead. It stays until you've earned your way past it.</p>
-        <div class="shot"><img src="img/shot_overlay.png" alt="The Veto block screen listing today's habits over a blocked app" loading="lazy" width="560" height="1257"></div>
+    <div class="ios-box">
+      <div>
+        <h2>On iPhone?</h2>
+        <p>Leave your email and you'll hear when Broc lands on iOS.</p>
       </div>
-      <div class="feat">
-        <h3>Earn time your way</h3>
-        <p>Per habit: each one you finish unlocks a chunk of screen time. All habits first: nothing opens until the list is clear.</p>
-        <div class="shot"><img src="img/shot_today.png" alt="The Today tab with daily habits, streak and earned screen time" loading="lazy" width="560" height="1257"></div>
-      </div>
-      <div class="feat">
-        <h3>Honest streaks <span class="pro">AI VERIFY · PRO</span></h3>
-        <p>Streaks count the days you follow through. AI photo verification checks you actually did the habit, not just tapped a box.</p>
-        <div class="shot"><img src="img/shot_lock.png" alt="Choosing which apps Veto blocks" loading="lazy" width="560" height="1257"></div>
-      </div>
+      <form id="ios-form" action="#">
+        <input type="email" name="email" placeholder="name@email.com" required aria-label="Email address">
+        <button type="submit">Notify me</button>
+      </form>
+      <p class="joined" id="ios-joined">You're on the list. We'll email you when iOS is ready.</p>
     </div>
   </div>
 </section>
 
-<!-- ======================= PUNCH ======================= -->
-<section class="punch">
+<!-- ── FAQ ──────────────────────────────────────────────────────────── -->
+<section class="faq" id="faq">
   <div class="wrap">
-    <p>Every other blocker has a snooze button. Veto doesn't.</p>
-    <p class="who" style="margin-left:auto;margin-right:auto;">Built for students, late-night scrollers, and anyone who's outsmarted every soft app blocker they've tried.</p>
-  </div>
-</section>
-
-<!-- ======================= FAQ ======================= -->
-<section class="faq">
-  <div class="wrap">
-    <h2>Fair questions</h2>
-    <div class="faq-list">
-      <details>
-        <summary>How is this different from other app blockers?</summary>
-        <div class="a">Most blockers make you wait, breathe, or tap through a guilt screen. All of those have an exit. Veto's only exit is doing the habit you set for yourself. A 30-second delay is easy to outlast. Thirty pushups are not.</div>
-      </details>
-      <details>
-        <summary>Can't I just uninstall it?</summary>
-        <div class="a">Today, yes. Veto isn't a prison and won't pretend to be one. The point is friction: tapping "5 more minutes" takes nothing, while deleting an app you installed on purpose takes a deliberate decision. And for people who want the door welded shut, a strict commitment mode with uninstall protection (Max Veto) is on the roadmap.</div>
-      </details>
-      <details>
-        <summary>What does it cost?</summary>
-        <div class="a">The core is free: block any apps, up to 5 habits, streaks. Veto Pro adds unlimited habits, custom unlock durations, AI photo verification and full history, with a 7-day free trial. No ads either way.</div>
-      </details>
-      <details>
-        <summary>Is there an iPhone version?</summary>
-        <div class="a">Android first. iOS comes after, and how fast depends on demand: pick iPhone above when you join the waitlist and you've cast your vote.</div>
-      </details>
-      <details>
-        <summary>What can Veto see on my phone?</summary>
-        <div class="a">Veto uses Android's Usage Access permission to check which app is in the foreground. That's it. No keylogging, no screen recording, no reading what you do inside apps. Digital wellbeing starts with not abusing the permissions you're given.</div>
-      </details>
-      <details>
-        <summary>When does it launch?</summary>
-        <div class="a">Closed beta is running now and finishes within weeks. The waitlist gets one email the day Veto is live on Google Play, before anyone else hears about it.</div>
-      </details>
+    <h2>Questions</h2>
+    <div class="faq-item">
+      <h3>Does it actually block apps?</h3>
+      <p>Yes. When you open a blocked app, Broc's lock screen appears over it and stays until
+        your habits are done. There is no snooze and no "5 more minutes."</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is it free?</h3>
+      <p>Yes, with no ads. Broc Pro adds unlimited habits, custom unlock durations, AI photo
+        verification, and full history, with a 7-day free trial.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What does Broc see on my phone?</h3>
+      <p>Only which app is open right now, so it can compare against your block list. No
+        keylogging, no screen recording, no browsing history. Details in the
+        <a href="/privacy/">privacy policy</a>.</p>
+    </div>
+    <div class="faq-item">
+      <h3>When is the iPhone version coming?</h3>
+      <p>Android first. Drop your email above and you'll be the first to know when iOS ships.</p>
     </div>
   </div>
 </section>
 
-<!-- ======================= FINAL CTA ======================= -->
-<section class="final">
-  <h2>Stop scrolling your day away.</h2>
-  <p>Join the waitlist and get in before everyone else.</p>
-  <div class="signup">
-    <div class="platform-row" role="radiogroup" aria-label="Your phone">
-      <span class="platform-pill sel" data-platform="Android" role="radio" aria-checked="true" tabindex="0">Android</span>
-      <span class="platform-pill" data-platform="iPhone" role="radio" aria-checked="false" tabindex="0">iPhone</span>
-    </div>
-    <form action="#">
-      <input type="email" name="email" placeholder="you@email.com" required autocomplete="email" aria-label="Email address">
-      <button type="submit">Join the waitlist</button>
-    </form>
-    <div class="joined">
-      <div class="head">
-        <span class="check-badge"><svg viewBox="0 0 96 104" fill="none" width="22" height="24"><path d="M14 44 L40 88 L82 16" stroke="#fff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <h3>You're on the list.</h3>
-      </div>
-      <p class="joined-msg">You'll get one email the day Veto goes live.</p>
-      <div class="share-row">
-        <a class="share-btn share-x" target="_blank" rel="noopener">Post on X</a>
-        <a class="share-btn share-wa" target="_blank" rel="noopener">Send on WhatsApp</a>
-        <span class="share-btn share-copy">Copy link</span>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- ── Footer ───────────────────────────────────────────────────────── -->
 <footer>
-  <div class="wrap">
-    <div class="tag">Veto. You against your phone.</div>
-    <a href="mailto:vetohabits@gmail.com">vetohabits@gmail.com</a> &nbsp;·&nbsp;
-    <a href="https://vetohabits.github.io/veto-privacy/">Privacy</a>
+  <div class="wrap foot">
+    <span>&copy; 2026 Broc &middot; <a href="mailto:developer@getbroc.app">developer@getbroc.app</a></span>
+    <span class="foot-links">
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+    </span>
   </div>
 </footer>
 
 <script>
-  /* =====================================================================
-     WAITLIST → GOOGLE FORM (free, rows land in your Google Sheet)
-     ---------------------------------------------------------------------
-     Email entry is live. To also record platform (Android/iPhone):
-       1. Open the Veto waitlist form → add a question, type "Multiple
-          choice", label "Platform", options: Android / iPhone.
-       2. ⋮ → "Get pre-filled link" → pick Android → Get link → Copy link.
-          The URL now contains a SECOND entry.XXXXXXXXXX=Android.
-       3. Paste that id into GFORM_ENTRY_PLATFORM below.
-     Until then the page records email only. See DEPLOY.md.
-     ===================================================================== */
-  var SITE_URL = "https://vetohabits.github.io/";
   var GFORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSfbe_cFcHPzLqpEXzAcn-ZPRynPiuAf6cTU6Iz8yItXx-Zl8A/formResponse";
   var GFORM_ENTRY_EMAIL = "entry.1496517566";
   var GFORM_ENTRY_PLATFORM = "entry.817730999";
 
-  var SHARE_TEXT = "I just joined the waitlist for Veto, the app blocker with no snooze button. It blocks your apps until your daily habits are done. " + SITE_URL;
-
-  // Platform pills: one selection per signup block.
-  document.querySelectorAll('.signup').forEach(function(block){
-    var pills = block.querySelectorAll('.platform-pill');
-    pills.forEach(function(p){
-      function select(){
-        pills.forEach(function(q){ q.classList.remove('sel'); q.setAttribute('aria-checked','false'); });
-        p.classList.add('sel'); p.setAttribute('aria-checked','true');
+  // iOS notify form -> Google Form (platform fixed to iPhone).
+  var form = document.getElementById('ios-form');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var input = form.querySelector('input[type=email]');
+    var email = (input.value || '').trim();
+    if (!email) return;
+    var data = new FormData();
+    data.append(GFORM_ENTRY_EMAIL, email);
+    data.append(GFORM_ENTRY_PLATFORM, 'iPhone');
+    function done(){
+      form.style.display = 'none';
+      document.getElementById('ios-joined').style.display = 'block';
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({path: 'ios-notify-signup', event: true});
       }
-      p.addEventListener('click', select);
-      p.addEventListener('keydown', function(e){ if(e.key===' '||e.key==='Enter'){ e.preventDefault(); select(); } });
-    });
-
-    var form = block.querySelector('form');
-    var joined = block.querySelector('.joined');
-
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      var input = form.querySelector('input[type=email]');
-      var email = input && input.value.trim();
-      if (!email) return;
-      var platform = (block.querySelector('.platform-pill.sel') || {}).dataset
-        ? block.querySelector('.platform-pill.sel').dataset.platform : 'Android';
-
-      var done = function(){
-        var row = block.querySelector('.platform-row');
-        if (row) row.style.display = 'none';
-        form.style.display = 'none';
-        var reassure = block.querySelector('.reassure');
-        if (reassure) reassure.style.display = 'none';
-        var msg = joined.querySelector('.joined-msg');
-        if (msg && platform === 'iPhone') {
-          msg.textContent = "iPhone noted. You'll hear from us when iOS is on the way. Know an Android friend? Send them in.";
-        }
-        joined.classList.add('show');
-        if (window.goatcounter && window.goatcounter.count) {
-          window.goatcounter.count({path: 'waitlist-signup-' + platform.toLowerCase(), event: true});
-        }
-      };
-
-      var data = new URLSearchParams();
-      data.append(GFORM_ENTRY_EMAIL, email);
-      if (GFORM_ENTRY_PLATFORM) data.append(GFORM_ENTRY_PLATFORM, platform);
-      // Google Forms blocks reading the response (CORS); no-cors still records it.
-      fetch(GFORM_ACTION, {method:'POST', mode:'no-cors', body:data}).finally(done);
-    });
+    }
+    fetch(GFORM_ACTION, {method:'POST', mode:'no-cors', body:data}).then(done).catch(done);
   });
 
-  // Share buttons.
-  document.querySelectorAll('.share-x').forEach(function(a){
-    a.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(SHARE_TEXT);
-  });
-  document.querySelectorAll('.share-wa').forEach(function(a){
-    a.href = 'https://wa.me/?text=' + encodeURIComponent(SHARE_TEXT);
-  });
-  document.querySelectorAll('.share-copy').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      if (navigator.share) { navigator.share({text: SHARE_TEXT}); return; }
-      navigator.clipboard.writeText(SHARE_TEXT).then(function(){
-        btn.textContent = 'Copied';
-        setTimeout(function(){ btn.textContent = 'Copy link'; }, 1600);
-      });
+  // Count Play-store clicks.
+  document.querySelectorAll('.play-link').forEach(function(a){
+    a.addEventListener('click', function(){
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({path: 'play-store-click', event: true});
+      }
     });
   });
 </script>
@@ -444,6 +357,5 @@
      https://vetoapp.goatcounter.com -->
 <script data-goatcounter="https://vetoapp.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
-
 </body>
 </html>
