@@ -52,7 +52,7 @@
 
 <main>
 <h1>Privacy policy</h1>
-<p class="updated">Last updated: 2 July 2026</p>
+<p class="updated">Last updated: 4 July 2026</p>
 
 <p>This policy explains what Broc collects, why, and what you can do about it.
 Broc ("we", "us") makes a habit app that blocks chosen apps on your phone until
@@ -78,6 +78,12 @@ to block.</p>
 us whether your subscription is active. We never see your card details.</p>
 <p><strong>Diagnostics.</strong> If the app crashes, we receive a crash report so we can fix the
 problem. It does not contain your habit content.</p>
+<p><strong>Product analytics.</strong> We use PostHog, hosted in the EU, to understand how the
+app and our website are used: events such as "habit created" or "first unlock",
+plus device model and app version. This shows us where Broc confuses people so
+we can fix it. It never includes your habit names, your photos, or the content
+of anything you do inside other apps. The website also uses GoatCounter, a
+cookieless page-view counter.</p>
 <p>We do not show ads and we do not sell your data.</p>
 
 <h2>The "Usage access" permission</h2>
@@ -105,8 +111,9 @@ photos, simply leave photo verification off.</p>
 <h2>Where your data lives</h2>
 <p>Your account and habit data are stored with Google Firebase (Cloud Firestore,
 Authentication, Crashlytics) and may be processed on Google's servers.
-Subscription status is handled by RevenueCat and the app store. These providers
-process data on our behalf under their own security and privacy terms.</p>
+Subscription status is handled by RevenueCat and the app store. Analytics
+events are processed by PostHog on servers in the EU. These providers process
+data on our behalf under their own security and privacy terms.</p>
 
 <h2>How long we keep it</h2>
 <p>We keep your data while your account exists. If you delete your account, we
