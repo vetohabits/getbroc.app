@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Broc: the habit app blocker. You against your phone.</title>
-<meta name="description" content="Broc blocks Instagram, TikTok, and YouTube until your daily habits are done. No snooze button. You earn your screen time. Free on Android.">
-<link rel="icon" type="image/png" href="/img/favicon.png">
-<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<meta name="description" content="Broc blocks Instagram, TikTok, and YouTube until your daily habits are done. No snooze button. You earn your screen time. 7-day free trial on Android.">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="canonical" href="https://getbroc.app/">
 
 <meta property="og:title" content="Broc: the habit app blocker">
@@ -27,7 +27,6 @@
   "operatingSystem": "Android",
   "applicationCategory": "Productivity",
   "description": "Broc blocks distracting apps until your daily habits are done. You earn your screen time back by doing the habit, not by tapping snooze.",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://getbroc.app/",
   "installUrl": "https://play.google.com/store/apps/details?id=com.vetohq.veto"
 }
@@ -35,291 +34,385 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --navy:#0A1428; --navy2:#0D1F42; --navy3:#08101F;
-    --cobalt:#1452FF; --cobalt2:#0E47C8; --badge:#016BFE;
-    --ink:#0A1420; --dim:rgba(255,255,255,0.72); --faint:rgba(255,255,255,0.45);
-    --hairline:rgba(255,255,255,0.08);
+    --white:#FFFFFF; --grey:#F5F6F8; --navy:#0A1420;
+    --ink:#0D1522; --body:#55627A; --muted:#828EA3;
+    --blue:#1452FF; --blue-deep:#0E3ECC;
+    --hairline:#E5E9F0;
   }
   *{margin:0; padding:0; box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{font-family:'Hanken Grotesk',system-ui,sans-serif; background:var(--navy); color:#fff;
-       -webkit-font-smoothing:antialiased; overflow-x:hidden;}
-  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+  body{font-family:'Hanken Grotesk',system-ui,sans-serif; background:var(--white);
+       color:var(--ink); font-size:17px; line-height:1.55; -webkit-font-smoothing:antialiased;}
   a{color:inherit; text-decoration:none;}
+  img{max-width:100%; height:auto; display:block;}
+  h1,h2{font-family:'Bricolage Grotesque',sans-serif; font-weight:800;
+       letter-spacing:-0.032em; line-height:1.05; color:var(--ink);}
 
   /* ── Nav ── */
-  nav{position:relative; z-index:3; display:flex; align-items:center; justify-content:space-between;
-      max-width:1080px; margin:0 auto; padding:20px 24px;}
-  .brand{display:flex; align-items:center; gap:10px;}
-  .brand img{width:34px; height:34px; border-radius:50%;}
-  .brand span{font-family:'Bricolage Grotesque',sans-serif; font-size:21px; font-weight:800;}
-  .navlinks{display:flex; align-items:center; gap:22px; font-size:14px; color:var(--dim);}
-  .navlinks a:hover{color:#fff;}
-  .btn{display:inline-flex; align-items:center; gap:9px; background:var(--cobalt); color:#fff;
-       padding:10px 18px; border-radius:999px; font-size:14px; font-weight:700; transition:.15s;}
-  .btn:hover{background:#2A63FF; transform:translateY(-1px);}
-  .btn-white{display:inline-flex; align-items:center; gap:10px; background:#fff; color:var(--ink);
-       padding:14px 24px; border-radius:14px; font-size:16px; font-weight:700; transition:.15s;}
-  .btn-white:hover{background:#E9EEF6; transform:translateY(-1px);}
+  .topbar{position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.85);
+      backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px);
+      border-bottom:1px solid var(--hairline);}
+  nav{display:flex; align-items:center; max-width:1024px; margin:0 auto;
+      padding:0 22px; height:52px;}
+  .brand{display:flex; align-items:center; gap:9px; margin-right:auto;}
+  .brand img{width:26px; height:26px; border-radius:50%;}
+  .brand span{font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:800;
+      letter-spacing:-0.02em;}
+  .navlinks{display:flex; gap:28px; font-size:13.5px; font-weight:500; color:var(--body);
+      margin-right:28px;}
+  .navlinks a:hover{color:var(--ink);}
+  .pill{display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      background:var(--blue); color:#fff; border-radius:999px; font-weight:600;
+      white-space:nowrap; transition:background .15s;}
+  .pill:hover{background:var(--blue-deep);}
+  .pill.sm{padding:7px 16px; font-size:13.5px;}
+  .pill.lg{padding:14px 30px; font-size:16.5px;}
+  .tlink{color:var(--blue); font-weight:600; font-size:16.5px;}
+  .tlink:hover{text-decoration:underline;}
+  .tlink::after{content:' \203A';}
 
-  /* ── Hero ── */
-  .hero{position:relative; overflow:hidden;}
-  .hero .wedges{position:absolute; inset:0; width:100%; height:100%; z-index:0;}
-  .hero-grid{position:relative; z-index:2; display:grid; grid-template-columns:1.15fr 0.85fr;
-             gap:32px; align-items:end; padding-top:44px;}
-  h1{font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(44px,7vw,76px);
-     font-weight:800; line-height:1.02; letter-spacing:-0.5px;}
-  .hero-sub{margin-top:20px; font-size:17px; line-height:1.6; color:var(--dim); max-width:420px;}
-  .hero-cta{margin-top:28px; display:flex; align-items:center; gap:16px; flex-wrap:wrap;}
-  .hero-note{font-size:13px; color:var(--faint);}
-  .hero-copy{padding-bottom:72px;}
-  .phone{width:min(300px,72vw); justify-self:center; border-radius:34px 34px 0 0;
-         background:#08080C; padding:9px 9px 0; box-shadow:0 -18px 60px rgba(0,0,0,0.45);}
-  .phone img{display:block; width:100%; height:auto; border-radius:25px 25px 0 0;}
+  /* ── Tiles: edge-to-edge slides, centered content ── */
+  .tile{padding:110px 22px 0; text-align:center; overflow:hidden;}
+  .tile.grey{background:var(--grey);}
+  .tile.dark{background:var(--navy);}
+  .tile h2{font-size:clamp(34px,4.6vw,56px);}
+  .tile .tag{font-size:clamp(17px,2vw,21px); color:var(--body); max-width:600px;
+      margin:18px auto 0; line-height:1.5;}
+  .tile .ctas{margin-top:26px; display:flex; align-items:center; justify-content:center;
+      gap:26px; flex-wrap:wrap;}
+  .tile .note{display:block; margin-top:14px; font-size:13px; color:var(--muted);}
+  .tile .visual{margin:64px auto 0; padding-bottom:110px;}
+  .tile .visual.crop{padding-bottom:0;}
 
-  /* ── Steps ── */
-  .steps{background:var(--navy2); border-top:1px solid var(--hairline);}
-  .steps-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; padding:52px 0;}
-  .step-icon{width:40px; height:40px; border-radius:12px; background:var(--cobalt);
-             display:flex; align-items:center; justify-content:center; margin-bottom:14px;}
-  .step h3{font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:700;}
-  .step p{margin-top:8px; font-size:14.5px; line-height:1.55; color:var(--dim);}
+  /* Hero */
+  .hero{padding-top:72px;}
+  .hero h1{font-size:clamp(46px,7vw,86px); letter-spacing:-0.038em; max-width:900px;
+      margin:22px auto 0;}
+  .hero .tag{max-width:560px;}
+  .hero-badge{display:inline-block; font-size:13px; font-weight:600; color:var(--body);
+      background:var(--grey); border-radius:999px; padding:7px 16px;}
 
-  /* ── Feature sections ── */
-  .feature{padding:72px 0; border-top:1px solid var(--hairline);}
-  .feature-grid{display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center;}
-  .feature h2{font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(28px,4vw,40px);
-              font-weight:800; line-height:1.1;}
-  .feature .lead{margin-top:14px; font-size:16px; line-height:1.65; color:var(--dim);}
-  .verified-tile{width:200px; height:200px; border-radius:22px; background:var(--navy2);
-                 border:1px solid var(--hairline); display:flex; flex-direction:column;
-                 align-items:center; justify-content:center; gap:12px; justify-self:center;}
-  .verified-tile .check{width:64px; height:64px; border-radius:50%; background:var(--cobalt);
-                        display:flex; align-items:center; justify-content:center;}
-  .verified-tile span{font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:700;}
+  /* Phones */
+  .phone{width:min(340px,80vw); margin:0 auto; border-radius:44px; background:#0B121C;
+      padding:11px; box-shadow:0 50px 100px -34px rgba(13,21,34,0.42);}
+  .phone img{border-radius:34px;}
+  .phone.cropped{border-radius:44px 44px 0 0; padding-bottom:0;
+      box-shadow:0 -20px 80px -40px rgba(13,21,34,0.30);}
+  .phone.cropped img{border-radius:34px 34px 0 0;}
+  .duo{display:flex; justify-content:center; align-items:flex-start; gap:30px; flex-wrap:wrap;}
+  .duo .phone{width:min(300px,80vw); margin:0;}
 
-  /* ── Screens strip ── */
-  .screens{background:var(--navy2); border-top:1px solid var(--hairline); padding:64px 0;}
-  .screens h2{font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(26px,3.5vw,34px);
-              font-weight:800; text-align:center;}
-  .screens-row{margin-top:36px; display:flex; justify-content:center; gap:22px; flex-wrap:wrap;}
-  .screen-card{width:min(230px,80vw); border-radius:26px; background:#08080C; padding:7px;}
-  .screen-card img{display:block; width:100%; height:auto; border-radius:20px;}
-  .screen-cap{margin-top:10px; text-align:center; font-size:13px; color:var(--dim);}
+  /* ── How it works: quiet 3 columns ── */
+  .how-grid{max-width:1024px; margin:72px auto 0; padding-bottom:110px;
+      display:grid; grid-template-columns:repeat(3,1fr); gap:56px; text-align:left;}
+  .how-col .num{font-family:'Bricolage Grotesque',sans-serif; font-size:14px; font-weight:700;
+      color:var(--blue); letter-spacing:0.06em;}
+  .how-col h3{font-family:'Bricolage Grotesque',sans-serif; font-size:21px; font-weight:700;
+      letter-spacing:-0.02em; margin-top:12px;}
+  .how-col p{margin-top:10px; font-size:15.5px; color:var(--body); line-height:1.6;}
 
-  /* ── iOS capture ── */
-  .ios{padding:56px 0; border-top:1px solid var(--hairline);}
-  .ios-box{display:flex; align-items:center; justify-content:space-between; gap:24px;
-           flex-wrap:wrap; background:var(--navy2); border:1px solid var(--hairline);
-           border-radius:20px; padding:28px 32px;}
-  .ios h2{font-family:'Bricolage Grotesque',sans-serif; font-size:22px; font-weight:800;}
-  .ios p{margin-top:5px; font-size:14px; color:var(--dim);}
-  .ios form{display:flex; gap:10px; flex-wrap:wrap;}
-  .ios input[type=email]{background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.18);
-       color:#fff; border-radius:12px; padding:12px 16px; font-size:15px; font-family:inherit;
-       min-width:230px; outline:none;}
-  .ios input[type=email]:focus{border-color:var(--cobalt);}
-  .ios input::placeholder{color:var(--faint);}
-  .ios button{background:var(--cobalt); color:#fff; border:0; border-radius:12px;
-       padding:12px 22px; font-size:15px; font-weight:700; font-family:inherit; cursor:pointer;}
-  .ios button:hover{background:#2A63FF;}
-  .joined{display:none; font-size:15px; font-weight:600; color:#fff;}
+  /* ── Manifesto ── */
+  .manifesto{padding:130px 22px; text-align:center;}
+  .manifesto.grey{background:var(--grey);}
+  .manifesto p{font-family:'Bricolage Grotesque',sans-serif; font-weight:800;
+      letter-spacing:-0.03em; line-height:1.16; font-size:clamp(28px,4vw,46px);
+      max-width:820px; margin:0 auto; color:var(--muted);}
+  .manifesto p b{color:var(--ink); font-weight:800;}
 
   /* ── FAQ ── */
-  .faq{padding:64px 0 72px; border-top:1px solid var(--hairline);}
-  .faq h2{font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(26px,3.5vw,34px); font-weight:800;}
-  .faq-item{margin-top:26px; max-width:640px;}
-  .faq-item h3{font-size:16.5px; font-weight:700;}
-  .faq-item p{margin-top:7px; font-size:15px; line-height:1.6; color:var(--dim);}
-  .faq-item a{text-decoration:underline;}
+  .faq{padding:110px 22px;}
+  .faq h2{font-size:clamp(30px,4vw,44px); text-align:center;}
+  .faq-list{max-width:680px; margin:48px auto 0; text-align:left;
+      border-top:1px solid var(--hairline);}
+  details{border-bottom:1px solid var(--hairline);}
+  summary{list-style:none; cursor:pointer; display:flex; align-items:center;
+      justify-content:space-between; gap:20px; padding:22px 2px;
+      font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px;
+      letter-spacing:-0.015em;}
+  summary::-webkit-details-marker{display:none;}
+  summary .ic{flex:none; color:var(--muted); font-size:20px; font-weight:400; line-height:1;
+      font-family:'Hanken Grotesk',sans-serif; transition:transform .2s;}
+  details[open] summary .ic{transform:rotate(45deg);}
+  details .a{padding:0 34px 24px 2px; font-size:15.5px; color:var(--body); max-width:62ch;}
+  details .a a{color:var(--blue); font-weight:600;}
+
+  /* ── iOS band ── */
+  .ios{background:var(--grey); padding:56px 22px; text-align:center;}
+  .ios h3{font-family:'Bricolage Grotesque',sans-serif; font-size:21px; font-weight:700;
+      letter-spacing:-0.02em;}
+  .ios p{margin-top:6px; font-size:14.5px; color:var(--body);}
+  .ios form{margin-top:22px; display:inline-flex; gap:10px; flex-wrap:wrap; justify-content:center;}
+  .ios input[type=email]{background:#fff; border:1px solid var(--hairline); color:var(--ink);
+      border-radius:999px; padding:12px 22px; font-size:15px; font-family:inherit;
+      min-width:260px; outline:none; transition:border-color .15s;}
+  .ios input[type=email]:focus{border-color:var(--blue);}
+  .ios input::placeholder{color:var(--muted);}
+  .ios button{background:var(--ink); color:#fff; border:0; border-radius:999px;
+      padding:12px 26px; font-size:15px; font-weight:600; font-family:inherit; cursor:pointer;}
+  .ios button:hover{background:#232F44;}
+  .joined{display:none; margin-top:22px; font-size:15px; font-weight:600; color:var(--ink);}
+
+  /* ── Final dark tile ── */
+  .tile.dark{padding-bottom:120px;}
+  .tile.dark h2{color:#fff; font-size:clamp(38px,5.4vw,64px);}
+  .tile.dark .tag{color:rgba(255,255,255,0.60);}
+  .tile.dark .note{color:rgba(255,255,255,0.40);}
 
   /* ── Footer ── */
-  footer{background:var(--navy3); border-top:1px solid var(--hairline); padding:26px 0;}
-  .foot{display:flex; align-items:center; justify-content:space-between; gap:14px;
-        flex-wrap:wrap; font-size:13px; color:var(--faint);}
-  .foot a:hover{color:#fff;}
-  .foot-links{display:flex; gap:20px;}
+  footer{background:var(--grey); font-size:13.5px; color:var(--body);}
+  .foot-wrap{max-width:1024px; margin:0 auto; padding:0 22px;}
+  .foot-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:36px; padding:48px 0 36px;}
+  .foot-brand p{margin-top:12px; max-width:24ch; line-height:1.55; color:var(--muted);}
+  .foot-col h4{font-size:12px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase;
+      color:var(--muted);}
+  .foot-col a{display:block; margin-top:12px;}
+  .foot-col a:hover{color:var(--ink);}
+  .foot-base{border-top:1px solid var(--hairline); padding:20px 0 28px; display:flex;
+      justify-content:space-between; gap:12px; flex-wrap:wrap; font-size:12.5px; color:var(--muted);}
+  .foot-base a:hover{color:var(--ink);}
 
+  /* ── Reveal ── */
+  .rv{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+  .rv.in{opacity:1; transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    .rv{opacity:1; transform:none; transition:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ── Mobile ── */
   @media (max-width:820px){
-    .navlinks .navlink{display:none;}
-    .hero-grid{grid-template-columns:1fr; gap:8px; padding-top:28px;}
-    .hero-copy{padding-bottom:36px; text-align:center;}
-    .hero-sub{margin-left:auto; margin-right:auto;}
-    .hero-cta{justify-content:center;}
-    .steps-grid{grid-template-columns:1fr; gap:26px; padding:40px 0;}
-    .feature-grid{grid-template-columns:1fr; gap:32px; text-align:center;}
-    .feature .lead{margin-left:auto; margin-right:auto; max-width:460px;}
-    .ios-box{justify-content:center; text-align:center;}
+    .navlinks{display:none;}
+    .tile{padding-top:76px;}
+    .tile .visual{margin-top:48px; padding-bottom:76px;}
+    .hero{padding-top:56px;}
+    .how-grid{grid-template-columns:1fr; gap:36px; margin-top:48px; padding-bottom:76px;}
+    .manifesto{padding:88px 22px;}
+    .faq{padding:76px 22px;}
+    .duo{gap:24px;}
+    .foot-grid{grid-template-columns:1fr 1fr; gap:28px;}
+    .foot-brand{grid-column:1 / -1;}
+    .tile.dark{padding-bottom:88px;}
   }
 </style>
 </head>
 <body>
 
-<!-- ── Hero ─────────────────────────────────────────────────────────── -->
-<header class="hero">
-  <svg class="wedges" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <rect width="1440" height="900" fill="#0A1428"/>
-    <polygon points="0,120 520,260 260,470 0,380" fill="#1452FF"/>
-    <polygon points="520,260 960,170 830,430 260,470" fill="#0E47C8"/>
-    <polygon points="960,170 1440,290 1440,80 1080,50" fill="#102A5E"/>
-    <polygon points="0,620 380,520 540,820 0,900" fill="#0D1F42"/>
-    <polygon points="830,430 1290,490 1440,760 960,790" fill="#0D2352"/>
-    <polygon points="1290,490 1440,290 1440,490" fill="#1B6CFF"/>
-  </svg>
-
+<!-- ── Nav ───────────────────────────────────────────────────────────── -->
+<div class="topbar">
   <nav>
     <a class="brand" href="/">
-      <img src="/img/favicon.png" alt="" width="34" height="34">
+      <img src="img/favicon.png" alt="" width="26" height="26">
       <span>Broc</span>
     </a>
     <div class="navlinks">
-      <a class="navlink" href="#how">How it works</a>
-      <a class="navlink" href="#faq">FAQ</a>
-      <a class="btn play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto">Get it on Google Play</a>
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#faq">FAQ</a>
     </div>
+    <a class="pill sm play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto">Get the app</a>
   </nav>
+</div>
 
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <h1>You against<br>your phone.</h1>
-      <p class="hero-sub">Broc blocks Instagram, TikTok, and YouTube until your daily
-        habits are done. No snooze button. You earn your screen time.</p>
-      <div class="hero-cta">
-        <a class="btn-white play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 1.8c-.4.4-.6 1-.6 1.7v17c0 .7.2 1.3.6 1.7l.1.1 9.5-9.5v-.2L3.7 1.7l-.1.1z"/><path d="M16.3 15.3 13.1 12.1v-.2l3.2-3.2.1 0 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.8 2.2h-.1z"/><path d="M16.4 15.2 13.1 12 3.6 21.5c.4.4 1 .4 1.7 0l11.1-6.3z"/><path d="M16.4 8.8 5.3 2.5c-.7-.4-1.3-.4-1.7 0L13.1 12l3.3-3.2z"/></svg>
-          Get it on Google Play
-        </a>
-        <span class="hero-note">Free. No ads.</span>
-      </div>
-    </div>
-    <div class="phone">
-      <img src="/img/shot_overlay.png" alt="Broc's lock screen blocking Instagram: the badger mascot, today's habit list, and the time each habit unlocks" width="480" height="964">
+<!-- ── Hero ──────────────────────────────────────────────────────────── -->
+<header class="tile hero">
+  <span class="hero-badge">Now on Google Play</span>
+  <h1>Earn your screen&nbsp;time.</h1>
+  <p class="tag">Broc locks Instagram, TikTok, and YouTube until your daily habits
+    are done. No snooze button.</p>
+  <div class="ctas">
+    <a class="pill lg play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto">Get it on Google Play</a>
+    <a class="tlink" href="#how">See how it works</a>
+  </div>
+  <span class="note">7-day free trial &middot; No ads &middot; Android</span>
+  <div class="visual crop">
+    <div class="phone cropped">
+      <img src="img/shot_wall.png" alt="Broc blocking TikTok: 'Do a habit, earn your scroll' over today's habit list with the minutes each one unlocks" width="1080" height="2400" fetchpriority="high">
     </div>
   </div>
 </header>
 
-<!-- ── How it works ─────────────────────────────────────────────────── -->
-<section class="steps" id="how">
-  <div class="wrap steps-grid">
-    <div class="step">
-      <div class="step-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+<!-- ── How it works ──────────────────────────────────────────────────── -->
+<section class="tile grey" id="how">
+  <div class="rv">
+    <h2>Three steps between<br>you and the feed.</h2>
+  </div>
+  <div class="how-grid">
+    <div class="how-col rv">
+      <span class="num">01</span>
       <h3>Block</h3>
-      <p>Pick the apps that pull you in. When you open one, Broc's lock screen shows up instead.</p>
+      <p>Pick the apps that pull you in. When you open one, Broc's wall shows up
+        instead of the feed.</p>
     </div>
-    <div class="step">
-      <div class="step-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></div>
+    <div class="how-col rv" style="transition-delay:.07s">
+      <span class="num">02</span>
       <h3>Do the habit</h3>
-      <p>Read, train, study, anything you set. Broc's AI can even check a photo to confirm you really did it.</p>
+      <p>Read, train, study, anything you set. Prove it with a photo or a timer,
+        so a tapped checkbox is never enough.</p>
     </div>
-    <div class="step">
-      <div class="step-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h12M6 22h12M8 2v4l4 4 4-4V2M8 22v-4l4-4 4 4v4"/></svg></div>
+    <div class="how-col rv" style="transition-delay:.14s">
+      <span class="num">03</span>
       <h3>Earn it back</h3>
-      <p>Each finished habit unlocks screen time. Streaks track every day you show up.</p>
+      <p>Each finished habit unlocks real minutes. Streaks track every day
+        you show up.</p>
     </div>
   </div>
 </section>
 
-<!-- ── No faking it ─────────────────────────────────────────────────── -->
-<section class="feature">
-  <div class="wrap feature-grid">
-    <div>
-      <h2>No faking it.</h2>
-      <p class="lead">Every other blocker has a bypass: a snooze, a delay you can outlast, an
-        "emergency" button. Broc asks for proof. Snap a photo of the finished habit and
-        Broc's AI confirms it was real before your apps come back.</p>
-    </div>
-    <div class="verified-tile">
-      <div class="check"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg></div>
-      <span>Verified</span>
+<!-- ── Feature tiles ─────────────────────────────────────────────────── -->
+<section class="tile" id="features">
+  <div class="rv">
+    <h2>No snooze. No "5&nbsp;more&nbsp;minutes."</h2>
+    <p class="tag">Other blockers give you a delay to outlast. Broc gives you a wall.
+      Until the habit is done, the app stays locked.</p>
+  </div>
+  <div class="visual rv">
+    <div class="phone">
+      <img src="img/shot_lock_dark.png" alt="Broc's Lock tab: blocking active, with TikTok, Instagram, YouTube and X locked" loading="lazy" width="1080" height="2400">
     </div>
   </div>
 </section>
 
-<!-- ── Screens ──────────────────────────────────────────────────────── -->
-<section class="screens">
-  <div class="wrap">
-    <h2>Habits in. Doomscroll out.</h2>
-    <div class="screens-row">
-      <div>
-        <div class="screen-card"><img src="/img/shot_today.png" alt="Broc's Today tab: habit list with completion ring and streak" loading="lazy" width="400" height="803"></div>
-        <p class="screen-cap">Your daily list</p>
+<section class="tile grey">
+  <div class="rv">
+    <h2>Proof, not promises.</h2>
+    <p class="tag">Broc's AI checks a photo of the finished habit. Or a timer counts
+      your minutes while you stay. Your call, per habit.</p>
+  </div>
+  <div class="visual rv">
+    <div class="phone">
+      <img src="img/shot_verify.png" alt="Broc AI photo verification: a camera viewfinder framing an open book with 'Capture and verify'" loading="lazy" width="1080" height="2400">
+    </div>
+  </div>
+</section>
+
+<section class="tile">
+  <div class="rv">
+    <h2>Momentum you can see.</h2>
+    <p class="tag">One clean list for the day. Streaks and a four-week grid for
+      every habit. The record of every day you followed through.</p>
+  </div>
+  <div class="visual rv">
+    <div class="duo">
+      <div class="phone">
+        <img src="img/shot_today_dark.png" alt="Broc's Today tab: the day's habits grouped by category with streaks and an open unlock window" loading="lazy" width="1080" height="2400">
       </div>
-      <div>
-        <div class="screen-card"><img src="/img/shot_progress.jpg" alt="Broc's Progress tab: a 24-day streak with weekly chart" loading="lazy" width="400" height="802"></div>
-        <p class="screen-cap">Streaks that hold you to it</p>
-      </div>
-      <div>
-        <div class="screen-card"><img src="/img/shot_lock.png" alt="Broc's Lock tab: choosing YouTube and TikTok to block" loading="lazy" width="400" height="803"></div>
-        <p class="screen-cap">You choose what gets blocked</p>
+      <div class="phone">
+        <img src="img/shot_progress_dark.png" alt="Broc's Progress tab: streak stats, weekly chart, and per-habit completion grids" loading="lazy" width="1080" height="2400">
       </div>
     </div>
   </div>
 </section>
 
-<!-- Social proof slot: once ~10 Play reviews exist, add a ratings row here
-     (stars + "4.8 on Google Play" + two short quotes). -->
-
-<!-- ── iOS capture ──────────────────────────────────────────────────── -->
-<section class="ios">
-  <div class="wrap">
-    <div class="ios-box">
-      <div>
-        <h2>On iPhone?</h2>
-        <p>Leave your email and you'll hear when Broc lands on iOS.</p>
-      </div>
-      <form id="ios-form" action="#">
-        <input type="email" name="email" placeholder="name@email.com" required aria-label="Email address">
-        <button type="submit">Notify me</button>
-      </form>
-      <p class="joined" id="ios-joined">You're on the list. We'll email you when iOS is ready.</p>
-    </div>
-  </div>
+<!-- ── Manifesto ─────────────────────────────────────────────────────── -->
+<section class="manifesto grey">
+  <p class="rv">Most blockers make you wait.
+    <b>Broc makes you do something.</b></p>
 </section>
 
-<!-- ── FAQ ──────────────────────────────────────────────────────────── -->
+<!-- ── FAQ ───────────────────────────────────────────────────────────── -->
 <section class="faq" id="faq">
-  <div class="wrap">
-    <h2>Questions</h2>
-    <div class="faq-item">
-      <h3>Does it actually block apps?</h3>
-      <p>Yes. When you open a blocked app, Broc's lock screen appears over it and stays until
-        your habits are done. There is no snooze and no "5 more minutes."</p>
-    </div>
-    <div class="faq-item">
-      <h3>Is it free?</h3>
-      <p>Yes, with no ads. Broc Pro adds unlimited habits, custom unlock durations, AI photo
-        verification, and full history, with a 7-day free trial.</p>
-    </div>
-    <div class="faq-item">
-      <h3>What does Broc see on my phone?</h3>
-      <p>Only which app is open right now, so it can compare against your block list. No
-        keylogging, no screen recording, no browsing history. Details in the
+  <h2 class="rv">Questions</h2>
+  <div class="faq-list rv">
+    <details open>
+      <summary>Does it actually block apps?<span class="ic">+</span></summary>
+      <p class="a">Yes. When you open a blocked app, Broc's wall appears over it and stays
+        until your habits are done. There is no snooze and no "5 more minutes."</p>
+    </details>
+    <details>
+      <summary>What does it cost?<span class="ic">+</span></summary>
+      <p class="a">Broc is a subscription with a 7-day free trial. One plan, everything in:
+        unlimited habits, custom unlock durations, AI photo verification, and full history.
+        No ads, ever.</p>
+    </details>
+    <details>
+      <summary>What does Broc see on my phone?<span class="ic">+</span></summary>
+      <p class="a">Only which app is open right now, so it can compare against your block
+        list. No keylogging, no screen recording, no browsing history. Details in the
         <a href="/privacy/">privacy policy</a>.</p>
-    </div>
-    <div class="faq-item">
-      <h3>When is the iPhone version coming?</h3>
-      <p>Android first. Drop your email above and you'll be the first to know when iOS ships.</p>
-    </div>
+    </details>
+    <details>
+      <summary>Can't I just uninstall it?<span class="ic">+</span></summary>
+      <p class="a">You can. Broc isn't a parental-control cage, it's a wall you chose to
+        build. It makes the lazy path annoying and the honest path rewarding. That's enough
+        for most people, most days.</p>
+    </details>
+    <details>
+      <summary>Which habits work with it?<span class="ic">+</span></summary>
+      <p class="a">Anything: reading, the gym, meditation, cleaning, studying, walking the
+        dog. Photo verification and timers cover most of them; you decide per habit.</p>
+    </details>
+    <details>
+      <summary>When is the iPhone version coming?<span class="ic">+</span></summary>
+      <p class="a">Android first. Leave your email below and you'll be the first to know
+        when iOS ships.</p>
+    </details>
   </div>
 </section>
 
-<!-- ── Footer ───────────────────────────────────────────────────────── -->
+<!-- ── iOS band ──────────────────────────────────────────────────────── -->
+<section class="ios">
+  <h3>On iPhone?</h3>
+  <p>Leave your email and you'll hear when Broc lands on iOS.</p>
+  <form id="ios-form" action="#">
+    <input type="email" name="email" placeholder="name@email.com" required aria-label="Email address">
+    <button type="submit">Notify me</button>
+  </form>
+  <p class="joined" id="ios-joined">You're on the list. We'll email you when iOS is ready.</p>
+</section>
+
+<!-- ── Final dark tile ───────────────────────────────────────────────── -->
+<section class="tile dark">
+  <div class="rv">
+    <h2>The scroll can wait.<br>Your habits can't.</h2>
+    <p class="tag">Put the wall up today. Your first week is free.</p>
+    <div class="ctas">
+      <a class="pill lg play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto">Get it on Google Play</a>
+    </div>
+    <span class="note">7-day free trial &middot; No ads &middot; Android</span>
+  </div>
+</section>
+
+<!-- ── Footer ────────────────────────────────────────────────────────── -->
 <footer>
-  <div class="wrap foot">
-    <span>&copy; 2026 Broc &middot; <a href="mailto:developer@getbroc.app">developer@getbroc.app</a></span>
-    <span class="foot-links">
-      <a href="/vs-screen-time-limits/">Broc vs limits</a>
-      <a href="/block-tiktok-while-studying/">Studying</a>
-      <a href="/stop-doomscrolling-at-night/">Doomscrolling</a>
-      <a href="/earn-scrolling-by-reading/">Reading</a>
-      <a href="/ai-photo-verification/">AI verify</a>
-      <a href="/privacy/">Privacy</a>
-      <a href="/terms/">Terms</a>
-    </span>
+  <div class="foot-wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/">
+          <img src="img/favicon.png" alt="" width="26" height="26">
+          <span>Broc</span>
+        </a>
+        <p>The habit app blocker.<br>You against your phone.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Product</h4>
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+        <a class="play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto">Google Play</a>
+      </div>
+      <div class="foot-col">
+        <h4>Guides</h4>
+        <a href="/vs-screen-time-limits/">Broc vs screen-time limits</a>
+        <a href="/block-tiktok-while-studying/">Block TikTok while studying</a>
+        <a href="/stop-doomscrolling-at-night/">Stop doomscrolling at night</a>
+        <a href="/earn-scrolling-by-reading/">Earn scrolling by reading</a>
+        <a href="/ai-photo-verification/">AI photo verification</a>
+      </div>
+      <div class="foot-col">
+        <h4>Legal</h4>
+        <a href="/privacy/">Privacy policy</a>
+        <a href="/terms/">Terms of service</a>
+        <a href="/delete-account/">Delete account</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; 2026 Broc</span>
+      <a href="mailto:developer@getbroc.app">developer@getbroc.app</a>
+    </div>
   </div>
 </footer>
 
@@ -356,6 +449,14 @@
       }
     });
   });
+
+  // Scroll reveal (respects prefers-reduced-motion via CSS).
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, {rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
 </script>
 
 <!-- GoatCounter (free, cookieless analytics). Dashboard:
