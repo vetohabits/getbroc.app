@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What is a habit app blocker? Timers vs earned screen time</title>
+<meta name="description" content="A habit app blocker locks your distracting apps until your real habits are done, instead of running a timer you can ignore. How it works, why it sticks, and how Broc does it on Android.">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="canonical" href="https://getbroc.app/habit-app-blocker/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="What is a habit app blocker?">
+<meta property="og:description" content="Lock the apps that pull you in until your habits are done. Why habit gates beat timers.">
+<meta property="og:image" content="https://getbroc.app/img/og.png">
+<meta property="og:url" content="https://getbroc.app/habit-app-blocker/">
+<meta property="og:type" content="article">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a habit app blocker?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A habit app blocker locks your distracting apps until you complete real-world habits, instead of unlocking after a timer or a delay. Broc is a habit app blocker for Android: you block apps like TikTok and Instagram, set daily habits like reading or the gym, and each finished habit earns screen time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is a habit app blocker different from a screen time limit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A screen time limit measures minutes and asks you to stop, usually with an ignore button. A habit app blocker flips the deal: the apps stay locked until something real gets done, so screen time becomes a reward instead of a default."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the app tell whether I actually did the habit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Broc verifies habits two ways: AI photo verification checks a photo of the finished habit, and timer verification counts minutes only while you stay in the app. You choose per habit, or use plain honesty mode."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does Broc cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Broc is a subscription with a 7-day free trial. One plan, everything in: unlimited habits, custom unlock durations, AI photo verification and full history. No ads."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{ --navy:#0A1428; --navy3:#08101F; --cobalt:#1452FF; --ink:#1B2430;
+         --dim:#4A5568; --hairline:#E4E8EF; --wash:#F6F8FB; }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  body{font-family:'Hanken Grotesk',system-ui,sans-serif; background:#fff; color:var(--ink);
+       -webkit-font-smoothing:antialiased; line-height:1.65;}
+  a{color:var(--cobalt);}
+  .top{background:var(--navy); padding:18px 24px;}
+  .top-inner{max-width:760px; margin:0 auto; display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:10px; color:#fff; text-decoration:none;}
+  .brand img{width:30px; height:30px; border-radius:50%;}
+  .brand span{font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:800;}
+  .top a.back{color:rgba(255,255,255,0.7); font-size:13px; text-decoration:none;}
+  .top a.back:hover{color:#fff;}
+  .hero{background:var(--navy); padding:36px 24px 48px;}
+  .hero-inner{max-width:760px; margin:0 auto;}
+  .hero .kicker{color:#7EA0FF; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;}
+  .hero h1{font-family:'Bricolage Grotesque',sans-serif; font-size:36px; font-weight:800;
+           line-height:1.12; color:#fff; margin-top:10px;}
+  .hero p{color:rgba(255,255,255,0.78); margin-top:14px; font-size:17px; max-width:600px;}
+  main{max-width:760px; margin:0 auto; padding:40px 24px 90px;}
+  h2{font-family:'Bricolage Grotesque',sans-serif; font-size:22px; font-weight:700; margin:38px 0 10px;}
+  h3{font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:700; margin:24px 0 6px;}
+  p{margin:12px 0; font-size:16px;}
+  ul{margin:12px 0 12px 22px; font-size:16px;}
+  li{margin:6px 0;}
+  strong{font-weight:700;}
+  table{width:100%; border-collapse:collapse; margin:18px 0; font-size:15px;}
+  th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--hairline); vertical-align:top;}
+  th{font-family:'Bricolage Grotesque',sans-serif; font-size:14px;}
+  .callout{border-left:4px solid var(--cobalt); background:var(--wash); padding:14px 18px;
+           border-radius:0 10px 10px 0; margin:18px 0; font-size:15px;}
+  .cta{margin:44px 0 0; padding:28px; background:var(--navy); border-radius:14px; text-align:center;}
+  .cta p{color:rgba(255,255,255,0.85); margin:0 0 14px;}
+  .btn{display:inline-block; background:var(--cobalt); color:#fff; text-decoration:none;
+       font-weight:700; padding:13px 26px; border-radius:10px;}
+  .more{margin-top:44px; border-top:1px solid var(--hairline); padding-top:22px;}
+  .more h2{margin-top:0; font-size:17px;}
+  .more ul{list-style:none; margin:10px 0 0; display:grid; gap:8px;}
+  .more li{margin:0;}
+  footer{border-top:1px solid var(--hairline); padding:22px 24px; font-size:13px; color:var(--dim);}
+  .foot-inner{max-width:760px; margin:0 auto; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+  footer a{color:var(--dim);}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-inner">
+    <a class="brand" href="/"><img src="/img/favicon.png" alt=""><span>Broc</span></a>
+    <a class="back" href="/guides/">&larr; All guides</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="kicker">Guide &middot; the category</span>
+    <h1>What is a habit app blocker?</h1>
+    <p>A blocker that doesn't count minutes. It locks your apps until your
+    real habits are done, and hands the time back as a reward.</p>
+  </div>
+</div>
+
+<main>
+
+<h2>The one-line definition</h2>
+
+<p>A <strong>habit app blocker</strong> locks your distracting apps until you
+complete real-world habits. No countdown, no "take a breath" prompt, no ignore
+button. The feed opens when the reading, the workout, or the studying is done,
+because that's the deal you set.</p>
+
+<p>Broc is a habit app blocker for Android. You pick the apps that pull you in
+(Instagram, TikTok, YouTube, games), set your daily habits, and every finished
+habit earns minutes of screen time. Open a blocked app early and you see your
+habit list instead of the feed.</p>
+
+<h2>Why timers keep failing you</h2>
+
+<p>Every screen-time tool you've already tried runs on the same engine: measure
+the minutes, then ask you to stop. Android's Digital Wellbeing, app timers,
+focus modes. They all share one hole: the person who set the rule can waive
+the rule, for free, in one tap. When the dialog says "ignore limit for today,"
+the tired version of you at 11pm always wins the argument.</p>
+
+<div class="callout">A timer knows how long you scrolled. It has no idea
+whether you did anything with your day. That's the gap a habit gate closes.</div>
+
+<p>A habit app blocker changes what the exit costs. There is no snooze to hold
+down. The only way through the wall is doing the thing you already wanted to
+do. Willpower stops being the mechanism and becomes the byproduct.</p>
+
+<h2>How Broc's habit gate works</h2>
+
+<ul>
+  <li><strong>Block:</strong> choose any apps on your phone. Opening one shows
+  the wall: your habits and what each one earns.</li>
+  <li><strong>Do the habit:</strong> read ten pages, train, meditate, study,
+  walk the dog. Anything you set.</li>
+  <li><strong>Prove it:</strong> AI photo verification checks a photo of the
+  finished habit (the open book, the gym). Timer verification counts minutes
+  only while you stay in the app. Your call, per habit. More in
+  <a href="/ai-photo-verification/">the verification guide</a>.</li>
+  <li><strong>Earn it back:</strong> per-habit mode gives each habit its own
+  unlock minutes. All-habits-first mode keeps everything locked until the whole
+  list is cleared.</li>
+  <li><strong>Keep score:</strong> streaks and a four-week grid per habit turn
+  follow-through into something you can see, and won't want to break.</li>
+</ul>
+
+<h2>Habit gate vs the other approaches</h2>
+
+<table>
+  <tr><th>Approach</th><th>Unlock condition</th><th>The hole</th></tr>
+  <tr><td>Screen-time limits (Digital Wellbeing)</td><td>Timer runs out, asks you to stop</td><td>"Ignore limit" is one tap</td></tr>
+  <tr><td>Pause apps (one sec, ScreenZen)</td><td>Wait through a delay or prompt</td><td>A delay can be outlasted</td></tr>
+  <tr><td>Gamified blockers (Forest)</td><td>Don't touch the phone or the tree dies</td><td>The stake is imaginary</td></tr>
+  <tr><td>Habit app blocker (Broc)</td><td>A real habit gets done, optionally verified</td><td>You'd have to lie to a camera</td></tr>
+</table>
+
+<p>Full comparison with names and prices in
+<a href="/opal-alternative-android/">the app blocker comparison guide</a>.</p>
+
+<h2>Who this works for</h2>
+
+<ul>
+  <li>Students who need the feed closed until the studying is done.</li>
+  <li>Anyone managing ADHD who needs a hard stop, not a gentle nudge.</li>
+  <li>Gym-goers making the workout non-negotiable before Instagram opens.</li>
+  <li>Anyone who has bypassed every blocker they ever installed.</li>
+</ul>
+
+<h2>Common questions</h2>
+
+<h3>Can't I just uninstall it?</h3>
+<p>You can, and Broc doesn't pretend otherwise. But uninstalling a wall you
+built yourself is a real decision that kills a visible streak. "Ignore limit
+for today" was a reflex. That difference is the whole mechanism.</p>
+
+<h3>What does it cost?</h3>
+<p>Broc is a subscription with a 7-day free trial. One plan, everything in:
+unlimited habits, custom unlock durations, AI photo verification and full
+history. No ads.</p>
+
+<h3>What does Broc see on my phone?</h3>
+<p>Only which app is open right now, to compare against your block list. No
+keylogging, no screen recording, no browsing history. Details in the
+<a href="/privacy/">privacy policy</a>.</p>
+
+<h3>iPhone?</h3>
+<p>Android only for now. Leave your email on the <a href="/">homepage</a> and
+you'll hear when iOS lands.</p>
+
+<div class="cta">
+  <p>Block the apps. Do the habit. Earn it back.</p>
+  <a class="btn play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto">Get Broc on Google Play</a>
+</div>
+
+<div class="more">
+  <h2>More guides</h2>
+  <ul>
+    <li><a href="/earn-screen-time/">Earn your screen time: the mechanic explained</a></li>
+    <li><a href="/vs-screen-time-limits/">Broc vs screen-time limits: why timers are easy to ignore</a></li>
+    <li><a href="/opal-alternative-android/">Opal alternatives for Android, compared honestly</a></li>
+    <li><a href="/guides/">All guides</a></li>
+  </ul>
+</div>
+
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <span>&copy; 2026 Broc &middot; Broc. You against your phone.</span>
+    <span><a href="/">Home</a> &middot; <a href="/guides/">Guides</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.play-link').forEach(function(a){
+    a.addEventListener('click', function(){
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({path: 'play-store-click', event: true});
+      }
+    });
+  });
+</script>
+
+<script data-goatcounter="https://vetoapp.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<script src="/js/ph.js" defer></script>
+</body>
+</html>
