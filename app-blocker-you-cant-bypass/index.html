@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why you bypass every app blocker (and what actually holds)</title>
+<meta name="description" content="Ignore buttons, outlasted delays, quiet uninstalls: every app blocker has a bypass because willpower is the lock. Here's the taxonomy of bypasses and the setup that finally holds on Android.">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="canonical" href="https://getbroc.app/app-blocker-you-cant-bypass/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Why you bypass every app blocker (and what actually holds)">
+<meta property="og:description" content="Every blocker has a bypass because willpower is the lock. The setup that finally holds.">
+<meta property="og:image" content="https://getbroc.app/img/og.png">
+<meta property="og:url" content="https://getbroc.app/app-blocker-you-cant-bypass/">
+<meta property="og:type" content="article">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is there an app blocker you can't bypass?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No app can stop you uninstalling it; Android doesn't allow that, and anyone claiming to be uninstall-proof is overselling. What works is making the bypass cost something real. Broc removes the in-app bypasses entirely (no snooze, no ignore button) and makes the unlock require a completed, verified habit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do I keep ignoring my screen time limits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because the person who set the limit can waive it for free. Ignore-limit buttons, extended delays and strict-mode toggles are all decisions you make in one tap at your weakest moment. A limit is a suggestion unless the exit costs something."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is a habit gate harder to bypass than a timer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A timer's bypass is passive: wait, or tap ignore. A habit gate's only exit is doing a real habit, verified by a photo check or an in-app timer. There is nothing to outlast and no button to hold. The lazy path becomes doing the thing."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{ --navy:#0A1428; --navy3:#08101F; --cobalt:#1452FF; --ink:#1B2430;
+         --dim:#4A5568; --hairline:#E4E8EF; --wash:#F6F8FB; }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  body{font-family:'Hanken Grotesk',system-ui,sans-serif; background:#fff; color:var(--ink);
+       -webkit-font-smoothing:antialiased; line-height:1.65;}
+  a{color:var(--cobalt);}
+  .top{background:var(--navy); padding:18px 24px;}
+  .top-inner{max-width:760px; margin:0 auto; display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:10px; color:#fff; text-decoration:none;}
+  .brand img{width:30px; height:30px; border-radius:50%;}
+  .brand span{font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:800;}
+  .top a.back{color:rgba(255,255,255,0.7); font-size:13px; text-decoration:none;}
+  .top a.back:hover{color:#fff;}
+  .hero{background:var(--navy); padding:36px 24px 48px;}
+  .hero-inner{max-width:760px; margin:0 auto;}
+  .hero .kicker{color:#7EA0FF; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;}
+  .hero h1{font-family:'Bricolage Grotesque',sans-serif; font-size:36px; font-weight:800;
+           line-height:1.12; color:#fff; margin-top:10px;}
+  .hero p{color:rgba(255,255,255,0.78); margin-top:14px; font-size:17px; max-width:600px;}
+  main{max-width:760px; margin:0 auto; padding:40px 24px 90px;}
+  h2{font-family:'Bricolage Grotesque',sans-serif; font-size:22px; font-weight:700; margin:38px 0 10px;}
+  h3{font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:700; margin:24px 0 6px;}
+  p{margin:12px 0; font-size:16px;}
+  ul{margin:12px 0 12px 22px; font-size:16px;}
+  li{margin:6px 0;}
+  strong{font-weight:700;}
+  .callout{border-left:4px solid var(--cobalt); background:var(--wash); padding:14px 18px;
+           border-radius:0 10px 10px 0; margin:18px 0; font-size:15px;}
+  .cta{margin:44px 0 0; padding:28px; background:var(--navy); border-radius:14px; text-align:center;}
+  .cta p{color:rgba(255,255,255,0.85); margin:0 0 14px;}
+  .btn{display:inline-block; background:var(--cobalt); color:#fff; text-decoration:none;
+       font-weight:700; padding:13px 26px; border-radius:10px;}
+  .more{margin-top:44px; border-top:1px solid var(--hairline); padding-top:22px;}
+  .more h2{margin-top:0; font-size:17px;}
+  .more ul{list-style:none; margin:10px 0 0; display:grid; gap:8px;}
+  .more li{margin:0;}
+  footer{border-top:1px solid var(--hairline); padding:22px 24px; font-size:13px; color:var(--dim);}
+  .foot-inner{max-width:760px; margin:0 auto; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+  footer a{color:var(--dim);}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-inner">
+    <a class="brand" href="/"><img src="/img/favicon.png" alt=""><span>Broc</span></a>
+    <a class="back" href="/guides/">&larr; All guides</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="kicker">Guide &middot; the bypass problem</span>
+    <h1>Why you bypass every app blocker</h1>
+    <p>You're not weak. The blockers are. Every one of them ships with an
+    exit, and you've found them all.</p>
+  </div>
+</div>
+
+<main>
+
+<h2>The bypass taxonomy</h2>
+
+<p>If you've installed and defeated more than one blocker, you'll recognise
+these. Every mainstream tool falls to at least one:</p>
+
+<ul>
+  <li><strong>The ignore button.</strong> Digital Wellbeing's app timers end
+  in a dialog with "ignore limit for today." The rule and the exemption live
+  in the same tap.</li>
+  <li><strong>The outlasted delay.</strong> Pause apps make you breathe or
+  wait before opening. Day one, profound. Day nine, you tap through the
+  pause on muscle memory while the breathing text is still fading in.</li>
+  <li><strong>The settings walk.</strong> Timers and schedules you set can be
+  unset. Thirty seconds in settings and tonight's block never happened.</li>
+  <li><strong>The imaginary stake.</strong> Gamified blockers kill a virtual
+  tree when you cave. You mourn the first tree. You do not mourn the
+  fortieth.</li>
+  <li><strong>The quiet uninstall.</strong> The exit of last resort, always
+  available, no witnesses.</li>
+</ul>
+
+<div class="callout">The common thread: in every case, the lock and the key
+live in the same pocket. Yours. A block you can waive for free is a
+suggestion with extra steps.</div>
+
+<h2>The uncomfortable truth about "unbypassable"</h2>
+
+<p>No Android app can stop you uninstalling it. The OS doesn't allow it, and
+that's the right call; software that can't be removed is malware. Any blocker
+marketing itself as uninstall-proof or unbeatable is overselling, and you
+should read the fine print before trusting it.</p>
+
+<p>So the honest question isn't "which blocker has no exit?" None of them.
+It's "<strong>which blocker makes the exit cost more than the habit?</strong>"
+That reframe changes which app wins.</p>
+
+<h2>Making the bypass expensive</h2>
+
+<p>Three things move the cost of caving above the cost of just doing the
+thing:</p>
+
+<h3>1. Remove the free exits</h3>
+<p>Broc's wall has no snooze, no "5 more minutes," no ignore button. When you
+open a blocked app you see your habit list and what each habit earns. The
+in-app bypass simply doesn't exist, which kills the reflex taps that defeat
+timers and pauses.</p>
+
+<h3>2. Make the unlock require proof</h3>
+<p>The remaining exit inside the rules is lying: "yep, definitely meditated."
+Broc closes it with verification. The
+<a href="/ai-photo-verification/">AI photo check</a> wants to see the open
+book or the gym before the habit counts; timer verification counts minutes
+only while you stay in the app. Now the honest path is genuinely the
+cheapest one available.</p>
+
+<h3>3. Give the uninstall a price</h3>
+<p>The last exit can't be blocked, so it has to be made expensive. Broc does
+it with your streak: every day the habits get done, the number grows, and
+uninstalling means watching day 23 go to zero over one scroll. "Ignore limit
+for today" was a reflex; deleting a three-week streak is a decision. Most
+nights, the decision loses.</p>
+
+<h2>What this looks like in practice</h2>
+
+<p>You block Instagram, TikTok and YouTube. Tonight's list: gym, ten pages,
+tidy the kitchen. At 7pm you reach for Instagram on autopilot and hit the
+wall: three habits, each with a price next to it. There's no button to argue
+with, so the argument doesn't happen. You do the gym, snap the photo, and
+thirty minutes open up. The scroll happens; it just happens <em>after</em>.
+That ordering, repeated for a month, is the entire product.</p>
+
+<h2>Common questions</h2>
+
+<h3>What about strict modes in other blockers?</h3>
+<p>Stay Focused and others offer strict modes that lock their own settings,
+and they do raise the bypass cost. They're still timer logic underneath:
+when the clock runs out you've earned nothing, learned nothing, and tomorrow
+starts the same fight. Strictness tied to <em>habits</em> compounds instead;
+see <a href="/habit-app-blocker/">what a habit app blocker is</a>.</p>
+
+<h3>Seriously, what stops me uninstalling Broc?</h3>
+<p>Nothing mechanical. A visible streak, habits that are finally getting
+done, and the mild embarrassment of deleting a wall you built yourself. In
+practice that holds far better than any lock, because it's yours.</p>
+
+<h3>What does Broc cost?</h3>
+<p>Broc is a subscription with a 7-day free trial. One plan, everything in:
+unlimited habits, custom unlock durations, AI photo verification and full
+history. No ads.</p>
+
+<div class="cta">
+  <p>No snooze. No ignore. Just the habit, then the scroll.</p>
+  <a class="btn play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto">Get Broc on Google Play</a>
+</div>
+
+<div class="more">
+  <h2>More guides</h2>
+  <ul>
+    <li><a href="/vs-screen-time-limits/">Broc vs screen-time limits: why timers are easy to ignore</a></li>
+    <li><a href="/habit-app-blocker/">What is a habit app blocker?</a></li>
+    <li><a href="/earn-screen-time/">Earn your screen time: the mechanic explained</a></li>
+    <li><a href="/guides/">All guides</a></li>
+  </ul>
+</div>
+
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <span>&copy; 2026 Broc &middot; Broc. You against your phone.</span>
+    <span><a href="/">Home</a> &middot; <a href="/guides/">Guides</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.play-link').forEach(function(a){
+    a.addEventListener('click', function(){
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({path: 'play-store-click', event: true});
+      }
+    });
+  });
+</script>
+
+<script data-goatcounter="https://vetoapp.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<script src="/js/ph.js" defer></script>
+</body>
+</html>
