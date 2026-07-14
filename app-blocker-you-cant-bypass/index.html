@@ -18,6 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/guide.css">
 
 <script type="application/ld+json">
 {
@@ -29,7 +30,7 @@
       "name": "Is there an app blocker you can't bypass?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No app can stop you uninstalling it; Android doesn't allow that, and anyone claiming to be uninstall-proof is overselling. What works is making the bypass cost something real. Broc removes the in-app bypasses entirely (no snooze, no ignore button) and makes the unlock require a completed, verified habit."
+        "text": "Broc does not prevent uninstall. Some Android device-management modes can restrict uninstalling or settings changes, but an ordinary consumer blocker should not be described as impossible to remove. Broc instead removes in-app shortcuts and makes the normal unlock require a completed, verified habit."
       }
     },
     {
@@ -37,7 +38,7 @@
       "name": "Why do I keep ignoring my screen time limits?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Because the person who set the limit can waive it for free. Ignore-limit buttons, extended delays and strict-mode toggles are all decisions you make in one tap at your weakest moment. A limit is a suggestion unless the exit costs something."
+        "text": "Because the person who set the limit can also edit or remove it. Android app timers can be deleted in Settings before midnight, and Focus mode offers a temporary break. A self-imposed rule is easier to waive when the exit costs nothing."
       }
     },
     {
@@ -45,7 +46,7 @@
       "name": "How is a habit gate harder to bypass than a timer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A timer's bypass is passive: wait, or tap ignore. A habit gate's only exit is doing a real habit, verified by a photo check or an in-app timer. There is nothing to outlast and no button to hold. The lazy path becomes doing the thing."
+        "text": "A timer can be changed, removed or outlasted. A habit gate's normal in-app exit is doing a real habit, verified by a photo check or an in-app timer. There is no snooze or extra-time button on Broc's wall."
       }
     }
   ]
@@ -93,6 +94,34 @@
   .foot-inner{max-width:760px; margin:0 auto; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;}
   footer a{color:var(--dim);}
 </style>
+<script type="application/ld+json" data-seo="article">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why you bypass every app blocker",
+  "description": "Ignore buttons, outlasted delays, quiet uninstalls: every app blocker has a bypass because willpower is the lock. Here's the taxonomy of bypasses and the setup that finally holds on Android.",
+  "image": [
+    "https://getbroc.app/img/og.png"
+  ],
+  "datePublished": "2026-07-12",
+  "dateModified": "2026-07-14",
+  "mainEntityOfPage": "https://getbroc.app/app-blocker-you-cant-bypass/",
+  "author": {
+    "@type": "Person",
+    "name": "Shay Gavan",
+    "url": "https://getbroc.app/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Broc",
+    "url": "https://getbroc.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://getbroc.app/img/apple-touch-icon.png"
+    }
+  }
+}
+</script>
 </head>
 <body>
 
@@ -109,6 +138,7 @@
     <h1>Why you bypass every app blocker</h1>
     <p>You're not weak. The blockers are. Every one of them ships with an
     exit, and you've found them all.</p>
+    <p class="byline">By <a href="/about/">Shay Gavan</a> &middot; Published 12 July 2026 &middot; Reviewed 14 July 2026</p>
   </div>
 </div>
 
@@ -120,9 +150,9 @@
 these. Every mainstream tool falls to at least one:</p>
 
 <ul>
-  <li><strong>The ignore button.</strong> Digital Wellbeing's app timers end
-  in a dialog with "ignore limit for today." The rule and the exemption live
-  in the same tap.</li>
+  <li><strong>The editable timer.</strong> Android's Digital Wellbeing app
+  timers can be removed in Settings before midnight, while Focus mode lets
+  you take a temporary break. The person who set the rule can also waive it.</li>
   <li><strong>The outlasted delay.</strong> Pause apps make you breathe or
   wait before opening. Day one, profound. Day nine, you tap through the
   pause on muscle memory while the breathing text is still fading in.</li>
@@ -141,10 +171,11 @@ suggestion with extra steps.</div>
 
 <h2>The uncomfortable truth about "unbypassable"</h2>
 
-<p>No Android app can stop you uninstalling it. The OS doesn't allow it, and
-that's the right call; software that can't be removed is malware. Any blocker
-marketing itself as uninstall-proof or unbeatable is overselling, and you
-should read the fine print before trusting it.</p>
+<p>Broc does not prevent uninstall. Android can technically restrict app
+removal in managed-device or profile-owner setups, and some strict blockers
+add settings or uninstall protection. Those controls and their limitations
+vary by app and device, so an ordinary consumer blocker should not be called
+impossible to remove.</p>
 
 <p>So the honest question isn't "which blocker has no exit?" None of them.
 It's "<strong>which blocker makes the exit cost more than the habit?</strong>"
@@ -170,10 +201,10 @@ only while you stay in the app. Now the honest path is genuinely the
 cheapest one available.</p>
 
 <h3>3. Give the uninstall a price</h3>
-<p>The last exit can't be blocked, so it has to be made expensive. Broc does
+<p>Broc leaves uninstall available, so that exit has to feel expensive. It does
 it with your streak: every day the habits get done, the number grows, and
-uninstalling means watching day 23 go to zero over one scroll. "Ignore limit
-for today" was a reflex; deleting a three-week streak is a decision. Most
+uninstalling means watching day 23 go to zero over one scroll. Editing a
+timer was a reflex; deleting a three-week streak is a decision. Most
 nights, the decision loses.</p>
 
 <h2>What this looks like in practice</h2>
@@ -204,9 +235,14 @@ practice that holds far better than any lock, because it's yours.</p>
 unlimited habits, custom unlock durations, AI photo verification and full
 history. No ads.</p>
 
+<div class="source-note">
+  <h2>Android controls checked</h2>
+  <p><strong>Reviewed 14 July 2026.</strong> Google's <a href="https://support.google.com/android/answer/9346420?hl=en">Digital Wellbeing help</a> explains that app timers can be deleted before midnight and Focus mode can be paused with &ldquo;Take a break.&rdquo; Android's device-policy documentation separately supports uninstall restrictions on managed devices. Broc itself does not prevent uninstall.</p>
+</div>
+
 <div class="cta">
   <p>No snooze. No ignore. Just the habit, then the scroll.</p>
-  <a class="btn play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto">Get Broc on Google Play</a>
+  <a class="btn play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;utm_source=getbroc-site&amp;utm_medium=organic&amp;utm_campaign=app-blocker-you-cant-bypass">Get Broc on Google Play</a>
 </div>
 
 <div class="more">
@@ -224,7 +260,7 @@ history. No ads.</p>
 <footer>
   <div class="foot-inner">
     <span>&copy; 2026 Broc &middot; Broc. You against your phone.</span>
-    <span><a href="/">Home</a> &middot; <a href="/guides/">Guides</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></span>
+    <span><a href="/">Home</a> &middot; <a href="/guides/">Guides</a> &middot; <a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></span>
   </div>
 </footer>
 
