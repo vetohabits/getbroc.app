@@ -49,6 +49,24 @@ th{font-family:'Bricolage Grotesque',sans-serif; font-size:13.5px;}
 .guide-figure img{width:min(300px,80vw); height:auto; margin:0 auto; border-radius:28px;
                   box-shadow:0 24px 60px -28px rgba(10,20,40,.45); display:block;}
 .guide-figure figcaption{font-size:13px; color:var(--dim); margin:10px auto 0; max-width:50ch;}
+/* Sticky install bar. The only CTA on a guide page used to sit under ~600
+   words, so a reader had to finish the article to find it. Sticky bottom-bar
+   CTAs test well on mobile specifically, which is where this audience is:
+   people searching "how do I stop scrolling" are holding the phone they are
+   trying to escape. Desktop keeps the inline CTA only, where the tests are
+   much weaker and a fixed bar mostly costs reading space. */
+.install-bar{position:fixed; left:0; right:0; bottom:0; z-index:40; display:none;
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom)); background:var(--navy);
+  box-shadow:0 -6px 20px rgba(10,20,32,.18);}
+.install-bar a{display:block; padding:13px 16px; border-radius:10px; background:var(--cobalt);
+  color:#fff; font-weight:800; text-align:center; text-decoration:none;}
+.install-bar span{display:block; margin-bottom:7px; color:rgba(255,255,255,.82); font-size:12px; text-align:center;}
+@media (max-width:760px){
+  .install-bar{display:block;}
+  /* Keep the bar from covering the last lines of the article. */
+  body{padding-bottom:96px;}
+}
+
 .cta{margin:44px 0 0; padding:28px; background:var(--navy); border-radius:14px; text-align:center;}
 .cta p{color:rgba(255,255,255,0.85); margin:0 0 14px;}
 .btn{display:inline-block; background:var(--cobalt); color:#fff; text-decoration:none;
