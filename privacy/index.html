@@ -9,6 +9,11 @@
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="canonical" href="https://getbroc.app/privacy/">
 <meta name="robots" content="index,follow">
+<meta property="og:title" content="Privacy policy — Broc">
+<meta property="og:description" content="What Broc collects, why, and what you can do about it.">
+<meta property="og:image" content="https://getbroc.app/img/og.png">
+<meta property="og:url" content="https://getbroc.app/privacy/">
+<meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +57,7 @@
 
 <main>
 <h1>Privacy policy</h1>
-<p class="updated">Last updated: 4 July 2026</p>
+<p class="updated">Last updated: 16 July 2026</p>
 
 <p>This policy explains what Broc collects, why, and what you can do about it.
 Broc ("we", "us") makes a habit app that blocks chosen apps on your phone until
@@ -72,8 +77,10 @@ address and, if you use Google, your display name. This is how your habits sync
 across devices.</p>
 <p><strong>Your habits and progress.</strong> The habits you create, your daily completions,
 your streaks, and your settings (such as reward mode and which apps you block).</p>
-<p><strong>Your blocked-apps list.</strong> The package names and labels of the apps you choose
-to block.</p>
+<p><strong>Your blocked-apps list.</strong> On Android, the package names and labels of the
+apps you choose are stored with your account so they can be restored. On
+iPhone, Apple keeps app identities private: the opaque Screen Time selection
+stays in Broc's App Group on your device and is not sent to our servers.</p>
 <p><strong>Purchase status.</strong> If you subscribe to Broc Pro, our payments provider tells
 us whether your subscription is active. We never see your card details.</p>
 <p><strong>Diagnostics.</strong> If the app crashes, we receive a crash report so we can fix the
@@ -86,19 +93,26 @@ of anything you do inside other apps. The website also uses GoatCounter, a
 cookieless page-view counter.</p>
 <p>We do not show ads and we do not sell your data.</p>
 
-<h2>The "Usage access" permission</h2>
+<h2>Android blocking permissions</h2>
 <p>Broc uses Android's Usage Access permission only to detect which app is open
 right now and compare it against your block list, on your device. We do not
 record, store, or send a history of the apps you use.</p>
+<p>Android's "Appear on top" permission lets Broc show its lock screen over a
+blocked app.</p>
 
-<h2>The "Appear on top" permission</h2>
-<p>This lets Broc show its lock screen over a blocked app.</p>
+<h2>iPhone Screen Time access</h2>
+<p>On iPhone, Broc uses Apple's Family Controls picker, Managed Settings shields,
+and Device Activity monitoring. Apple gives Broc opaque tokens rather than app
+names. Those tokens and the lock timer stay in the shared App Group used by
+Broc's iPhone extensions. We do not record or send a history of the apps or
+websites you use.</p>
 
 <h2>Notifications</h2>
-<p>Broc runs a background service that watches for blocked apps. While that service
-is active, Android shows an ongoing notification so you always know Broc is
-running. We use the notification only to display this status. We do not send
-marketing or send your data through it.</p>
+<p>If you enable daily reminders, Broc stores a device notification token, your
+time zone, and reminder time in Firebase so it can send the reminder you chose.
+We do not use reminders for third-party advertising. On Android, the active
+blocking service also shows an ongoing status notification so you know it is
+running.</p>
 
 <h2>Photos for AI verification (Pro)</h2>
 <p>If you turn on photo verification for a habit, the photo you take is sent
