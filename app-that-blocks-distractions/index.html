@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An app that blocks distractions: what actually works</title>
+<meta name="description" content="An app that blocks distractions only helps if you cannot wave it away. Timers, pauses and gates compared, and how to set one up on Android.">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="canonical" href="https://getbroc.app/app-that-blocks-distractions/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="An app that blocks distractions">
+<meta property="og:description" content="Timers, pauses and habit gates compared, honestly.">
+<meta property="og:image" content="https://getbroc.app/img/og.png">
+<meta property="og:url" content="https://getbroc.app/app-that-blocks-distractions/">
+<meta property="og:type" content="article">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/guide.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best app that blocks distractions on Android?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on how easily you bypass things. If a pause or a schedule still stops you, a lightweight blocker is enough. If you have learned to tap through those, you need a blocker whose unlock is conditional on doing something rather than on waiting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can an app block distractions permanently?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, and you should be wary of any that claims to. On Android you can always uninstall an app or revoke its permissions. What a good blocker does is make the distraction cost more effort than the thing you meant to do."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do distraction blockers work for ADHD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many people with ADHD report that soft friction like a breathing pause stops working quickly, because the pause becomes part of the ritual. A gate that requires a completed action tends to hold longer, though nothing works for everyone."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{ --navy:#0A1428; --navy3:#08101F; --cobalt:#1452FF; --ink:#1B2430;
+         --dim:#4A5568; --hairline:#E4E8EF; --wash:#F6F8FB; }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  body{font-family:'Hanken Grotesk',system-ui,sans-serif; background:#fff; color:var(--ink);
+       -webkit-font-smoothing:antialiased; line-height:1.65;}
+  a{color:var(--cobalt);}
+  .top{background:var(--navy); padding:18px 24px;}
+  .top-inner{max-width:760px; margin:0 auto; display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:10px; color:#fff; text-decoration:none;}
+  .brand img{width:30px; height:30px; border-radius:50%;}
+  .brand span{font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:800;}
+  .top a.back{color:rgba(255,255,255,0.7); font-size:13px; text-decoration:none;}
+  .top a.back:hover{color:#fff;}
+  .hero{background:var(--navy); padding:36px 24px 48px;}
+  .hero-inner{max-width:760px; margin:0 auto;}
+  .hero .kicker{color:#7EA0FF; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;}
+  .hero h1{font-family:'Bricolage Grotesque',sans-serif; font-size:36px; font-weight:800;
+           line-height:1.12; color:#fff; margin-top:10px;}
+  .hero p{color:rgba(255,255,255,0.78); margin-top:14px; font-size:17px; max-width:600px;}
+  main{max-width:760px; margin:0 auto; padding:40px 24px 90px;}
+  h2{font-family:'Bricolage Grotesque',sans-serif; font-size:22px; font-weight:700; margin:38px 0 10px;}
+  h3{font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:700; margin:24px 0 6px;}
+  p{margin:12px 0; font-size:16px;}
+  ul{margin:12px 0 12px 22px; font-size:16px;}
+  li{margin:6px 0;}
+  strong{font-weight:700;}
+  table{width:100%; border-collapse:collapse; margin:18px 0; font-size:15px;}
+  th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--hairline); vertical-align:top;}
+  th{font-family:'Bricolage Grotesque',sans-serif; font-size:14px;}
+  .callout{border-left:4px solid var(--cobalt); background:var(--wash); padding:14px 18px;
+           border-radius:0 10px 10px 0; margin:18px 0; font-size:15px;}
+  .cta{margin:44px 0 0; padding:28px; background:var(--navy); border-radius:14px; text-align:center;}
+  .cta p{color:rgba(255,255,255,0.85); margin:0 0 14px;}
+  .btn{display:inline-block; background:var(--cobalt); color:#fff; text-decoration:none;
+       font-weight:700; padding:13px 26px; border-radius:10px;}
+  .more{margin-top:44px; border-top:1px solid var(--hairline); padding-top:22px;}
+  .more h2{margin-top:0; font-size:17px;}
+  .more ul{list-style:none; margin:10px 0 0; display:grid; gap:8px;}
+  .more li{margin:0;}
+  footer{border-top:1px solid var(--hairline); padding:22px 24px; font-size:13px; color:var(--dim);}
+  .foot-inner{max-width:760px; margin:0 auto; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+  footer a{color:var(--dim);}
+</style>
+<script type="application/ld+json" data-seo="article">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What is a habit app blocker?",
+  "description": "A habit app blocker locks your distracting apps until your real habits are done, instead of running a timer you can ignore. How it works, why it sticks, and how Broc does it on Android.",
+  "image": [
+    "https://getbroc.app/img/shot_wall.png"
+  ],
+  "datePublished": "2026-07-12",
+  "dateModified": "2026-07-14",
+  "mainEntityOfPage": "https://getbroc.app/habit-app-blocker/",
+  "author": {
+    "@type": "Person",
+    "name": "Shay Gavan",
+    "url": "https://getbroc.app/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Broc",
+    "url": "https://getbroc.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://getbroc.app/img/apple-touch-icon.png"
+    }
+  }
+}
+</script>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-inner">
+    <a class="brand" href="/"><img src="/img/favicon.png" alt=""><span>Broc</span></a>
+    <a class="back" href="/guides/">&larr; All guides</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <p class="kicker">Guide</p>
+    <h1>An app that blocks distractions, and what that actually takes</h1>
+    <p>Most of them work for a fortnight. The ones that keep working have something in common, and it is not a longer countdown.</p>
+    <p class="byline">By <a href="/about/">Shay Gavan</a> &middot; Published 18 August 2026</p>
+  </div>
+</div>
+
+<main>
+
+<div class="callout"><strong>The short version:</strong> an app that blocks
+distractions is only as good as its unlock. If getting back in costs you a tap
+or a wait, you will learn to pay it. If it costs you the thing you actually
+meant to do, the block does something.</div>
+
+<h2>Three ways an app can block a distraction</h2>
+
+<p>Almost every distraction blocker on Android is one of three designs, and
+they fail in different ways.</p>
+
+<table>
+  <tr><th>Design</th><th>How you get back in</th><th>How it usually fails</th></tr>
+  <tr><td>Timer or budget</td><td>Wait for tomorrow, or tap &ldquo;15 more minutes&rdquo;</td><td>The extension becomes automatic</td></tr>
+  <tr><td>Pause or breath screen</td><td>Wait a few seconds</td><td>You learn its length and wait it out</td></tr>
+  <tr><td>Schedule</td><td>Wait for the window to open</td><td>You move the window, or work around it</td></tr>
+  <tr><td>Habit gate</td><td>Do the thing you said mattered</td><td>You can still uninstall it</td></tr>
+</table>
+
+<p>The first three all share a property: the price of getting back in is
+<em>time</em>, and time passes whether or not you do anything useful with it. A
+gate changes the currency. The price is an action, so paying it is the same as
+having done the thing.</p>
+
+<h2>What counts as a distraction is personal</h2>
+
+<p>The apps worth blocking are rarely the ones you would list if asked. People
+block TikTok and Instagram and then lose the evening to a news app, a shopping
+app, or a group chat. Before you set anything up, look at your actual Screen
+Time or Digital Wellbeing figures for the last week and block what is genuinely
+at the top, not what feels like it should be.</p>
+
+<p>A second thing worth doing first: turn off notifications for those apps.
+Blocking an app while still letting it tap you on the shoulder forty times a day
+is fighting the same battle twice.</p>
+
+<h2>What a distraction blocker can honestly check</h2>
+
+<p>Be realistic about verification, because this is where marketing tends to
+get loose. An Android app can see which app is in the foreground and for how
+long. It can ask you to photograph something. It cannot know whether you read
+the page you photographed, and it cannot read another app to confirm you
+finished a lesson or a workout inside it.</p>
+
+<p>So the honest version of a habit gate is: it checks that you spent the time,
+or that you produced evidence you were where you said you would be. That is a
+much lower bar than mind reading and a much higher one than tapping a box.</p>
+
+<h2>Setting one up so it survives week three</h2>
+
+<ul>
+  <li><strong>Block fewer apps than you want to.</strong> Three apps you never
+  get back is better than fifteen you switch off on day four.</li>
+  <li><strong>Make the unlock small.</strong> The habit you gate behind should be
+  something you would do on a bad day, not your ideal morning.</li>
+  <li><strong>Decide the rule while you are calm.</strong> The whole point is that
+  the version of you who set it up gets a say later.</li>
+  <li><strong>Do not gate anything you need in an emergency.</strong> Maps, phone,
+  messages and banking stay open.</li>
+</ul>
+
+<p>Broc is the gate version of this for Android: you choose the apps, set the
+habits that unlock them, and the apps stay shut until the habit is done. There
+is no snooze, because a snooze is the thing that breaks every other design on
+this page. If you want to see how the unlock is calculated, the
+<a href="/earn-screen-time/">earn your screen time</a> guide walks through it.</p>
+
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <span>&copy; 2026 Broc &middot; Broc. You against your phone.</span>
+    <span><a href="/">Home</a> &middot; <a href="/guides/">Guides</a> &middot; <a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.play-link').forEach(function(a){
+    a.addEventListener('click', function(){
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({path: 'play-store-click', event: true});
+      }
+    });
+  });
+</script>
+
+<script data-goatcounter="https://vetoapp.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<script src="/js/ph.js" defer></script>
+
+<div class="install-bar">
+  <span>7-day free trial, then a subscription.</span>
+  <a class="play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dapp-that-blocks-distractions">Get Broc for Android</a>
+</div>
+</body>
+</html>

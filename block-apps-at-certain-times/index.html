@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to block apps at certain times on Android</title>
+<meta name="description" content="Schedule app blocking on Android with Digital Wellbeing or a blocker, what schedules are good at, and when a habit gate holds better than a time window.">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="canonical" href="https://getbroc.app/block-apps-at-certain-times/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Block apps at certain times on Android">
+<meta property="og:description" content="How to schedule app blocking, and when a schedule is the wrong tool.">
+<meta property="og:image" content="https://getbroc.app/img/og.png">
+<meta property="og:url" content="https://getbroc.app/block-apps-at-certain-times/">
+<meta property="og:type" content="article">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/guide.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I block apps at certain times on Android?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Android has this built in. Open Settings, then Digital Wellbeing and parental controls, then Focus mode. Choose the distracting apps and set a schedule. Several third-party blockers offer the same thing with more control over how hard the block is to bypass."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I block apps during work hours only?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A schedule is well suited to a fixed, predictable block such as working hours, a lecture timetable or bedtime. It works because the boundary is genuinely time-shaped rather than task-shaped."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Broc block apps on a schedule?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Broc gates apps behind completed habits rather than a clock, so the apps stay locked until the habit is done regardless of the time of day. If you specifically want a time window, Android Focus mode or a scheduling blocker is the better fit."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{ --navy:#0A1428; --navy3:#08101F; --cobalt:#1452FF; --ink:#1B2430;
+         --dim:#4A5568; --hairline:#E4E8EF; --wash:#F6F8FB; }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  body{font-family:'Hanken Grotesk',system-ui,sans-serif; background:#fff; color:var(--ink);
+       -webkit-font-smoothing:antialiased; line-height:1.65;}
+  a{color:var(--cobalt);}
+  .top{background:var(--navy); padding:18px 24px;}
+  .top-inner{max-width:760px; margin:0 auto; display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:10px; color:#fff; text-decoration:none;}
+  .brand img{width:30px; height:30px; border-radius:50%;}
+  .brand span{font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:800;}
+  .top a.back{color:rgba(255,255,255,0.7); font-size:13px; text-decoration:none;}
+  .top a.back:hover{color:#fff;}
+  .hero{background:var(--navy); padding:36px 24px 48px;}
+  .hero-inner{max-width:760px; margin:0 auto;}
+  .hero .kicker{color:#7EA0FF; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;}
+  .hero h1{font-family:'Bricolage Grotesque',sans-serif; font-size:36px; font-weight:800;
+           line-height:1.12; color:#fff; margin-top:10px;}
+  .hero p{color:rgba(255,255,255,0.78); margin-top:14px; font-size:17px; max-width:600px;}
+  main{max-width:760px; margin:0 auto; padding:40px 24px 90px;}
+  h2{font-family:'Bricolage Grotesque',sans-serif; font-size:22px; font-weight:700; margin:38px 0 10px;}
+  h3{font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:700; margin:24px 0 6px;}
+  p{margin:12px 0; font-size:16px;}
+  ul{margin:12px 0 12px 22px; font-size:16px;}
+  li{margin:6px 0;}
+  strong{font-weight:700;}
+  table{width:100%; border-collapse:collapse; margin:18px 0; font-size:15px;}
+  th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--hairline); vertical-align:top;}
+  th{font-family:'Bricolage Grotesque',sans-serif; font-size:14px;}
+  .callout{border-left:4px solid var(--cobalt); background:var(--wash); padding:14px 18px;
+           border-radius:0 10px 10px 0; margin:18px 0; font-size:15px;}
+  .cta{margin:44px 0 0; padding:28px; background:var(--navy); border-radius:14px; text-align:center;}
+  .cta p{color:rgba(255,255,255,0.85); margin:0 0 14px;}
+  .btn{display:inline-block; background:var(--cobalt); color:#fff; text-decoration:none;
+       font-weight:700; padding:13px 26px; border-radius:10px;}
+  .more{margin-top:44px; border-top:1px solid var(--hairline); padding-top:22px;}
+  .more h2{margin-top:0; font-size:17px;}
+  .more ul{list-style:none; margin:10px 0 0; display:grid; gap:8px;}
+  .more li{margin:0;}
+  footer{border-top:1px solid var(--hairline); padding:22px 24px; font-size:13px; color:var(--dim);}
+  .foot-inner{max-width:760px; margin:0 auto; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+  footer a{color:var(--dim);}
+</style>
+<script type="application/ld+json" data-seo="article">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What is a habit app blocker?",
+  "description": "A habit app blocker locks your distracting apps until your real habits are done, instead of running a timer you can ignore. How it works, why it sticks, and how Broc does it on Android.",
+  "image": [
+    "https://getbroc.app/img/shot_wall.png"
+  ],
+  "datePublished": "2026-07-12",
+  "dateModified": "2026-07-14",
+  "mainEntityOfPage": "https://getbroc.app/habit-app-blocker/",
+  "author": {
+    "@type": "Person",
+    "name": "Shay Gavan",
+    "url": "https://getbroc.app/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Broc",
+    "url": "https://getbroc.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://getbroc.app/img/apple-touch-icon.png"
+    }
+  }
+}
+</script>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-inner">
+    <a class="brand" href="/"><img src="/img/favicon.png" alt=""><span>Broc</span></a>
+    <a class="back" href="/guides/">&larr; All guides</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <p class="kicker">Guide</p>
+    <h1>How to block apps at certain times on Android</h1>
+    <p>Scheduling is the right answer for some problems and quietly the wrong one for others. Here is how to set it up, and how to tell which you have.</p>
+    <p class="byline">By <a href="/about/">Shay Gavan</a> &middot; Published 18 August 2026</p>
+  </div>
+</div>
+
+<main>
+
+<div class="callout"><strong>Straight answer:</strong> Android does this without
+any extra app. Settings &rarr; Digital Wellbeing &amp; parental controls &rarr;
+Focus mode, pick the apps, set the schedule. Whether that solves your problem is
+a separate question, and worth two minutes before you set it up.</div>
+
+<h2>The built-in way</h2>
+
+<p>Android&rsquo;s Digital Wellbeing includes Focus mode, which pauses a chosen set
+of apps on a schedule you define. It is free, it is already on the phone, and for
+a genuinely time-shaped problem it is usually enough. You can also take a break
+from it on demand, which is either the feature or the flaw depending on you.</p>
+
+<p>Third-party blockers offer the same scheduling with more control: multiple
+schedules, stricter modes that are harder to switch off, and blocking of websites
+as well as apps. If the built-in version keeps getting turned off in the moment,
+that extra resistance is what you are paying for.</p>
+
+<h2>When a schedule is the right tool</h2>
+
+<p>Schedules work when the boundary really is a time. Lectures from nine to
+eleven. No phone after eleven at night. Work hours where you are at a desk
+anyway. In each case you are not trying to make yourself do something &mdash; you
+are trying to keep the phone out of a block of time that already has a shape.</p>
+
+<h2>When a schedule quietly fails</h2>
+
+<p>The trouble starts when people reach for a schedule to solve a task problem.
+You want to study, so you block social media from seven to nine. Two things then
+happen. The first is that you can sit through seven to nine without studying,
+because the block has no idea what you are doing, only what time it is. The
+second is that at nine o&rsquo;clock everything opens whether or not the work
+happened, which teaches you that waiting is enough.</p>
+
+<p>If you have ever set a schedule and then simply used the time to reorganise
+your desk, that is the failure mode. The window was never the problem.</p>
+
+<table>
+  <tr><th>If your problem is</th><th>Use</th></tr>
+  <tr><td>The phone during lectures or work hours</td><td>A schedule</td></tr>
+  <tr><td>Scrolling in bed at midnight</td><td>A schedule</td></tr>
+  <tr><td>Studying that keeps not happening</td><td>A habit gate</td></tr>
+  <tr><td>The gym you skip when you are tired</td><td>A habit gate</td></tr>
+</table>
+
+<h2>Using both at once</h2>
+
+<p>These are not rivals and there is no reason to pick one. A schedule handles the
+hours where the phone should simply be absent, and a gate handles the work that
+keeps slipping. A common setup is a hard schedule from bedtime until morning,
+because sleep is genuinely time-shaped, with a habit gate running during the day
+for the two or three apps that eat the afternoon.</p>
+
+<p>The one thing worth avoiding is stacking several blockers over the same apps.
+Two blockers fighting over the same package tend to produce confusing behaviour,
+and the usual outcome is that you disable both.</p>
+
+<h2>The gate alternative</h2>
+
+<p>A habit gate ignores the clock. The apps are locked, and they open when the
+habit is done &mdash; at six in the morning or eleven at night, it makes no
+difference. It suits the task-shaped problem for the same reason a schedule
+suits the time-shaped one: the condition matches the thing you actually want.</p>
+
+<p><strong>To be clear about what Broc is:</strong> Broc is a habit gate and does
+not block on a schedule. If what you need is a nine-to-five window, Android Focus
+mode or a scheduling blocker will serve you better and cost nothing. Broc is for
+the case where the block should lift because you did the thing, not because a
+clock moved. The <a href="/vs-screen-time-limits/">comparison with screen-time
+limits</a> covers the difference in more detail, and
+<a href="/best-app-blockers-android/">the ranked list of Android blockers</a>
+includes the scheduling ones.</p>
+
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <span>&copy; 2026 Broc &middot; Broc. You against your phone.</span>
+    <span><a href="/">Home</a> &middot; <a href="/guides/">Guides</a> &middot; <a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.play-link').forEach(function(a){
+    a.addEventListener('click', function(){
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({path: 'play-store-click', event: true});
+      }
+    });
+  });
+</script>
+
+<script data-goatcounter="https://vetoapp.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<script src="/js/ph.js" defer></script>
+
+<div class="install-bar">
+  <span>7-day free trial, then a subscription.</span>
+  <a class="play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dblock-apps-at-certain-times">Get Broc for Android</a>
+</div>
+</body>
+</html>
