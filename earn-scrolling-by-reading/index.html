@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Turn scrolling into a reward for reading</title>
-<meta name="description" content="You don't need more discipline to read. You need an exchange rate. Ten pages earns fifteen minutes of Instagram. How to set it up with Broc on Android.">
+<meta name="description" content="You don't need more discipline to read. You need an exchange rate. Make reading unlock a chosen amount of screen time with Broc on iPhone or Android.">
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="canonical" href="https://getbroc.app/earn-scrolling-by-reading/">
@@ -14,10 +14,6 @@
 <meta property="og:image" content="https://getbroc.app/img/og.png">
 <meta property="og:url" content="https://getbroc.app/earn-scrolling-by-reading/">
 <meta property="og:type" content="article">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/guide.css">
 
 <script type="application/ld+json">
@@ -30,7 +26,7 @@
       "name": "How can I make myself read instead of scrolling?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Link the two directly: make scrolling the reward for reading. With Broc, a habit-based app blocker for Android, apps like Instagram and TikTok stay blocked until your reading habit is done, and finishing it earns a set window of screen time."
+        "text": "Link the two directly: make scrolling the reward for reading. With Broc on iPhone or Android, apps like Instagram and TikTok stay blocked until your reading habit is done, and finishing it earns a set amount of screen time."
       }
     },
     {
@@ -54,7 +50,7 @@
       "name": "What is Broc?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Broc is a habit-based app blocker for Android: block distracting apps, do a real habit, prove it with a photo, earn the unlock."
+        "text": "Broc is a habit-based app blocker for iPhone and Android: block distracting apps, finish a real habit, choose the proof method, and earn the unlock."
       }
     }
   ]
@@ -127,7 +123,7 @@
     "https://getbroc.app/img/og.png"
   ],
   "datePublished": "2026-07-02",
-  "dateModified": "2026-07-14",
+  "dateModified": "2026-09-02",
   "mainEntityOfPage": "https://getbroc.app/earn-scrolling-by-reading/",
   "author": {
     "@type": "Person",
@@ -145,15 +141,24 @@
   }
 }
 </script>
+<meta property="og:site_name" content="Broc">
+<meta property="og:image:alt" content="Broc: finish a habit to earn screen time">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600 800;font-display:swap;src:url('/fonts/bricolage-grotesque-latin.woff2') format('woff2')}
+@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/hanken-grotesk-latin.woff2') format('woff2')}
+</style>
 </head>
 <body>
 
-<div class="top">
+<nav class="top" aria-label="Primary">
   <div class="top-inner">
-    <a class="brand" href="/"><img src="/img/favicon.png" alt=""><span>Broc</span></a>
+    <a class="brand" href="/"><img src="/img/favicon.png" alt="" width="30" height="30"><span>Broc</span></a>
     <a class="back" href="/">&larr; getbroc.app</a>
   </div>
-</div>
+</nav>
 
 <div class="hero">
   <div class="hero-inner">
@@ -212,10 +217,10 @@ prove it with a photo, earn the unlock. The reading version:</p>
   <div class="step">
     <h3>Use per-habit unlock mode</h3>
     <p>Each completed habit earns a chunk of screen time. Pages in, minutes
-    out. When the window ends, the block returns, and so does the book.</p>
+    out. When the earned time is used, the block returns, and so does the book.</p>
   </div>
   <div class="step">
-    <h3>Optional: photo proof (Pro)</h3>
+    <h3>Optional: photo proof</h3>
     <p>AI photo verification wants to see the open book or the e-reader page
     before the habit counts. For the people (all of us) who would eventually
     just tap the box.</p>
@@ -226,7 +231,7 @@ prove it with a photo, earn the unlock. The reading version:</p>
 
 <p>Two feedback loops start running. The obvious one: you read every day,
 because that's the only door to the feed, and ten daily pages quietly becomes
-twelve books a year. The sneakier one: the scroll window is finite now, so you
+twelve books a year. The sneakier one: the earned time is finite now, so you
 stop opening Instagram out of boredom and start spending it like money.
 Both loops show up in your streak, and a 20-day streak is a possession you
 won't break for one lazy evening.</p>
@@ -248,10 +253,6 @@ it up, and the app holding you to it is the product working.</p>
 <p>Broc is a subscription with a 7-day free trial. One plan, everything in:
 unlimited habits, custom unlock durations, AI photo verification and full
 history. No ads.</p>
-
-<h3>iPhone?</h3>
-<p>Yes. Broc is available now on the
-<a class="app-store-link" href="https://apps.apple.com/app/id6803488648">App Store</a>.</p>
 
 <div class="cta">
   <p>Make Instagram cost 10 pages.</p>
@@ -281,15 +282,7 @@ history. No ads.</p>
   </div>
 </footer>
 
-<script>
-  document.querySelectorAll('.play-link').forEach(function(a){
-    a.addEventListener('click', function(){
-      if (window.goatcounter && window.goatcounter.count) {
-        window.goatcounter.count({path: 'play-store-click', event: true});
-      }
-    });
-  });
-</script>
+
 
 <script data-goatcounter="https://vetoapp.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>

@@ -14,10 +14,6 @@
 <meta property="og:image" content="https://getbroc.app/img/og.png">
 <meta property="og:url" content="https://getbroc.app/earn-screen-time/">
 <meta property="og:type" content="article">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/guide.css">
 
 <script type="application/ld+json">
@@ -38,7 +34,7 @@
       "name": "Which apps let you earn screen time?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Broc (Android) locks apps until daily habits are done and verifies them with AI photo checks or timers. Unrot's habit-and-brain-points app appears iPhone-only and earns coins for habits that unlock apps. A separate Android product formerly associated with the Unrot name is now called Untap."
+        "text": "Broc is available on iPhone and Android. It locks selected apps until daily habits are done and supports a tick, photo, timer, or time in another app. Unrot uses its own habit-and-credit system."
       }
     },
     {
@@ -118,10 +114,10 @@
   "headline": "App that makes you earn your screen time",
   "description": "Earned screen time flips the deal: your apps stay locked until real habits are done, then the scroll is the reward. How the mechanic works, which apps use it, and how Broc verifies the habit actually happened.",
   "image": [
-    "https://getbroc.app/img/shot_wall.png"
+    "https://getbroc.app/img/product-shield.webp"
   ],
   "datePublished": "2026-07-12",
-  "dateModified": "2026-07-14",
+  "dateModified": "2026-09-02",
   "mainEntityOfPage": "https://getbroc.app/earn-screen-time/",
   "author": {
     "@type": "Person",
@@ -139,15 +135,24 @@
   }
 }
 </script>
+<meta property="og:site_name" content="Broc">
+<meta property="og:image:alt" content="Broc: finish a habit to earn screen time">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600 800;font-display:swap;src:url('/fonts/bricolage-grotesque-latin.woff2') format('woff2')}
+@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/hanken-grotesk-latin.woff2') format('woff2')}
+</style>
 </head>
 <body>
 
-<div class="top">
+<nav class="top" aria-label="Primary">
   <div class="top-inner">
-    <a class="brand" href="/"><img src="/img/favicon.png" alt=""><span>Broc</span></a>
+    <a class="brand" href="/"><img src="/img/favicon.png" alt="" width="30" height="30"><span>Broc</span></a>
     <a class="back" href="/guides/">&larr; All guides</a>
   </div>
-</div>
+</nav>
 
 <div class="hero">
   <div class="hero-inner">
@@ -207,7 +212,7 @@ against you. This points it the other way.</p>
   </div>
   <div class="step">
     <h3>Spend the minutes, or bank the day</h3>
-    <p>Per-habit mode opens a timed window after each habit. All-habits-first
+    <p>Per-habit mode makes that habit's reward time available immediately. All-habits-first
     keeps everything locked until the day's list is cleared, then the evening
     is yours.</p>
   </div>
@@ -252,12 +257,8 @@ streak makes honesty cheaper than the shortcut, day after day.</p>
 unlimited habits, custom unlock durations, AI photo verification and full
 history. No ads.</p>
 
-<h3>iPhone?</h3>
-<p>Yes. Broc is available now on the
-<a class="app-store-link" href="https://apps.apple.com/app/id6803488648">App Store</a>.</p>
-
 <figure class="guide-figure">
-  <img src="/img/shot_wall.png" alt="Each completed habit earns a visible amount of screen time in Broc." loading="lazy" width="1080" height="2400">
+  <img src="/img/product-shield.webp" alt="Each completed habit earns a visible amount of screen time in Broc." loading="lazy" width="660" height="1434">
   <figcaption>Each completed habit earns a visible amount of screen time in Broc.</figcaption>
 </figure>
 
@@ -288,15 +289,7 @@ history. No ads.</p>
   </div>
 </footer>
 
-<script>
-  document.querySelectorAll('.play-link').forEach(function(a){
-    a.addEventListener('click', function(){
-      if (window.goatcounter && window.goatcounter.count) {
-        window.goatcounter.count({path: 'play-store-click', event: true});
-      }
-    });
-  });
-</script>
+
 
 <script data-goatcounter="https://vetoapp.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>

@@ -62,14 +62,56 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Broc available on iPhone and Android?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Broc is available on the App Store for iOS 16 or later and on Google Play for Android."}
+    },
+    {
+      "@type": "Question",
+      "name": "How does Broc block apps?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Broc keeps selected apps blocked until your chosen habit condition is complete. iPhone uses Apple's Screen Time shields. Android uses Usage Access and an overlay."}
+    },
+    {
+      "@type": "Question",
+      "name": "What does Broc see on my phone?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Android compares the open app with your block list on-device. Apple gives Broc private Screen Time selection tokens rather than app identities. Broc does not keylog, record your screen, or read browsing history."}
+    },
+    {
+      "@type": "Question",
+      "name": "What does Broc cost?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Broc is a subscription with a 7-day free trial. One plan includes unlimited habits, custom unlock durations, photo verification, and progress history. Broc has no ads."}
+    },
+    {
+      "@type": "Question",
+      "name": "How do I cancel or delete my Broc account?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Cancel through Apple or Google subscription settings. Deleting the app or account does not cancel billing. Delete your Broc account in Settings or follow the account-deletion page."}
+    },
+    {
+      "@type": "Question",
+      "name": "What should I do if blocking stops working?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Check that blocking is on in Broc's Lock tab and that system permissions remain granted. Review Screen Time access on iPhone or Usage Access and Appear on top on Android."}
+    }
+  ]
+}
+</script>
+
+<link rel="preload" href="/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 
 <style>
+  @font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600 800;
+    font-display:swap;src:url('/fonts/bricolage-grotesque-latin.woff2') format('woff2');}
+  @font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:400 700;
+    font-display:swap;src:url('/fonts/hanken-grotesk-latin.woff2') format('woff2');}
   :root{
-    --white:#FFFFFF; --grey:#F5F6F8; --navy:#0A1420;
-    --ink:#0D1522; --body:#55627A; --muted:#828EA3;
+    --white:#FFFFFF; --grey:#F4F0E8; --navy:#07111E;
+    --ink:#0D1522; --body:#55627A; --muted:#626C7C;
     --blue:#1452FF; --blue-deep:#0E3ECC;
     --hairline:#E5E9F0;
   }
@@ -78,6 +120,7 @@
   body{font-family:'Hanken Grotesk',system-ui,sans-serif; background:var(--white);
        color:var(--ink); font-size:17px; line-height:1.55; -webkit-font-smoothing:antialiased;}
   a{color:inherit; text-decoration:none;}
+  a:focus-visible,summary:focus-visible{outline:3px solid var(--blue); outline-offset:4px; border-radius:4px;}
   img{max-width:100%; height:auto; display:block;}
   h1,h2{font-family:'Bricolage Grotesque',sans-serif; font-weight:800;
        letter-spacing:-0.032em; line-height:1.05; color:var(--ink);}
@@ -104,6 +147,7 @@
   .tlink{color:var(--blue); font-weight:600; font-size:16.5px;}
   .tlink:hover{text-decoration:underline;}
   .tlink::after{content:' \203A';}
+  .hero .tlink{color:#8FAAFF;}
 
   /* ── Tiles: edge-to-edge slides, centered content ── */
   .tile{padding:110px 22px 0; text-align:center; overflow:hidden;}
@@ -119,17 +163,24 @@
   .tile .visual.crop{padding-bottom:0;}
 
   /* Hero */
-  .hero{padding-top:72px;}
+  .hero{padding-top:72px; background:var(--navy);}
+  .hero h1{color:#fff;}
+  .hero .tag{color:rgba(255,255,255,.72);}
+  .hero .note{color:rgba(255,255,255,.72);}
   .hero h1{font-size:clamp(46px,7vw,86px); letter-spacing:-0.038em; max-width:900px;
       margin:22px auto 0;}
   .hero .tag{max-width:560px;}
-  .hero-badge{display:inline-block; font-size:13px; font-weight:600; color:var(--body);
-      background:var(--grey); border-radius:999px; padding:7px 16px;}
+  .hero-badge{display:inline-block; font-size:13px; font-weight:600; color:#DDE6FF;
+      background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14);
+      border-radius:999px; padding:7px 16px;}
 
   /* Phones */
   .phone{width:min(340px,80vw); margin:0 auto; border-radius:44px; background:#0B121C;
       padding:11px; box-shadow:0 50px 100px -34px rgba(13,21,34,0.42);}
-  .phone img{border-radius:34px;}
+  .phone img{aspect-ratio:660/1434; border-radius:34px;}
+  .phone.store-shot{padding:0; background:transparent; border-radius:28px;
+      box-shadow:0 36px 90px -36px rgba(0,0,0,.55); overflow:hidden;}
+  .phone.store-shot img{border-radius:28px;}
   .phone.cropped{border-radius:44px 44px 0 0; padding-bottom:0;
       box-shadow:0 -20px 80px -40px rgba(13,21,34,0.30);}
   .phone.cropped img{border-radius:34px 34px 0 0;}
@@ -182,14 +233,14 @@
   .tile.dark{padding-bottom:120px;}
   .tile.dark h2{color:#fff; font-size:clamp(38px,5.4vw,64px);}
   .tile.dark .tag{color:rgba(255,255,255,0.60);}
-  .tile.dark .note{color:rgba(255,255,255,0.40);}
+  .tile.dark .note{color:rgba(255,255,255,0.72);}
 
   /* ── Footer ── */
   footer{background:var(--grey); font-size:13.5px; color:var(--body);}
   .foot-wrap{max-width:1024px; margin:0 auto; padding:0 22px;}
   .foot-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:36px; padding:48px 0 36px;}
   .foot-brand p{margin-top:12px; max-width:24ch; line-height:1.55; color:var(--muted);}
-  .foot-col h4{font-size:12px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase;
+  .foot-heading{font-size:12px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase;
       color:var(--muted);}
   .foot-col a{display:block; margin-top:12px;}
   .foot-col a:hover{color:var(--ink);}
@@ -198,8 +249,7 @@
   .foot-base a:hover{color:var(--ink);}
 
   /* ── Reveal ── */
-  .rv{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
-  .rv.in{opacity:1; transform:none;}
+  .rv{opacity:1; transform:none;}
   @media (prefers-reduced-motion: reduce){
     .rv{opacity:1; transform:none; transition:none;}
     html{scroll-behavior:auto;}
@@ -220,6 +270,8 @@
     .tile.dark{padding-bottom:88px;}
   }
 </style>
+<meta name="robots" content="index,follow">
+<meta property="og:image:alt" content="Broc: finish a habit to earn screen time">
 </head>
 <body>
 
@@ -253,10 +305,12 @@
   <span class="note">7-day free trial &middot; No ads &middot; iPhone and Android</span>
   <div class="visual crop">
     <div class="phone cropped">
-      <img src="img/shot_wall.png" alt="Broc blocking TikTok: 'Do a habit, earn your scroll' over today's habit list with the minutes each one unlocks" width="1080" height="2400" fetchpriority="high">
+      <img src="img/product-shield.webp" alt="Broc's iPhone shield asking the user to finish a habit before opening a distracting app" width="660" height="1434" fetchpriority="high">
     </div>
   </div>
 </header>
+
+<main>
 
 <!-- ── How it works ──────────────────────────────────────────────────── -->
 <section class="tile grey" id="how">
@@ -273,14 +327,14 @@
     <div class="how-col rv" style="transition-delay:.07s">
       <span class="num">02</span>
       <h3>Do the habit</h3>
-      <p>Read, train, study, anything you set. Prove it with a photo or a timer,
-        so a tapped checkbox is never enough.</p>
+      <p>Read, train, study—anything you set. Use a tick, photo, timer, or verified
+        time in another app.</p>
     </div>
     <div class="how-col rv" style="transition-delay:.14s">
       <span class="num">03</span>
       <h3>Earn it back</h3>
-      <p>Each finished habit unlocks real minutes. Streaks track every day
-        you show up.</p>
+      <p>Each finished habit makes real minutes available. Broc tracks what you
+        completed and how that time was used.</p>
     </div>
   </div>
 </section>
@@ -293,8 +347,8 @@
       Until the habit is done, the app stays locked.</p>
   </div>
   <div class="visual rv">
-    <div class="phone">
-      <img src="img/shot_lock_dark.png" alt="Broc's Lock tab: blocking active, with TikTok, Instagram, YouTube and X locked" loading="lazy" width="1080" height="2400">
+    <div class="phone store-shot">
+      <img src="img/product-lock.webp" alt="Broc's current Lock tab with blocking enabled and four distracting apps selected" loading="lazy" width="660" height="1434">
     </div>
   </div>
 </section>
@@ -302,29 +356,29 @@
 <section class="tile grey">
   <div class="rv">
     <h2>Proof, not promises.</h2>
-    <p class="tag">Broc's AI checks a photo of the finished habit. Or a timer counts
-      your minutes while you stay. Your call, per habit.</p>
+    <p class="tag">Choose the proof that fits: a simple tick, a photo check, a timer,
+      or time completed in another app.</p>
   </div>
   <div class="visual rv">
-    <div class="phone">
-      <img src="img/shot_verify.png" alt="Broc AI photo verification: a camera viewfinder framing an open book with 'Capture and verify'" loading="lazy" width="1080" height="2400">
+    <div class="phone store-shot">
+      <img src="img/product-photo.webp" alt="Broc's current photo-proof camera showing an open book and one Take photo action" loading="lazy" width="660" height="1434">
     </div>
   </div>
 </section>
 
 <section class="tile">
   <div class="rv">
-    <h2>Momentum you can see.</h2>
-    <p class="tag">One clean list for the day. Streaks and a four-week grid for
-      every habit. The record of every day you followed through.</p>
+    <h2>Your day, then the pattern.</h2>
+    <p class="tag">Today separates what remains from what is complete. Progress shows
+      four weeks of habits, unlocked time, blocked-app use, and stopped opens.</p>
   </div>
   <div class="visual rv">
     <div class="duo">
-      <div class="phone">
-        <img src="img/shot_today_dark.png" alt="Broc's Today tab: the day's habits grouped by category with streaks and an open unlock window" loading="lazy" width="1080" height="2400">
+      <div class="phone store-shot">
+        <img src="img/product-today.webp" alt="Broc's current Today tab showing Time unlocked, Remaining habits, and Completed habits" loading="lazy" width="660" height="1434">
       </div>
-      <div class="phone">
-        <img src="img/shot_progress_dark.png" alt="Broc's Progress tab: streak stats, weekly chart, and per-habit completion grids" loading="lazy" width="1080" height="2400">
+      <div class="phone store-shot">
+        <img src="img/product-progress.webp" alt="Broc's current Progress tab showing the last four weeks of completed habits and unlocked-time use" loading="lazy" width="660" height="1434">
       </div>
     </div>
   </div>
@@ -347,8 +401,8 @@
     </details>
     <details>
       <summary>What does it cost?<span class="ic">+</span></summary>
-      <p class="a">Broc is a subscription with a 7-day free trial. One plan, everything in:
-        unlimited habits, custom unlock durations, AI photo verification, and full history.
+      <p class="a">Broc is a subscription with a 7-day free trial. One plan includes
+        unlimited habits, custom unlock durations, photo verification, and progress history.
         No ads, ever.</p>
     </details>
     <details>
@@ -372,7 +426,26 @@
     <details>
       <summary>Is Broc on iPhone and Android?<span class="ic">+</span></summary>
       <p class="a">Yes. Broc is available on the <a class="app-store-link" href="https://apps.apple.com/app/id6803488648">App Store</a>
-        and <a class="play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dhome">Google Play</a>.</p>
+        for iOS 16 or later and on <a class="play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dhome">Google Play</a> for Android.</p>
+    </details>
+    <details>
+      <summary>Does blocking work differently on iPhone?<span class="ic">+</span></summary>
+      <p class="a">The outcome is the same, but the system controls differ. iPhone uses
+        Apple's Screen Time picker and shields; Android uses Usage Access and an overlay.
+        Apple keeps selected app identities private from Broc.</p>
+    </details>
+    <details>
+      <summary>How do I cancel or delete my account?<span class="ic">+</span></summary>
+      <p class="a">Cancel in your Apple or Google subscription settings. Deleting Broc
+        does not cancel billing. Delete your Broc account from Settings, or follow the
+        <a href="/delete-account/">account-deletion steps</a>.</p>
+    </details>
+    <details>
+      <summary>What if blocking stops working?<span class="ic">+</span></summary>
+      <p class="a">Open Broc's Lock tab and check that blocking is on and permissions
+        are still granted. On iPhone, review Screen Time access; on Android, review Usage
+        Access and Appear on top. If it persists, email
+        <a href="mailto:developer@getbroc.app">developer@getbroc.app</a>.</p>
     </details>
   </div>
 </section>
@@ -400,6 +473,8 @@
   </div>
 </section>
 
+</main>
+
 <!-- ── Footer ────────────────────────────────────────────────────────── -->
 <footer>
   <div class="foot-wrap">
@@ -412,7 +487,7 @@
         <p>The habit app blocker.<br>You against your phone.</p>
       </div>
       <div class="foot-col">
-        <h4>Product</h4>
+        <p class="foot-heading">Product</p>
         <a href="#how">How it works</a>
         <a href="#features">Features</a>
         <a href="#faq">FAQ</a>
@@ -420,7 +495,7 @@
         <a class="play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dhome">Google Play</a>
       </div>
       <div class="foot-col">
-        <h4>Guides</h4>
+        <p class="foot-heading">Guides</p>
         <a href="/guides/">All guides</a>
         <a href="/about/">About</a>
         <a href="/habit-app-blocker/">What is a habit app blocker?</a>
@@ -434,7 +509,7 @@
         <a href="/ai-photo-verification/">AI photo verification</a>
       </div>
       <div class="foot-col">
-        <h4>Legal</h4>
+        <p class="foot-heading">Legal</p>
         <a href="/privacy/">Privacy policy</a>
         <a href="/terms/">Terms of service</a>
         <a href="/delete-account/">Delete account</a>
@@ -447,24 +522,7 @@
   </div>
 </footer>
 
-<script>
-  // Count Play-store clicks.
-  document.querySelectorAll('.play-link').forEach(function(a){
-    a.addEventListener('click', function(){
-      if (window.goatcounter && window.goatcounter.count) {
-        window.goatcounter.count({path: 'play-store-click', event: true});
-      }
-    });
-  });
 
-  // Scroll reveal (respects prefers-reduced-motion via CSS).
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
-    });
-  }, {rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
-</script>
 
 <!-- GoatCounter (free, cookieless analytics). Dashboard:
      https://vetoapp.goatcounter.com -->

@@ -1,28 +1,41 @@
-// PostHog product analytics (EU cloud). Loaded on marketing pages only.
-// The project key is a public client-side key. Paste it once here and every
-// page picks it up. Until then this file is a no-op.
+// Explicit store-click analytics only. No SDK, cookies, local storage, page-view
+// capture, session recording, or person profile is used on the website.
 var POSTHOG_KEY = 'phc_wRz5xJg9EYqBMPUZ7NzUMVeUs9aVGrCJLVAVeLXWHPG9';
+var analyticsPageId = window.crypto && window.crypto.randomUUID
+  ? window.crypto.randomUUID()
+  : String(Date.now()) + '-' + Math.random().toString(36).slice(2);
 
-if (POSTHOG_KEY.indexOf('REPLACE_ME') === -1) {
-  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+function captureStoreClick(eventName) {
+  if (navigator.doNotTrack === '1' || window.doNotTrack === '1') return;
 
-  posthog.init(POSTHOG_KEY, {
-    api_host: 'https://eu.i.posthog.com',
-    defaults: '2025-05-24'
-  });
-
-  // Mirror the GoatCounter events so both tools see the same funnel.
-  document.querySelectorAll('.play-link').forEach(function (a) {
-    a.addEventListener('click', function () {
-      posthog.capture('play_store_click');
-    });
-  });
-  document.querySelectorAll('.app-store-link').forEach(function (a) {
-    a.addEventListener('click', function () {
-      if (window.goatcounter && window.goatcounter.count) {
-        window.goatcounter.count({path: 'app-store-click', event: true});
+  // PostHog's public API accepts anonymous events directly. keepalive lets the
+  // request finish while the browser follows the store link.
+  fetch('https://eu.i.posthog.com/i/v0/e/', {
+    method: 'POST',
+    keepalive: true,
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      api_key: POSTHOG_KEY,
+      distinct_id: analyticsPageId,
+      event: eventName,
+      properties: {
+        '$process_person_profile': false,
+        '$current_url': window.location.href
       }
-      posthog.capture('app_store_click');
+    })
+  }).catch(function () {});
+}
+
+function attachStoreAnalytics(selector, goatPath, posthogEvent) {
+  document.querySelectorAll(selector).forEach(function (link) {
+    link.addEventListener('click', function () {
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({path: goatPath, event: true});
+      }
+      captureStoreClick(posthogEvent);
     });
   });
 }
+
+attachStoreAnalytics('.play-link', 'play-store-click', 'play_store_click');
+attachStoreAnalytics('.app-store-link', 'app-store-click', 'app_store_click');

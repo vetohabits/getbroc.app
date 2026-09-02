@@ -14,10 +14,6 @@
 <meta property="og:image" content="https://getbroc.app/img/og.png">
 <meta property="og:url" content="https://getbroc.app/app-that-blocks-distractions/">
 <meta property="og:type" content="article">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/guide.css">
 
 <script type="application/ld+json">
@@ -104,10 +100,10 @@
   "headline": "What is a habit app blocker?",
   "description": "A habit app blocker locks your distracting apps until your real habits are done, instead of running a timer you can ignore. How it works, why it sticks, and how Broc does it on Android.",
   "image": [
-    "https://getbroc.app/img/shot_wall.png"
+    "https://getbroc.app/img/product-shield.webp"
   ],
   "datePublished": "2026-07-12",
-  "dateModified": "2026-07-14",
+  "dateModified": "2026-09-02",
   "mainEntityOfPage": "https://getbroc.app/habit-app-blocker/",
   "author": {
     "@type": "Person",
@@ -125,15 +121,24 @@
   }
 }
 </script>
+<meta property="og:site_name" content="Broc">
+<meta property="og:image:alt" content="Broc: finish a habit to earn screen time">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600 800;font-display:swap;src:url('/fonts/bricolage-grotesque-latin.woff2') format('woff2')}
+@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/hanken-grotesk-latin.woff2') format('woff2')}
+</style>
 </head>
 <body>
 
-<div class="top">
+<nav class="top" aria-label="Primary">
   <div class="top-inner">
-    <a class="brand" href="/"><img src="/img/favicon.png" alt=""><span>Broc</span></a>
+    <a class="brand" href="/"><img src="/img/favicon.png" alt="" width="30" height="30"><span>Broc</span></a>
     <a class="back" href="/guides/">&larr; All guides</a>
   </div>
-</div>
+</nav>
 
 <div class="hero">
   <div class="hero-inner">
@@ -206,7 +211,7 @@ much lower bar than mind reading and a much higher one than tapping a box.</p>
   messages and banking stay open.</li>
 </ul>
 
-<p>Broc is the gate version of this for Android: you choose the apps, set the
+<p>Broc is the gate version of this on iPhone and Android: you choose the apps, set the
 habits that unlock them, and the apps stay shut until the habit is done. There
 is no snooze, because a snooze is the thing that breaks every other design on
 this page. If you want to see how the unlock is calculated, the
@@ -221,15 +226,7 @@ this page. If you want to see how the unlock is calculated, the
   </div>
 </footer>
 
-<script>
-  document.querySelectorAll('.play-link').forEach(function(a){
-    a.addEventListener('click', function(){
-      if (window.goatcounter && window.goatcounter.count) {
-        window.goatcounter.count({path: 'play-store-click', event: true});
-      }
-    });
-  });
-</script>
+
 
 <script data-goatcounter="https://vetoapp.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>

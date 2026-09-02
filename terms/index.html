@@ -14,11 +14,6 @@
 <meta property="og:image" content="https://getbroc.app/img/og.png">
 <meta property="og:url" content="https://getbroc.app/terms/">
 <meta property="og:type" content="website">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-
 <style>
   :root{ --navy:#0A1428; --cobalt:#1452FF; --ink:#1B2430; --dim:#4A5568; --hairline:#E4E8EF; }
   *{margin:0; padding:0; box-sizing:border-box;}
@@ -45,20 +40,29 @@
   .foot-inner{max-width:800px; margin:0 auto; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;}
   footer a{color:var(--dim);}
 </style>
+<meta property="og:site_name" content="Broc">
+<meta property="og:image:alt" content="Broc: finish a habit to earn screen time">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600 800;font-display:swap;src:url('/fonts/bricolage-grotesque-latin.woff2') format('woff2')}
+@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/hanken-grotesk-latin.woff2') format('woff2')}
+</style>
 </head>
 <body>
 
-<div class="top">
+<nav class="top" aria-label="Primary">
   <div class="top-inner">
-    <a class="brand" href="/"><img src="/img/favicon.png" alt=""><span>Broc</span></a>
+    <a class="brand" href="/"><img src="/img/favicon.png" alt="" width="30" height="30"><span>Broc</span></a>
     <a class="back" href="/">&larr; getbroc.app</a>
   </div>
-</div>
+</nav>
 
 <main>
 
 <h1>TERMS OF USE</h1>
-<p class="subtitle"><strong>Last updated 24 August 2026</strong></p>
+<p class="subtitle"><strong>Last updated 2 September 2026</strong></p>
 
 <h2>AGREEMENT TO OUR LEGAL TERMS</h2>
 <p>We are Shay Gavan, trading as Broc ("<strong>Company</strong>", "<strong>we</strong>",
@@ -196,7 +200,7 @@ trial, your app store account will be charged for your chosen subscription unles
 before the trial ends. You can cancel at any time during the trial in your app store subscription
 settings.</p>
 <h3>Billing and Renewal</h3>
-<p>Use of the App requires a paid subscription ("<strong>Broc Pro</strong>"). Your subscription
+<p>Use of the App requires an active paid subscription after any trial. Your subscription
 will continue and automatically renew unless cancelled. You consent to recurring charges to your
 app store account payment method, without requiring prior approval for each recurring charge,
 until you cancel. The length of your billing cycle depends on the subscription plan you choose.</p>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How Broc works: block, do the habit, earn your screen time</title>
-<meta name="description" content="The full tour of Broc for Android. How blocking works, both unlock modes, photo and timer verification, the permissions it needs and why, and the price.">
+<meta name="description" content="How Broc blocks distracting apps on iPhone and Android, turns completed habits into screen time, verifies habits, and protects your privacy.">
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="canonical" href="https://getbroc.app/how-broc-works/">
@@ -14,9 +14,6 @@
 <meta property="og:image" content="https://getbroc.app/img/og.png">
 <meta property="og:url" content="https://getbroc.app/how-broc-works/">
 <meta property="og:type" content="article">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/guide.css">
 <script type="application/ld+json">
 {
@@ -28,7 +25,7 @@
       "name": "How does Broc block apps?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Broc uses Android's Usage Access permission to see which app is in the foreground. If it's on your block list and you haven't earned time, Broc shows its wall over the app: your habit list and what each habit unlocks. No snooze, no ignore button."
+        "text": "On iPhone, Broc uses Apple's Screen Time controls to shield selected apps. On Android, Usage Access detects a selected app and an overlay redirects you to your habits. Both platforms keep those apps blocked until your chosen unlock condition is met."
       }
     },
     {
@@ -36,7 +33,7 @@
       "name": "What permissions does Broc need and why?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Two are essential: Usage Access, to know which app is open (only the app name, never content), and Display over other apps, to show the wall. Camera is optional for photo verification, notifications are optional for reminders. No keylogging, no screen recording, no browsing history."
+        "text": "iPhone asks for Screen Time access through Apple's private picker. Android asks for Usage Access and Appear on top. Camera is optional for photo proof and notifications are optional for reminders. Broc does not keylog, record your screen, or read browsing history."
       }
     },
     {
@@ -44,7 +41,7 @@
       "name": "What are Broc's unlock modes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Per habit: each completed habit opens a timed window of screen time. All habits first: everything stays locked until the whole day's list is done. Time can be counted as a window (a countdown once unlocked) or a budget you spend across the day."
+        "text": "Per habit makes each habit's reward time available as soon as it is complete. All habits first keeps selected apps blocked until the full daily list is complete. Earned time is used only while a selected app is in use."
       }
     },
     {
@@ -52,7 +49,7 @@
       "name": "What does Broc cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Broc is a subscription with a 7-day free trial. One plan, everything in: unlimited habits, custom unlock durations, AI photo verification and full history. No ads."
+        "text": "Broc requires a subscription after any introductory trial shown in your app store. The plan includes unlimited habits, custom unlock durations, photo verification, and progress history. Broc has no ads."
       }
     }
   ]
@@ -63,12 +60,12 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "How Broc works",
-  "description": "The full tour of Broc for Android: how blocking works, the two unlock modes, photo and timer verification, exactly which permissions it needs and why, and what it costs.",
+  "description": "The full tour of Broc for iPhone and Android: blocking, unlock modes, habit proof, platform permissions, privacy, and subscriptions.",
   "image": [
-    "https://getbroc.app/img/shot_wall.png"
+    "https://getbroc.app/img/product-shield.webp"
   ],
   "datePublished": "2026-07-12",
-  "dateModified": "2026-07-14",
+  "dateModified": "2026-09-02",
   "mainEntityOfPage": "https://getbroc.app/how-broc-works/",
   "author": {
     "@type": "Person",
@@ -86,15 +83,24 @@
   }
 }
 </script>
+<meta property="og:site_name" content="Broc">
+<meta property="og:image:alt" content="Broc: finish a habit to earn screen time">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600 800;font-display:swap;src:url('/fonts/bricolage-grotesque-latin.woff2') format('woff2')}
+@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/hanken-grotesk-latin.woff2') format('woff2')}
+</style>
 </head>
 <body>
 
-<div class="top">
+<nav class="top" aria-label="Primary">
   <div class="top-inner">
-    <a class="brand" href="/"><img src="/img/favicon.png" alt=""><span>Broc</span></a>
+    <a class="brand" href="/"><img src="/img/favicon.png" alt="" width="30" height="30"><span>Broc</span></a>
     <a class="back" href="/guides/">&larr; All guides</a>
   </div>
-</div>
+</nav>
 
 <div class="hero">
   <div class="hero-inner">
@@ -113,42 +119,39 @@
 <div class="steps">
   <div class="step">
     <h3>Block</h3>
-    <p>Pick any apps on your phone: TikTok, Instagram, YouTube, games,
-    browsers. Opening one shows Broc's wall: the badger, your habit list,
-    and what each habit earns.</p>
+    <p>Choose the apps that pull you in. iPhone uses Apple's Screen Time
+    shields; Android redirects a selected app to Broc's habit wall.</p>
   </div>
   <div class="step">
     <h3>Do the habit</h3>
     <p>Set anything concrete: read 10 pages, work out, meditate, tidy up.
-    Reorder them, group them by category, give each its own reward size.</p>
+    Give each habit its own proof method and unlock duration.</p>
   </div>
   <div class="step">
     <h3>Prove it (your choice per habit)</h3>
     <p>Photo: snap the open book or the gym and Broc's AI checks it matches.
-    Timer: the minutes count while you stay in the app and pause if you
-    leave. Or honesty mode with no proof at all.</p>
+    Timer: the minutes count while you stay in Broc. In app: complete time in
+    another chosen app. Or use a direct tick when proof is unnecessary.</p>
   </div>
   <div class="step">
     <h3>Earn and spend</h3>
-    <p>Completed habits unlock screen time. Spend it; when it's gone the
-    wall returns until the next habit. Streaks and a four-week grid track
-    every day you follow through.</p>
+    <p>Completed habits unlock screen time. Earned time is consumed only while
+    a selected app is being used. Progress shows the last four weeks and what
+    Broc stopped.</p>
   </div>
 </div>
 
 <h2>The two unlock modes</h2>
 
-<p><strong>Per habit</strong> is the daily driver: each finished habit opens
-a timed window (you set the size per habit; the workout can pay more than
-the dishes). <strong>All habits first</strong> is strict mode: nothing on
-the block list opens until the entire day's list is cleared. Exam weeks,
-training blocks, mornings: see
+<p><strong>Per habit</strong> makes each habit's reward time available as soon
+as that habit is complete. <strong>All habits first</strong> keeps the whole
+block list closed until the daily list is cleared. Exam weeks, training blocks,
+and mornings are natural uses; see
 <a href="/block-apps-in-the-morning/">the morning setup</a>.</p>
 
-<p>Time itself can run as a <strong>window</strong> (a countdown that starts
-when you unlock) or a <strong>budget</strong> (a pool you spend across the
-day, pausing when you leave the app). Window is simpler; budget is fairer
-if you scroll in short bursts.</p>
+<p>Reward time works as a usage budget. It decreases while a selected app is
+in use and remains available when you leave. The older window timer is no
+longer offered in the current app.</p>
 
 <h2>Verification, honestly explained</h2>
 
@@ -163,9 +166,10 @@ when you leave. Both exist so the unlock means something.</p>
 <h2>Permissions: what Broc sees and doesn't</h2>
 
 <table>
-  <tr><th>Permission</th><th>Why</th><th>What it can't do</th></tr>
-  <tr><td>Usage access</td><td>Know which app is in the foreground, to compare against your block list</td><td>Can't read content, messages or browsing history</td></tr>
-  <tr><td>Display over other apps</td><td>Show the wall over a blocked app</td><td>Nothing else; it's how the wall appears</td></tr>
+  <tr><th>Platform access</th><th>Why</th><th>Privacy boundary</th></tr>
+  <tr><td>iPhone Screen Time</td><td>Select and shield apps, categories, or websites</td><td>Apple gives Broc private tokens, not app names or usage history</td></tr>
+  <tr><td>Android Usage Access</td><td>Compare the foreground app with your block list</td><td>Cannot read content, messages, or browsing history</td></tr>
+  <tr><td>Android Appear on top</td><td>Show Broc's wall over a selected app</td><td>Used only for the blocking surface</td></tr>
   <tr><td>Camera (optional)</td><td>Photo verification, only when you take a photo</td><td>Never records in the background</td></tr>
   <tr><td>Notifications (optional)</td><td>Daily reminders</td><td>Off means off; blocking works without them</td></tr>
 </table>
@@ -188,20 +192,20 @@ lives in the <a href="/privacy/">privacy policy</a>.</p>
 
 <h2>Pricing</h2>
 
-<p>Broc is a subscription with a 7-day free trial. One plan, everything in:
-unlimited habits, custom unlock durations, AI photo verification and full
-history. Habits and streaks sync to your account, so a new phone picks up
-where you left off. Broc is available on the
+<p>Broc requires an active subscription after any introductory trial shown in
+your app store. One plan includes unlimited habits, custom unlock durations,
+photo verification, and progress history. Account-backed habit data syncs,
+while Apple's private Screen Time selections remain on the iPhone. Broc is available on the
 <a class="app-store-link" href="https://apps.apple.com/app/id6803488648">App Store</a>
 and Google Play.</p>
 
 <figure class="guide-figure">
-  <img src="/img/shot_wall.png" alt="Broc's lock wall shows the habits standing between you and the feed." loading="lazy" width="1080" height="2400">
-  <figcaption>Broc's lock wall shows the habits standing between you and the feed.</figcaption>
+  <img src="/img/product-shield.webp" alt="Broc's iPhone shield asks the user to finish a habit before opening a distracting app." loading="lazy" width="660" height="1434">
+  <figcaption>On iPhone, Broc uses Apple's supported Screen Time shield.</figcaption>
 </figure>
 
 <div class="cta">
-  <p>Seven days free. The wall goes up in minutes.</p>
+  <p>Set the wall up in minutes. Your store shows the current trial and price.</p>
   <div class="store-buttons">
     <a class="btn app-store-link" href="https://apps.apple.com/app/id6803488648">Download on the App Store</a>
     <a class="btn play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dhow-broc-works">Get Broc on Google Play</a>
@@ -227,21 +231,13 @@ and Google Play.</p>
   </div>
 </footer>
 
-<script>
-  document.querySelectorAll('.play-link').forEach(function(a){
-    a.addEventListener('click', function(){
-      if (window.goatcounter && window.goatcounter.count) {
-        window.goatcounter.count({path: 'play-store-click', event: true});
-      }
-    });
-  });
-</script>
+
 <script data-goatcounter="https://vetoapp.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 <script src="/js/ph.js" defer></script>
 
 <div class="install-bar">
-  <span>7-day free trial, then a subscription.</span>
+  <span>Subscription required after any store trial.</span>
   <a class="app-store-link" href="https://apps.apple.com/app/id6803488648">Get Broc for iPhone</a>
   <a class="play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dhow-broc-works">Get Broc for Android</a>
 </div>

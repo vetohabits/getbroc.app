@@ -14,10 +14,6 @@
 <meta property="og:image" content="https://getbroc.app/img/og.png">
 <meta property="og:url" content="https://getbroc.app/habit-app-blocker/">
 <meta property="og:type" content="article">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/guide.css">
 
 <script type="application/ld+json">
@@ -30,7 +26,7 @@
       "name": "What is a habit app blocker?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A habit app blocker locks your distracting apps until you complete real-world habits, instead of unlocking after a timer or a delay. Broc is a habit app blocker for Android: you block apps like TikTok and Instagram, set daily habits like reading or the gym, and each finished habit earns screen time."
+        "text": "A habit app blocker locks distracting apps until you complete real-world habits, instead of unlocking after a delay. Broc is available on iPhone and Android: choose apps like TikTok and Instagram, set daily habits such as reading or the gym, and earn screen time when each habit is complete."
       }
     },
     {
@@ -54,7 +50,7 @@
       "name": "What does Broc cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Broc is a subscription with a 7-day free trial. One plan, everything in: unlimited habits, custom unlock durations, AI photo verification and full history. No ads."
+        "text": "Broc is a subscription with a 7-day free trial. One plan, everything in: unlimited habits, custom unlock durations, photo verification and progress history. No ads."
       }
     }
   ]
@@ -112,10 +108,10 @@
   "headline": "What is a habit app blocker?",
   "description": "A habit app blocker locks your distracting apps until your real habits are done, instead of running a timer you can ignore. How it works, why it sticks, and how Broc does it on Android.",
   "image": [
-    "https://getbroc.app/img/shot_wall.png"
+    "https://getbroc.app/img/product-shield.webp"
   ],
   "datePublished": "2026-07-12",
-  "dateModified": "2026-07-14",
+  "dateModified": "2026-09-02",
   "mainEntityOfPage": "https://getbroc.app/habit-app-blocker/",
   "author": {
     "@type": "Person",
@@ -133,15 +129,24 @@
   }
 }
 </script>
+<meta property="og:site_name" content="Broc">
+<meta property="og:image:alt" content="Broc: finish a habit to earn screen time">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600 800;font-display:swap;src:url('/fonts/bricolage-grotesque-latin.woff2') format('woff2')}
+@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/hanken-grotesk-latin.woff2') format('woff2')}
+</style>
 </head>
 <body>
 
-<div class="top">
+<nav class="top" aria-label="Primary">
   <div class="top-inner">
-    <a class="brand" href="/"><img src="/img/favicon.png" alt=""><span>Broc</span></a>
+    <a class="brand" href="/"><img src="/img/favicon.png" alt="" width="30" height="30"><span>Broc</span></a>
     <a class="back" href="/guides/">&larr; All guides</a>
   </div>
-</div>
+</nav>
 
 <div class="hero">
   <div class="hero-inner">
@@ -162,7 +167,7 @@ complete real-world habits. No countdown, no "take a breath" prompt, no ignore
 button. The feed opens when the reading, the workout, or the studying is done,
 because that's the deal you set.</p>
 
-<p>Broc is a habit app blocker for Android. You pick the apps that pull you in
+<p>Broc is a habit app blocker for iPhone and Android. You pick the apps that pull you in
 (Instagram, TikTok, YouTube, games), set your daily habits, and every finished
 habit earns minutes of screen time. Open a blocked app early and you see your
 habit list instead of the feed.</p>
@@ -238,17 +243,13 @@ history. No ads.</p>
 keylogging, no screen recording, no browsing history. Details in the
 <a href="/privacy/">privacy policy</a>.</p>
 
-<h3>iPhone?</h3>
-<p>Yes. Broc is available now on the
-<a class="app-store-link" href="https://apps.apple.com/app/id6803488648">App Store</a>.</p>
-
 <div class="source-note">
   <h2>Android controls checked</h2>
-  <p><strong>Reviewed 14 July 2026.</strong> The description of app timers and Focus mode follows Google's current <a href="https://support.google.com/android/answer/9346420?hl=en">Digital Wellbeing help</a>. Broc's habit-gate behaviour was checked against the production Android app.</p>
+  <p><strong>Reviewed 2 September 2026.</strong> The description of Android timers and Focus mode follows Google's current <a href="https://support.google.com/android/answer/9346420?hl=en">Digital Wellbeing help</a>. Broc's habit-gate behaviour was checked against the current iPhone and Android implementations.</p>
 </div>
 
 <figure class="guide-figure">
-  <img src="/img/shot_wall.png" alt="Broc's habit wall replaces a distracting app with the habits that unlock it." loading="lazy" width="1080" height="2400">
+  <img src="/img/product-shield.webp" alt="Broc's habit wall replaces a distracting app with the habits that unlock it." loading="lazy" width="660" height="1434">
   <figcaption>Broc's habit wall replaces a distracting app with the habits that unlock it.</figcaption>
 </figure>
 
@@ -281,15 +282,7 @@ keylogging, no screen recording, no browsing history. Details in the
   </div>
 </footer>
 
-<script>
-  document.querySelectorAll('.play-link').forEach(function(a){
-    a.addEventListener('click', function(){
-      if (window.goatcounter && window.goatcounter.count) {
-        window.goatcounter.count({path: 'play-store-click', event: true});
-      }
-    });
-  });
-</script>
+
 
 <script data-goatcounter="https://vetoapp.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>

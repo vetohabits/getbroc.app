@@ -14,11 +14,6 @@
 <meta property="og:image" content="https://getbroc.app/img/og.png">
 <meta property="og:url" content="https://getbroc.app/privacy/">
 <meta property="og:type" content="website">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-
 <style>
   :root{ --navy:#0A1428; --navy3:#08101F; --cobalt:#1452FF; --ink:#1B2430;
          --dim:#4A5568; --hairline:#E4E8EF; }
@@ -45,19 +40,28 @@
   .foot-inner{max-width:760px; margin:0 auto; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;}
   footer a{color:var(--dim);}
 </style>
+<meta property="og:site_name" content="Broc">
+<meta property="og:image:alt" content="Broc: finish a habit to earn screen time">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600 800;font-display:swap;src:url('/fonts/bricolage-grotesque-latin.woff2') format('woff2')}
+@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/hanken-grotesk-latin.woff2') format('woff2')}
+</style>
 </head>
 <body>
 
-<div class="top">
+<nav class="top" aria-label="Primary">
   <div class="top-inner">
-    <a class="brand" href="/"><img src="/img/favicon.png" alt=""><span>Broc</span></a>
+    <a class="brand" href="/"><img src="/img/favicon.png" alt="" width="30" height="30"><span>Broc</span></a>
     <a class="back" href="/">&larr; getbroc.app</a>
   </div>
-</div>
+</nav>
 
 <main>
 <h1>Privacy policy</h1>
-<p class="updated">Last updated: 24 August 2026</p>
+<p class="updated">Last updated: 2 September 2026</p>
 
 <p>This policy explains what Broc collects, why, and what you can do about it.
 Broc ("we", "us") makes a habit app that blocks chosen apps on your phone until
@@ -77,21 +81,21 @@ account identifier and email address that provider gives us and, where available
 name. Apple may provide a private relay address instead of your personal email. This is how your
 habits sync across devices.</p>
 <p><strong>Your habits and progress.</strong> The habits you create, your daily completions,
-your streaks, and your settings (such as reward mode and which apps you block).</p>
+unlock activity, and settings such as reward mode and which apps you block.</p>
 <p><strong>Your blocked-apps list.</strong> On Android, the package names and labels of the
 apps you choose are stored with your account so they can be restored. On
 iPhone, Apple keeps app identities private: the opaque Screen Time selection
 stays in Broc's App Group on your device and is not sent to our servers.</p>
-<p><strong>Purchase status.</strong> If you subscribe to Broc Pro, our payments provider tells
+<p><strong>Purchase status.</strong> If you subscribe to Broc, our payments provider tells
 us whether your subscription is active. We never see your card details.</p>
 <p><strong>Diagnostics.</strong> If the app crashes, we receive a crash report so we can fix the
 problem. It does not contain your habit content.</p>
-<p><strong>Product analytics.</strong> We use PostHog, hosted in the EU, to understand how the
-app and our website are used: events such as "habit created" or "first unlock",
-plus device model and app version. This shows us where Broc confuses people so
-we can fix it. It never includes your habit names, your photos, or the content
-of anything you do inside other apps. The website also uses GoatCounter, a
-cookieless page-view counter.</p>
+<p><strong>Product analytics.</strong> The app uses PostHog, hosted in the EU, for events such
+as "habit created" or "first unlock", plus device model and app version. It never
+includes habit names, photos, or content from other apps. This website uses
+PostHog in cookieless mode only for explicit App Store and Google Play clicks,
+and GoatCounter for cookieless page counts. Website session recording,
+autocapture, advertising profiles, and analytics cookies are disabled.</p>
 <p>We do not show ads and we do not sell your data.</p>
 
 <h2>Android blocking permissions</h2>
@@ -115,7 +119,7 @@ We do not use reminders for third-party advertising. On Android, the active
 blocking service also shows an ongoing status notification so you know it is
 running.</p>
 
-<h2>Photos for AI verification (Pro)</h2>
+<h2>Photos for AI verification</h2>
 <p>If you turn on photo verification for a habit, the photo you take is sent
 securely to our server and then to our AI provider (OpenAI) to check whether it
 matches the habit. We use the result (a pass or fail) to mark the habit done.
