@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Broc: Earn Your Screen Time. The habit app blocker.</title>
+<title>Broc: Block Distracting Apps Until Your Habits Are Done</title>
 <meta name="description" content="Broc blocks Instagram, TikTok, and YouTube until your daily habits are done. No snooze button. Earn your screen time on iPhone and Android.">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="canonical" href="https://getbroc.app/">
 
-<meta property="og:title" content="Broc: Earn Your Screen Time">
-<meta property="og:description" content="Blocks the apps that pull you in until your habits are done. No snooze button. You earn your screen time.">
+<meta property="og:title" content="Block distracting apps until your habits are done">
+<meta property="og:description" content="Broc keeps the apps you choose locked until you finish a habit. Available for iPhone and Android.">
 <meta property="og:site_name" content="Broc">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://getbroc.app/">
 <meta property="og:image" content="https://getbroc.app/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Broc: Earn Your Screen Time">
-<meta name="twitter:description" content="Blocks the apps that pull you in until your habits are done. No snooze button.">
+<meta name="twitter:title" content="Block distracting apps until your habits are done">
+<meta name="twitter:description" content="Broc keeps the apps you choose locked until you finish a habit. Available for iPhone and Android.">
 <meta name="twitter:image" content="https://getbroc.app/img/og.png">
 
 <script type="application/ld+json">
@@ -94,8 +94,8 @@
     },
     {
       "@type": "Question",
-      "name": "What should I do if blocking stops working?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Check that blocking is on in Broc's Lock tab and that system permissions remain granted. Review Screen Time access on iPhone or Usage Access and Appear on top on Android."}
+      "name": "Does blocking work differently on iPhone?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The outcome is the same, but the system controls differ. iPhone uses Apple's Screen Time picker and shields; Android uses Usage Access and an overlay."}
     }
   ]
 }
@@ -163,13 +163,19 @@
   .tile .visual.crop{padding-bottom:0;}
 
   /* Hero */
-  .hero{padding-top:72px; background:var(--navy);}
+  .hero{padding:72px 22px 0; background:var(--navy); text-align:left;}
+  .hero-shell{width:100%; max-width:1024px; margin:0 auto; display:grid;
+      grid-template-columns:minmax(0,1.15fr) minmax(280px,.65fr); align-items:center; gap:64px;}
+  .hero-copy{padding-bottom:72px;}
   .hero h1{color:#fff;}
   .hero .tag{color:rgba(255,255,255,.72);}
   .hero .note{color:rgba(255,255,255,.72);}
-  .hero h1{font-size:clamp(46px,7vw,86px); letter-spacing:-0.038em; max-width:900px;
-      margin:22px auto 0;}
-  .hero .tag{max-width:560px;}
+  .hero h1{font-size:clamp(46px,6.2vw,76px); letter-spacing:-0.038em; max-width:760px;
+      margin:20px 0 0;}
+  .hero .tag{max-width:520px; margin:20px 0 0;}
+  .hero .ctas{justify-content:flex-start; gap:12px;}
+  .hero .visual{align-self:end; margin:0; padding:0;}
+  .hero .phone{width:min(320px,100%);}
   .hero-badge{display:inline-block; font-size:13px; font-weight:600; color:#DDE6FF;
       background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14);
       border-radius:999px; padding:7px 16px;}
@@ -186,6 +192,8 @@
   .phone.cropped img{border-radius:34px 34px 0 0;}
   .duo{display:flex; justify-content:center; align-items:flex-start; gap:30px; flex-wrap:wrap;}
   .duo .phone{width:min(300px,80vw); margin:0;}
+  .feature-pair{flex-wrap:nowrap; gap:24px;}
+  .feature-pair .phone{width:min(280px,42vw);}
 
   /* ── How it works: quiet 3 columns ── */
   .how-grid{max-width:1024px; margin:72px auto 0; padding-bottom:110px;
@@ -195,14 +203,6 @@
   .how-col h3{font-family:'Bricolage Grotesque',sans-serif; font-size:21px; font-weight:700;
       letter-spacing:-0.02em; margin-top:12px;}
   .how-col p{margin-top:10px; font-size:15.5px; color:var(--body); line-height:1.6;}
-
-  /* ── Manifesto ── */
-  .manifesto{padding:130px 22px; text-align:center;}
-  .manifesto.grey{background:var(--grey);}
-  .manifesto p{font-family:'Bricolage Grotesque',sans-serif; font-weight:800;
-      letter-spacing:-0.03em; line-height:1.16; font-size:clamp(28px,4vw,46px);
-      max-width:820px; margin:0 auto; color:var(--muted);}
-  .manifesto p b{color:var(--ink); font-weight:800;}
 
   /* ── FAQ ── */
   .faq{padding:110px 22px;}
@@ -220,14 +220,6 @@
   details[open] summary .ic{transform:rotate(45deg);}
   details .a{padding:0 34px 24px 2px; font-size:15.5px; color:var(--body); max-width:62ch;}
   details .a a{color:var(--blue); font-weight:600;}
-
-  /* ── Download band ── */
-  .download{background:var(--grey); padding:56px 22px; text-align:center;}
-  .download h3{font-family:'Bricolage Grotesque',sans-serif; font-size:21px; font-weight:700;
-      letter-spacing:-0.02em;}
-  .download p{margin-top:6px; font-size:14.5px; color:var(--body);}
-  .download .ctas{margin-top:22px; display:flex; align-items:center; justify-content:center;
-      gap:14px; flex-wrap:wrap;}
 
   /* ── Final dark tile ── */
   .tile.dark{padding-bottom:120px;}
@@ -260,11 +252,20 @@
     .navlinks{display:none;}
     .tile{padding-top:76px;}
     .tile .visual{margin-top:48px; padding-bottom:76px;}
-    .hero{padding-top:56px;}
+    .hero{padding-top:56px; text-align:center;}
+    .hero-shell{grid-template-columns:1fr; gap:0;}
+    .hero-copy{padding-bottom:48px;}
+    .hero h1{margin-left:auto; margin-right:auto;}
+    .hero .tag{margin-left:auto; margin-right:auto;}
+    .hero .ctas{justify-content:center;}
+    .hero .visual{margin:0 auto;}
+    .hero h1{font-size:clamp(40px,11vw,46px);}
     .how-grid{grid-template-columns:1fr; gap:36px; margin-top:48px; padding-bottom:76px;}
-    .manifesto{padding:88px 22px;}
     .faq{padding:76px 22px;}
     .duo{gap:24px;}
+    .feature-pair{gap:12px;}
+    .feature-pair .phone{width:min(280px,43vw); border-radius:18px;}
+    .feature-pair .phone img{border-radius:18px;}
     .foot-grid{grid-template-columns:1fr 1fr; gap:28px;}
     .foot-brand{grid-column:1 / -1;}
     .tile.dark{padding-bottom:88px;}
@@ -293,19 +294,21 @@
 
 <!-- ── Hero ──────────────────────────────────────────────────────────── -->
 <header class="tile hero">
-  <span class="hero-badge">Now on the App Store and Google Play</span>
-  <h1>Earn your screen&nbsp;time.</h1>
-  <p class="tag">Broc locks Instagram, TikTok, and YouTube until your daily habits
-    are done. No snooze button.</p>
-  <div class="ctas">
-    <a class="pill lg app-store-link" href="https://apps.apple.com/app/id6803488648">Download on the App Store</a>
-    <a class="pill lg play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dhome">Get it on Google Play</a>
-    <a class="tlink" href="#how">See how it works</a>
-  </div>
-  <span class="note">7-day free trial &middot; No ads &middot; iPhone and Android</span>
-  <div class="visual crop">
-    <div class="phone cropped">
-      <img src="img/product-shield.webp" alt="Broc's iPhone shield asking the user to finish a habit before opening a distracting app" width="660" height="1434" fetchpriority="high">
+  <div class="hero-shell">
+    <div class="hero-copy">
+      <span class="hero-badge">Available on iPhone and Android</span>
+      <h1>Block distracting apps until your habits are done.</h1>
+      <p class="tag">Finish a habit to unlock the apps you chose for a set amount of time.</p>
+      <div class="ctas">
+        <a class="pill lg app-store-link" href="https://apps.apple.com/app/id6803488648">Get Broc for iPhone</a>
+        <a class="pill lg play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dhome">Get Broc for Android</a>
+      </div>
+      <span class="note">7-day free trial &middot; One subscription &middot; No ads</span>
+    </div>
+    <div class="visual crop">
+      <div class="phone cropped">
+        <img src="img/product-shield.webp" alt="Broc blocking a distracting app until a habit is complete" width="660" height="1434" fetchpriority="high">
+      </div>
     </div>
   </div>
 </header>
@@ -315,26 +318,23 @@
 <!-- ── How it works ──────────────────────────────────────────────────── -->
 <section class="tile grey" id="how">
   <div class="rv">
-    <h2>Three steps between<br>you and the feed.</h2>
+    <h2>How Broc works</h2>
   </div>
   <div class="how-grid">
     <div class="how-col rv">
       <span class="num">01</span>
       <h3>Block</h3>
-      <p>Pick the apps that pull you in. When you open one, Broc's wall shows up
-        instead of the feed.</p>
+      <p>Choose the apps you want to restrict. Broc blocks them when you try to open them.</p>
     </div>
     <div class="how-col rv" style="transition-delay:.07s">
       <span class="num">02</span>
       <h3>Do the habit</h3>
-      <p>Read, train, study—anything you set. Use a tick, photo, timer, or verified
-        time in another app.</p>
+      <p>Complete the habit using a tick, photo, timer, or verified time in another app.</p>
     </div>
     <div class="how-col rv" style="transition-delay:.14s">
       <span class="num">03</span>
       <h3>Earn it back</h3>
-      <p>Each finished habit makes real minutes available. Broc tracks what you
-        completed and how that time was used.</p>
+      <p>Use the app for the unlock time you set. When that time ends, it is blocked again.</p>
     </div>
   </div>
 </section>
@@ -342,52 +342,19 @@
 <!-- ── Feature tiles ─────────────────────────────────────────────────── -->
 <section class="tile" id="features">
   <div class="rv">
-    <h2>No snooze. No "5&nbsp;more&nbsp;minutes."</h2>
-    <p class="tag">Other blockers give you a delay to outlast. Broc gives you a wall.
-      Until the habit is done, the app stays locked.</p>
+    <h2>Choose the apps and habits.</h2>
+    <p class="tag">Select distracting apps, then set how each habit is completed: tick, timer, photo, or verified app time.</p>
   </div>
   <div class="visual rv">
-    <div class="phone store-shot">
-      <img src="img/product-lock.webp" alt="Broc's current Lock tab with blocking enabled and four distracting apps selected" loading="lazy" width="660" height="1434">
-    </div>
-  </div>
-</section>
-
-<section class="tile grey">
-  <div class="rv">
-    <h2>Proof, not promises.</h2>
-    <p class="tag">Choose the proof that fits: a simple tick, a photo check, a timer,
-      or time completed in another app.</p>
-  </div>
-  <div class="visual rv">
-    <div class="phone store-shot">
-      <img src="img/product-photo.webp" alt="Broc's current photo-proof camera showing an open book and one Take photo action" loading="lazy" width="660" height="1434">
-    </div>
-  </div>
-</section>
-
-<section class="tile">
-  <div class="rv">
-    <h2>Your day, then the pattern.</h2>
-    <p class="tag">Today separates what remains from what is complete. Progress shows
-      four weeks of habits, unlocked time, blocked-app use, and stopped opens.</p>
-  </div>
-  <div class="visual rv">
-    <div class="duo">
+    <div class="duo feature-pair">
       <div class="phone store-shot">
-        <img src="img/product-today.webp" alt="Broc's current Today tab showing Time unlocked, Remaining habits, and Completed habits" loading="lazy" width="660" height="1434">
+        <img src="img/product-lock.webp" alt="Broc's Lock tab with blocking enabled and four distracting apps selected" loading="lazy" width="660" height="1434">
       </div>
       <div class="phone store-shot">
-        <img src="img/product-progress.webp" alt="Broc's current Progress tab showing the last four weeks of completed habits and unlocked-time use" loading="lazy" width="660" height="1434">
+        <img src="img/product-photo.webp" alt="Broc's photo-proof camera framing a completed reading habit" loading="lazy" width="660" height="1434">
       </div>
     </div>
   </div>
-</section>
-
-<!-- ── Manifesto ─────────────────────────────────────────────────────── -->
-<section class="manifesto grey">
-  <p class="rv">Most blockers make you wait.
-    <b>Broc makes you do something.</b></p>
 </section>
 
 <!-- ── FAQ ───────────────────────────────────────────────────────────── -->
@@ -395,15 +362,15 @@
   <h2 class="rv">Questions</h2>
   <div class="faq-list rv">
     <details open>
-      <summary>Does it actually block apps?<span class="ic">+</span></summary>
-      <p class="a">Yes. When you open a blocked app, Broc's wall appears over it and stays
-        until your habits are done. There is no snooze and no "5 more minutes."</p>
+      <summary>How does Broc block apps?<span class="ic">+</span></summary>
+      <p class="a">When you open a blocked app, Broc's wall appears instead. Finish a habit
+        to unlock the app for the amount of time you set.</p>
     </details>
     <details>
       <summary>What does it cost?<span class="ic">+</span></summary>
       <p class="a">Broc is a subscription with a 7-day free trial. One plan includes
-        unlimited habits, custom unlock durations, photo verification, and progress history.
-        No ads, ever.</p>
+        unlimited habits, custom unlock times, photo verification, and progress history.
+        There are no ads.</p>
     </details>
     <details>
       <summary>What does Broc see on my phone?<span class="ic">+</span></summary>
@@ -411,17 +378,6 @@
         On iPhone, Apple keeps your Screen Time selections opaque. No keylogging, no
         screen recording, no browsing history. Details in the
         <a href="/privacy/">privacy policy</a>.</p>
-    </details>
-    <details>
-      <summary>Can't I just uninstall it?<span class="ic">+</span></summary>
-      <p class="a">You can. Broc isn't a parental-control cage, it's a wall you chose to
-        build. It makes the lazy path annoying and the honest path rewarding. That's enough
-        for most people, most days.</p>
-    </details>
-    <details>
-      <summary>Which habits work with it?<span class="ic">+</span></summary>
-      <p class="a">Anything: reading, the gym, meditation, cleaning, studying, walking the
-        dog. Photo verification and timers cover most of them; you decide per habit.</p>
     </details>
     <details>
       <summary>Is Broc on iPhone and Android?<span class="ic">+</span></summary>
@@ -440,36 +396,19 @@
         does not cancel billing. Delete your Broc account from Settings, or follow the
         <a href="/delete-account/">account-deletion steps</a>.</p>
     </details>
-    <details>
-      <summary>What if blocking stops working?<span class="ic">+</span></summary>
-      <p class="a">Open Broc's Lock tab and check that blocking is on and permissions
-        are still granted. On iPhone, review Screen Time access; on Android, review Usage
-        Access and Appear on top. If it persists, email
-        <a href="mailto:developer@getbroc.app">developer@getbroc.app</a>.</p>
-    </details>
-  </div>
-</section>
-
-<!-- ── Download band ─────────────────────────────────────────────────── -->
-<section class="download" id="download">
-  <h3>Get Broc</h3>
-  <p>Available now on iPhone and Android.</p>
-  <div class="ctas">
-    <a class="pill lg app-store-link" href="https://apps.apple.com/app/id6803488648">Download on the App Store</a>
-    <a class="pill lg play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dhome">Get it on Google Play</a>
   </div>
 </section>
 
 <!-- ── Final dark tile ───────────────────────────────────────────────── -->
-<section class="tile dark">
+<section class="tile dark" id="download">
   <div class="rv">
-    <h2>The scroll can wait.<br>Your habits can't.</h2>
-    <p class="tag">Put the wall up today. Your first week is free.</p>
+    <h2>Block distracting apps.</h2>
+    <p class="tag">Available now for iPhone and Android. Start with a 7-day free trial.</p>
     <div class="ctas">
-      <a class="pill lg app-store-link" href="https://apps.apple.com/app/id6803488648">Download on the App Store</a>
-      <a class="pill lg play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dhome">Get it on Google Play</a>
+      <a class="pill lg app-store-link" href="https://apps.apple.com/app/id6803488648">Get Broc for iPhone</a>
+      <a class="pill lg play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dhome">Get Broc for Android</a>
     </div>
-    <span class="note">7-day free trial &middot; No ads &middot; iPhone and Android</span>
+    <span class="note">One subscription &middot; No ads</span>
   </div>
 </section>
 
@@ -484,7 +423,7 @@
           <img src="img/favicon.png" alt="" width="26" height="26">
           <span>Broc</span>
         </a>
-        <p>The habit app blocker.<br>You against your phone.</p>
+        <p>Block distracting apps until your habits are done.</p>
       </div>
       <div class="foot-col">
         <p class="foot-heading">Product</p>
