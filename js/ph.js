@@ -17,10 +17,12 @@ if (POSTHOG_KEY.indexOf('REPLACE_ME') === -1) {
       posthog.capture('play_store_click');
     });
   });
-  var iosForm = document.getElementById('ios-form');
-  if (iosForm) {
-    iosForm.addEventListener('submit', function () {
-      posthog.capture('ios_notify_signup');
+  document.querySelectorAll('.app-store-link').forEach(function (a) {
+    a.addEventListener('click', function () {
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({path: 'app-store-click', event: true});
+      }
+      posthog.capture('app_store_click');
     });
-  }
+  });
 }

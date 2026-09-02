@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Broc: Earn Your Screen Time. The habit app blocker.</title>
-<meta name="description" content="Broc blocks Instagram, TikTok, and YouTube until your daily habits are done. No snooze button. You earn your screen time. 7-day free trial on Android.">
+<meta name="description" content="Broc blocks Instagram, TikTok, and YouTube until your daily habits are done. No snooze button. Earn your screen time on iPhone and Android.">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="canonical" href="https://getbroc.app/">
@@ -25,11 +25,14 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Broc",
-  "operatingSystem": "Android",
+  "operatingSystem": ["iOS", "Android"],
   "applicationCategory": "Productivity",
   "description": "Broc blocks distracting apps until your daily habits are done. You earn your screen time back by doing the habit, not by tapping snooze.",
   "url": "https://getbroc.app/",
-  "installUrl": "https://play.google.com/store/apps/details?id=com.vetohq.veto&referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dhome"
+  "installUrl": [
+    "https://apps.apple.com/app/id6803488648",
+    "https://play.google.com/store/apps/details?id=com.vetohq.veto&referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dhome"
+  ]
 }
 </script>
 
@@ -41,8 +44,9 @@
   "alternateName": ["Broc app", "Broc: Earn Your Screen Time"],
   "url": "https://getbroc.app/",
   "logo": "https://getbroc.app/img/apple-touch-icon.png",
-  "description": "Broc makes an Android app blocker that keeps distracting apps locked until your daily habits are done.",
+  "description": "Broc makes an app blocker that keeps distracting apps locked until your daily habits are done.",
   "sameAs": [
+    "https://apps.apple.com/app/id6803488648",
     "https://play.google.com/store/apps/details?id=com.vetohq.veto"
   ]
 }
@@ -166,21 +170,13 @@
   details .a{padding:0 34px 24px 2px; font-size:15.5px; color:var(--body); max-width:62ch;}
   details .a a{color:var(--blue); font-weight:600;}
 
-  /* ── iOS band ── */
-  .ios{background:var(--grey); padding:56px 22px; text-align:center;}
-  .ios h3{font-family:'Bricolage Grotesque',sans-serif; font-size:21px; font-weight:700;
+  /* ── Download band ── */
+  .download{background:var(--grey); padding:56px 22px; text-align:center;}
+  .download h3{font-family:'Bricolage Grotesque',sans-serif; font-size:21px; font-weight:700;
       letter-spacing:-0.02em;}
-  .ios p{margin-top:6px; font-size:14.5px; color:var(--body);}
-  .ios form{margin-top:22px; display:inline-flex; gap:10px; flex-wrap:wrap; justify-content:center;}
-  .ios input[type=email]{background:#fff; border:1px solid var(--hairline); color:var(--ink);
-      border-radius:999px; padding:12px 22px; font-size:15px; font-family:inherit;
-      min-width:260px; outline:none; transition:border-color .15s;}
-  .ios input[type=email]:focus{border-color:var(--blue);}
-  .ios input::placeholder{color:var(--muted);}
-  .ios button{background:var(--ink); color:#fff; border:0; border-radius:999px;
-      padding:12px 26px; font-size:15px; font-weight:600; font-family:inherit; cursor:pointer;}
-  .ios button:hover{background:#232F44;}
-  .joined{display:none; margin-top:22px; font-size:15px; font-weight:600; color:var(--ink);}
+  .download p{margin-top:6px; font-size:14.5px; color:var(--body);}
+  .download .ctas{margin-top:22px; display:flex; align-items:center; justify-content:center;
+      gap:14px; flex-wrap:wrap;}
 
   /* ── Final dark tile ── */
   .tile.dark{padding-bottom:120px;}
@@ -239,21 +235,22 @@
       <a href="#features">Features</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a class="pill sm play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;utm_source=getbroc-site&amp;utm_medium=organic&amp;utm_campaign=home">Get the app</a>
+    <a class="pill sm" href="#download">Get the app</a>
   </nav>
 </div>
 
 <!-- ── Hero ──────────────────────────────────────────────────────────── -->
 <header class="tile hero">
-  <span class="hero-badge">Now on Google Play</span>
+  <span class="hero-badge">Now on the App Store and Google Play</span>
   <h1>Earn your screen&nbsp;time.</h1>
   <p class="tag">Broc locks Instagram, TikTok, and YouTube until your daily habits
     are done. No snooze button.</p>
   <div class="ctas">
-    <a class="pill lg play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;utm_source=getbroc-site&amp;utm_medium=organic&amp;utm_campaign=home">Get it on Google Play</a>
+    <a class="pill lg app-store-link" href="https://apps.apple.com/app/id6803488648">Download on the App Store</a>
+    <a class="pill lg play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dhome">Get it on Google Play</a>
     <a class="tlink" href="#how">See how it works</a>
   </div>
-  <span class="note">7-day free trial &middot; No ads &middot; Android</span>
+  <span class="note">7-day free trial &middot; No ads &middot; iPhone and Android</span>
   <div class="visual crop">
     <div class="phone cropped">
       <img src="img/shot_wall.png" alt="Broc blocking TikTok: 'Do a habit, earn your scroll' over today's habit list with the minutes each one unlocks" width="1080" height="2400" fetchpriority="high">
@@ -356,8 +353,9 @@
     </details>
     <details>
       <summary>What does Broc see on my phone?<span class="ic">+</span></summary>
-      <p class="a">Only which app is open right now, so it can compare against your block
-        list. No keylogging, no screen recording, no browsing history. Details in the
+      <p class="a">On Android, Broc checks which app is open against your block list.
+        On iPhone, Apple keeps your Screen Time selections opaque. No keylogging, no
+        screen recording, no browsing history. Details in the
         <a href="/privacy/">privacy policy</a>.</p>
     </details>
     <details>
@@ -372,22 +370,21 @@
         dog. Photo verification and timers cover most of them; you decide per habit.</p>
     </details>
     <details>
-      <summary>When is the iPhone version coming?<span class="ic">+</span></summary>
-      <p class="a">Android first. Leave your email below and you'll be the first to know
-        when iOS ships.</p>
+      <summary>Is Broc on iPhone and Android?<span class="ic">+</span></summary>
+      <p class="a">Yes. Broc is available on the <a class="app-store-link" href="https://apps.apple.com/app/id6803488648">App Store</a>
+        and <a class="play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dhome">Google Play</a>.</p>
     </details>
   </div>
 </section>
 
-<!-- ── iOS band ──────────────────────────────────────────────────────── -->
-<section class="ios">
-  <h3>On iPhone?</h3>
-  <p>Leave your email and you'll hear when Broc lands on iOS.</p>
-  <form id="ios-form" action="#">
-    <input type="email" name="email" placeholder="name@email.com" required aria-label="Email address">
-    <button type="submit">Notify me</button>
-  </form>
-  <p class="joined" id="ios-joined">You're on the list. We'll email you when iOS is ready.</p>
+<!-- ── Download band ─────────────────────────────────────────────────── -->
+<section class="download" id="download">
+  <h3>Get Broc</h3>
+  <p>Available now on iPhone and Android.</p>
+  <div class="ctas">
+    <a class="pill lg app-store-link" href="https://apps.apple.com/app/id6803488648">Download on the App Store</a>
+    <a class="pill lg play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dhome">Get it on Google Play</a>
+  </div>
 </section>
 
 <!-- ── Final dark tile ───────────────────────────────────────────────── -->
@@ -396,9 +393,10 @@
     <h2>The scroll can wait.<br>Your habits can't.</h2>
     <p class="tag">Put the wall up today. Your first week is free.</p>
     <div class="ctas">
-      <a class="pill lg play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;utm_source=getbroc-site&amp;utm_medium=organic&amp;utm_campaign=home">Get it on Google Play</a>
+      <a class="pill lg app-store-link" href="https://apps.apple.com/app/id6803488648">Download on the App Store</a>
+      <a class="pill lg play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dhome">Get it on Google Play</a>
     </div>
-    <span class="note">7-day free trial &middot; No ads &middot; Android</span>
+    <span class="note">7-day free trial &middot; No ads &middot; iPhone and Android</span>
   </div>
 </section>
 
@@ -418,7 +416,8 @@
         <a href="#how">How it works</a>
         <a href="#features">Features</a>
         <a href="#faq">FAQ</a>
-        <a class="play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;utm_source=getbroc-site&amp;utm_medium=organic&amp;utm_campaign=home">Google Play</a>
+        <a class="app-store-link" href="https://apps.apple.com/app/id6803488648">App Store</a>
+        <a class="play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dhome">Google Play</a>
       </div>
       <div class="foot-col">
         <h4>Guides</h4>
@@ -449,30 +448,6 @@
 </footer>
 
 <script>
-  var GFORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSfbe_cFcHPzLqpEXzAcn-ZPRynPiuAf6cTU6Iz8yItXx-Zl8A/formResponse";
-  var GFORM_ENTRY_EMAIL = "entry.1496517566";
-  var GFORM_ENTRY_PLATFORM = "entry.817730999";
-
-  // iOS notify form -> Google Form (platform fixed to iPhone).
-  var form = document.getElementById('ios-form');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var input = form.querySelector('input[type=email]');
-    var email = (input.value || '').trim();
-    if (!email) return;
-    var data = new FormData();
-    data.append(GFORM_ENTRY_EMAIL, email);
-    data.append(GFORM_ENTRY_PLATFORM, 'iPhone');
-    function done(){
-      form.style.display = 'none';
-      document.getElementById('ios-joined').style.display = 'block';
-      if (window.goatcounter && window.goatcounter.count) {
-        window.goatcounter.count({path: 'ios-notify-signup', event: true});
-      }
-    }
-    fetch(GFORM_ACTION, {method:'POST', mode:'no-cors', body:data}).then(done).catch(done);
-  });
-
   // Count Play-store clicks.
   document.querySelectorAll('.play-link').forEach(function(a){
     a.addEventListener('click', function(){
