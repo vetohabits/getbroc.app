@@ -3,14 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-itunes-app" content="app-id=6803488648">
 <title>AI photo verification and privacy, explained</title>
-<meta name="description" content="Broc can make you prove a habit with a photo before your apps unlock. What the AI checks, what happens to the photo, and every privacy question answered straight.">
+<meta name="description" content="How Broc checks habit photos on iPhone and Android, what the AI can tell from a photo, and how the image is handled.">
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="canonical" href="https://getbroc.app/ai-photo-verification/">
 <meta name="robots" content="index,follow">
 <meta property="og:title" content="AI photo verification and privacy, explained">
-<meta property="og:description" content="The app that makes you prove you did the habit. What happens to the photo, answered straight.">
+<meta property="og:description" content="How Broc checks habit photos on iPhone and Android, what the AI can tell from a photo, and how the image is handled.">
 <meta property="og:image" content="https://getbroc.app/img/og.png">
 <meta property="og:url" content="https://getbroc.app/ai-photo-verification/">
 <meta property="og:type" content="article">
@@ -23,34 +24,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is Broc's AI photo verification?",
+      "name": "Is photo verification included?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "When you mark a habit done, Broc asks for a photo (your gym, the open book, your desk) and an AI checks whether the photo matches the habit before it counts. It stops the tap-the-box lie."
+        "text": "Yes. Photo verification is included in the Broc subscription on iPhone and Android. Your store shows the price and any trial offer before you confirm."
       }
     },
     {
       "@type": "Question",
-      "name": "What happens to my photo after verification?",
+      "name": "Does photo verification work offline?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The photo is sent securely to Broc's server, passed to the AI provider (OpenAI) for the check, and only the pass or fail result is kept. Broc does not save the photo on its servers after the check, and OpenAI does not use API images to train its models."
+        "text": "Photo verification needs an internet connection. You can submit a photo when you are back online."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I use Broc without photo verification?",
+      "name": "Which habits suit photo proof?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Verification is off by default and per-habit. Without it, you check habits off yourself and no photos are involved at all."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can you cheat the AI verification?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "People try. The AI checks whether the photo plausibly matches the habit, so a photo of your ceiling doesn't pass 'went to the gym'. It isn't claimed to be fraud-proof; it's enough friction that lying to it costs more than doing the habit."
+        "text": "Choose habits that leave visible evidence, such as study notes or a tidied desk. For a habit without a clear photo, choose Timer or Tick."
       }
     }
   ]
@@ -114,12 +107,12 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "AI photo verification and privacy, explained",
-  "description": "Broc can make you prove a habit with a photo before your apps unlock. What the AI checks, what happens to the photo, and every privacy question answered straight.",
+  "description": "How Broc checks habit photos on iPhone and Android, what the AI can tell from a photo, and how the image is handled.",
   "image": [
     "https://getbroc.app/img/og.png"
   ],
   "datePublished": "2026-07-02",
-  "dateModified": "2026-09-02",
+  "dateModified": "2026-11-07",
   "mainEntityOfPage": "https://getbroc.app/ai-photo-verification/",
   "author": {
     "@type": "Person",
@@ -160,84 +153,46 @@
   <div class="hero-inner">
     <span class="kicker">Feature</span>
     <h1>AI photo verification and privacy, explained</h1>
-    <p>Broc can make you prove the habit with a photo before your apps unlock.
-    Here's exactly what the AI checks, what happens to the photo, and the
-    honest answers to the awkward questions.</p>
-    <p class="byline">By <a href="/about/">Shay Gavan</a> &middot; Published 2 July 2026 &middot; Reviewed 14 July 2026</p>
+    <p>Choose Photo proof when a habit leaves something you can photograph.
+    Broc checks whether the image plausibly matches the habit.</p>
+    <p class="byline">By <a href="/about/">Shay Gavan</a> &middot; Published 2 July 2026 &middot; Updated 7 November 2026</p>
   </div>
 </div>
 
 <main>
 
-<h2>Why proof exists at all</h2>
-
-<p>Every habit tracker has the same quiet failure mode: the checkbox. At some
-point, tired and craving the feed, you tap "done" on a workout that didn't
-happen. Nobody sees it. The streak survives. The habit dies.</p>
-
-<p>Broc is a habit-based app blocker: block distracting apps, do a real habit,
-prove it with a photo, earn the unlock. Verification is the "prove it" part,
-and it's what makes the unlock mean something. No other app blocker checks
-whether the habit actually happened.</p>
-
-<h2>How it works</h2>
+<h2>How photo proof works</h2>
 
 <div class="flow">
-  <div class="stage"><div class="n">1</div><p><strong>You finish a habit with verification on.</strong>
-    <span>Instead of a checkbox, the camera opens.</span></p></div>
-  <div class="stage"><div class="n">2</div><p><strong>You photograph the evidence.</strong>
-    <span>The gym floor, the open book, your running shoes on the trail, the cleared desk.</span></p></div>
-  <div class="stage"><div class="n">3</div><p><strong>The AI checks the match.</strong>
-    <span>The photo goes securely to Broc's server, then to the AI provider (OpenAI), which answers one question: does this photo plausibly show this habit?</span></p></div>
-  <div class="stage"><div class="n">4</div><p><strong>Pass or fail comes back. That's all that's kept.</strong>
-    <span>Pass marks the habit done and earns your unlock. The photo is not saved on Broc's servers after the check.</span></p></div>
+  <div class="stage"><div class="n">1</div><p><strong>Choose Photo for a habit.</strong>
+    <span>Use the same proof option on iPhone or Android.</span></p></div>
+  <div class="stage"><div class="n">2</div><p><strong>Submit a photo when you finish.</strong>
+    <span>Frame the evidence, such as a page of notes or a cleared desk. Keep faces and personal details out of the frame.</span></p></div>
+  <div class="stage"><div class="n">3</div><p><strong>Broc checks whether the image matches.</strong>
+    <span>A match counts towards your unlock. An unclear image may need a retake. The check assesses visible evidence and can make mistakes.</span></p></div>
 </div>
 
-<h2>The privacy part, straight</h2>
+<h2>How the photo is handled</h2>
 
 <table>
   <tr><th>Question</th><th>Answer</th></tr>
-  <tr><td>Is the photo stored?</td><td>Not after the check. Broc keeps the pass/fail result, not the image.</td></tr>
-  <tr><td>Who sees it?</td><td>No human review. The photo is processed by the AI provider (OpenAI) via API.</td></tr>
-  <tr><td>Is it used to train AI?</td><td>No. OpenAI does not use API images for training.</td></tr>
-  <tr><td>Can I opt out?</td><td>It's opt-in, per habit. Leave it off and no photos are ever taken.</td></tr>
-  <tr><td>What else can Broc see on my phone?</td><td>On Android, Usage Access identifies the app currently open so Broc can check it against your block list on-device. On iPhone, Apple supplies private Screen Time tokens instead of app names. Broc does not store or send app-usage history, record your screen, or log what you type.</td></tr>
+  <tr><td>Where is the photo sent?</td><td>Broc sends the image through its server to OpenAI for verification. Broc does not save the image on its servers after the check.</td></tr>
+  <tr><td>How does OpenAI handle it?</td><td>OpenAI says API inputs are excluded from model training by default. Its <a href="https://developers.openai.com/api/docs/guides/your-data">API data controls</a> explain processing and retention.</td></tr>
+  <tr><td>How can I avoid sending photos?</td><td>Choose a different proof method for the habit, such as Timer or Tick.</td></tr>
 </table>
 
-<p>The full details live in the <a href="/privacy/">privacy policy</a>. If
-anything there doesn't match what you see in the app, email
-<a href="mailto:developer@getbroc.app">developer@getbroc.app</a> and it gets
-fixed.</p>
-
-<h2>"Can't you cheat it?"</h2>
-
-<p>The most asked question, so here's the honest answer: people try, and the
-model is better at this than you'd hope. A photo of your ceiling doesn't pass
-"went to the gym". Yesterday's photo is a gamble because the check looks at
-whether the scene plausibly matches the habit now.</p>
-
-<div class="callout">Broc doesn't claim verification is fraud-proof, because
-nothing is. The claim is smaller and more useful: lying to it costs more
-effort than doing the habit, and that reverses the default.</div>
-
-<p>And if you defeat it anyway? You've spent real ingenuity to avoid ten
-pushups, and the streak you're protecting is now fiction. The app can't want
-the habit more than you do. It just makes wanting it enough.</p>
+<p>See the <a href="/privacy/">Broc privacy policy</a> for details.</p>
 
 <h2>Common questions</h2>
 
-<h3>Is verification included?</h3>
-<p>Yes. Every Broc subscription includes it (7-day free trial), along with
-custom habits, custom unlock durations and progress history.</p>
+<h3>Is photo verification included?</h3>
+<p>Yes. Photo verification is included in the Broc subscription on iPhone and Android. Your store shows the price and any trial offer before you confirm.</p>
 
-<h3>Does verification work offline?</h3>
-<p>No, the check needs a connection. Without one, verify when you're back
-online.</p>
+<h3>Does photo verification work offline?</h3>
+<p>Photo verification needs an internet connection. You can submit a photo when you are back online.</p>
 
 <h3>Which habits suit photo proof?</h3>
-<p>Anything that leaves visible evidence: gym sessions, reading, a tidied
-room, meal prep, being at the library. For habits with nothing to photograph
-(meditation, say), leave verification off for that habit.</p>
+<p>Choose habits that leave visible evidence, such as study notes or a tidied desk. For a habit without a clear photo, choose Timer or Tick.</p>
 
 <div class="cta">
   <p>The habit tracker that asks for receipts.</p>
@@ -273,7 +228,7 @@ room, meal prep, being at the library. For habits with nothing to photograph
 <script src="/js/ph.js" defer></script>
 
 <div class="install-bar">
-  <span>7-day free trial, then a subscription.</span>
+  <span>7-day trial for eligible subscribers.</span>
   <a class="app-store-link" href="https://apps.apple.com/app/id6803488648">Get Broc for iPhone</a>
   <a class="play-link" href="https://play.google.com/store/apps/details?id=com.vetohq.veto&amp;referrer=utm_source%3Dgetbroc-site%26utm_medium%3Dorganic%26utm_campaign%3Dai-photo-verification">Get Broc for Android</a>
 </div>
